@@ -1,0 +1,36 @@
+{
+  "audio": [
+    {
+      "path": "public/assets/audio/01歌曲：Empty City at Night.mp3",
+      "bytes": 4266376,
+      "sha256": "c92810b856031e88b4e3877d53ba9eb82f9cf58de0dad804f2b3269d98330942"
+    },
+    {
+      "path": "public/assets/audio/02歌曲_Raindrops on Glass.mp3",
+      "bytes": 3741043,
+      "sha256": "d52a7178db59fd4c4bb6fc71183cd3758ee79e9d4789c598d3d7936e3f5c04ca"
+    },
+    {
+      "path": "public/assets/audio/03歌曲_Imaginary World Beneath the.mp3",
+      "bytes": 4576201,
+      "sha256": "fe1fce57d5f62aabd41f8b06edf9cdd6c0de87a69961dcb8ddeddedf92c11646"
+    },
+    {
+      "path": "public/assets/audio/04歌曲_Magical Rainy City.mp3",
+      "bytes": 4349079,
+      "sha256": "0760d503a665199c8dc7603ed47fa3ada132dc5846b64fe0859361bd43650fd2"
+    },
+    {
+      "path": "public/assets/audio/05歌曲_D Major Reprise.mp3",
+      "bytes": 4318018,
+      "sha256": "6ed420676118415bf3e075ca4d9028dc0e9550e1a1ed5e6f9868d7b2a9e33557"
+    }
+  ],
+  "images": "Three visible chat reference images; original downloadable PNG files unavailable. Procedural interactive artwork references their composition and palette.",
+  "model": {
+    "path": "public/assets/models/hand_landmarker.task",
+    "present": false,
+    "source": "https://storage.googleapis.com/mediapipe-models/hand_landmarker/hand_landmarker/float16/1/hand_landmarker.task",
+    "status": "Blocked by environment egress policy. Run npm run assets on an authorized network."
+  }
+}

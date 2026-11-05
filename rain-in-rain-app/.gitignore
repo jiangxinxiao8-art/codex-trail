@@ -1,0 +1,9 @@
+node_modules/
+dist/
+test-results/
+playwright-report/
+public/assets/audio/*
+public/assets/images/*
+public/assets/models/*
+public/assets/wasm/*
+!public/assets/**/.gitkeep
