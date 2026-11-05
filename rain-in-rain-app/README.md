@@ -9,7 +9,6 @@
 ```sh
 cd rain-in-rain-app
 npm install
-npm run assets
 npm run dev
 ```
 
@@ -23,16 +22,17 @@ npm test
 
 `npm run build` 包含 TypeScript 类型检查。`npm test` 检查捏合边缘、防抖、张掌和完整剧情状态机。
 
-## 必须先准备真实手部模型
+## 手部模型已随包附带
 
-当前云环境阻止 `storage.googleapis.com`，因此交付时模型可能仍未下载。**不能把鼠标模式当作摄像头已经验收。** `npm run assets` 会：
+最新版已包含经过验证的真实模型 `public/assets/models/hand_landmarker.task`（7,819,105 字节）与匹配 WASM，运行时从本地读取。首次安装依赖后可直接 `npm run dev`，无需从 Google 下载模型。
 
-1. 从已安装的 `@mediapipe/tasks-vision` 复制 WASM 到 `public/assets/wasm`。
-2. 从 MediaPipe 官方固定版本地址下载模型：
-   `https://storage.googleapis.com/mediapipe-models/hand_landmarker/hand_landmarker/float16/1/hand_landmarker.task`
-3. 校验 HTTPS 响应中 Google 提供的 MD5，再检查文件大小与 task ZIP 签名，记录 SHA256 和来源。校验失败不会创建模型占位文件。
+旧版遇到 `Unable to open zip archive` 时：下载仓库中的 `hand_landmarker.task`，放入项目的 `public/assets/models/`，然后刷新网页重新开始。
 
-需要系统 `curl`（Windows 10/11 通常自带）。下载完成后模型在 `public/assets/models/hand_landmarker.task`。模型和 WASM 均从本地服务加载，运行时不调用云端推理。云环境已保存所需域名的网络草稿，需在环境设置中保存并发布后才生效。
+`npm run assets` 是可选的资源修复命令：复制 npm 安装包中的 WASM；本地模型通过固定 SHA256 后直接复用，无需联网。若模型不存在或损坏，才从官方地址下载并验证服务端 MD5 及固定 SHA256：
+
+`https://storage.googleapis.com/mediapipe-models/hand_landmarker/hand_landmarker/float16/1/hand_landmarker.task`
+
+模型完整性信息见 `public/assets/models/provenance.json`。官方 task ZIP 包有两个前置对齐字节，旧版下载脚本错误地要求第一个字节为 P；此问题已修复。启动前也会验证模型，避免将 Vite 返回的 HTML 页面误传入 MediaPipe。
 
 ## 操作与六幕剧情
 
@@ -59,7 +59,7 @@ npm test
 | music_04 | `public/assets/audio/04歌曲_Magical Rainy City.mp3` | DANCE |
 | music_05 | `public/assets/audio/05歌曲_D Major Reprise.mp3` | ENDING |
 
-第一首实际文件名含全角冒号，已按上传的真实名称映射。资源清单见 `src/assets.ts`。五首 MP3 已复制到项目；原始上传文件保持不变。静态素材在 Git 中默认忽略，**复制项目或制作发布包时须带上 public/assets**。也可在设置面板同时导入本地五首 MP3；文件只在当前浏览器会话中读取。
+第一首实际文件名含全角冒号，已按上传的真实名称映射。资源清单见 `src/assets.ts`。五首 MP3 已复制到项目；原始上传文件保持不变。歌曲、模型和 WASM 已随仓库提交，其他新增静态素材默认忽略，**复制项目或制作发布包时须带上 public/assets**。也可在设置面板同时导入本地五首 MP3；文件只在当前浏览器会话中读取。
 
 音乐预加载到 Tone.Player。第二、三幕共享 music_02，不会重复从头播放；其余切换 2.5 秒交叉淡入淡出，每段独立 Gain。音乐结束后不循环，雨声与互动继续。所有通道经过总增益和 -3dB limiter。雨声为明确标记的临时粉红噪声滤波合成环境音；没有声称使用未提供的雨声录音。互动音色采用复用的 FM 合成铃音、混响和轻延迟，不使用虚构采样。音阶 D/E/F#/A/B，主题动机按要求单独准确播放 D–F–A–F（开头、高潮、结尾）；它与 D 大调五声音阶的 F# 有意区分。
 
@@ -85,7 +85,7 @@ npm test
 
 ## 验证范围与限制
 
-已实际安装依赖、启动 Vite、运行生产构建。摄像头原型的鼠标交互、音频初始化、无设备回退已用 Chromium 验证；状态机/手势合成关键点单元测试 4 项通过。五首 MP3 均经过 ffprobe 解码信息检查，原始音轨时长约 160–195 秒。完整六幕鼠标浏览器测试及五首音乐启动顺序已通过，0 未捕获异常；暂停、重新开始、缺失模型时摄像头释放与鼠标回退均通过。测试模拟剧情等待时间，保留真实交互和 Web Audio 时钟。记录见 `VALIDATION.md`。
+已实际安装依赖、启动 Vite、运行生产构建。摄像头原型的鼠标交互、音频初始化、无设备回退已用 Chromium 验证；模型完整性、状态机和手势合成关键点单元测试 6 项通过。五首 MP3 均经过 ffprobe 解码信息检查，原始音轨时长约 160–195 秒。完整六幕鼠标浏览器测试及五首音乐启动顺序已通过，0 未捕获异常；暂停、重新开始、缺失模型时摄像头释放与鼠标回退均通过。测试模拟剧情等待时间，保留真实交互和 Web Audio 时钟。记录见 `VALIDATION.md`。
 
 需要用户在真实电脑上验收：摄像头权限、模型成功加载后的真人单手识别稳定性、光照与遮挡条件、镜像方向、真实音箱/耳机的听感、与上传参考画面的艺术贴合度。合成关键点测试和鼠标测试不能替代这些真人验证。
 
@@ -93,6 +93,8 @@ npm test
 
 ```sh
 npm run test:browser
-# 以下只用于验证“模型尚未安装”时的失败回退分支
+# 官方模型 + 模拟摄像头视频推理
+npm run test:camera
+# 模拟模型 URL 错误返回 HTML 的回退分支
 npm run test:camera-fallback
 ```

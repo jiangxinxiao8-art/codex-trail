@@ -29,8 +29,10 @@
   "images": "Three visible chat reference images; original downloadable PNG files unavailable. Procedural interactive artwork references their composition and palette.",
   "model": {
     "path": "public/assets/models/hand_landmarker.task",
-    "present": false,
+    "present": true,
     "source": "https://storage.googleapis.com/mediapipe-models/hand_landmarker/hand_landmarker/float16/1/hand_landmarker.task",
-    "status": "Blocked by environment egress policy. Run npm run assets on an authorized network."
+    "status": "Official version 1 downloaded, publisher MD5 and ZIP CRCs verified.",
+    "bytes": 7819105,
+    "sha256": "fbc2a30080c3c557093b5ddfc334698132eb341044ccee322ccf8bcf3607cde1"
   }
 }

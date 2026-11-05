@@ -1,3 +1,10 @@
 import { chromium, expect } from '@playwright/test';
-const browser=await chromium.launch({executablePath:process.env.CHROME_PATH||'/usr/bin/chromium',headless:true,args:['--no-sandbox','--use-fake-device-for-media-stream','--use-fake-ui-for-media-stream','--use-angle=swiftshader','--enable-unsafe-swiftshader']});
-try {const page=await browser.newPage({viewport:{width:800,height:600}});await page.addInitScript(()=>{window.__stoppedTracks=0;const stop=MediaStreamTrack.prototype.stop;MediaStreamTrack.prototype.stop=function(){window.__stoppedTracks++;return stop.call(this);};});await page.goto('http://localhost:5173');await page.waitForSelector('canvas');await page.click('#start');await expect(page.locator('#caption')).toBeVisible({timeout:60000});await expect(page.locator('#mode-label')).toContainText('鼠标模式');await expect(page.locator('#notice')).toContainText('摄像头或模型不可用');expect(await page.evaluate(()=>window.__stoppedTracks)).toBeGreaterThan(0);console.log('假摄像头已成功请求；缺失模型初始化失败后，摄像头释放、明确错误提示、鼠标回退均通过。');}finally{await browser.close();}
+const browser=await chromium.launch({executablePath:process.env.CHROME_PATH||'/usr/bin/chromium',headless:true,args:['--no-sandbox','--use-angle=swiftshader','--enable-unsafe-swiftshader']});
+try {
+ const page=await browser.newPage({viewport:{width:800,height:600}});
+ await page.route('**/assets/models/hand_landmarker.task',route=>route.fulfill({status:200,contentType:'text/html',body:'<!doctype html><html>Vite fallback</html>'}));
+ await page.addInitScript(()=>{window.__cameraCalls=0;navigator.mediaDevices.getUserMedia=async()=>{window.__cameraCalls++;throw new Error('不应在无效模型时请求摄像头');};});
+ await page.goto('http://localhost:5173');await page.waitForSelector('canvas');await page.click('#start');
+ await expect(page.locator('#caption')).toBeVisible({timeout:60000});await expect(page.locator('#mode-label')).toContainText('鼠标模式');await expect(page.locator('#notice')).toContainText('模型缺失或损坏');expect(await page.evaluate(()=>window.__cameraCalls)).toBe(0);
+ console.log('模型 URL 返回 HTML 时显示明确修复提示并回退鼠标，不请求摄像头、不进入 MediaPipe ZIP 解析。');
+} finally {await browser.close();}
