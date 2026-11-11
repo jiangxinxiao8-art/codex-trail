@@ -1,35 +1,29 @@
-# 雨中曲 · Sing in the Rain
+# 雨中曲 · Sing in the Rain — V3 功能预览
 
-六幕互动艺术网页项目，包含完整源代码、五首原始 MP3 和本地 MediaPipe WASM。
+在原版上增量升级：电影式开场、手写署名、单路摄像头预览、平滑掌心移动、分层城市、舞蹈与透视飞翔、三道光环、完整降落和归家五项互动。
 
-## 下载项目
+**当前为可运行的 V3 程序绘制版；用户发送的原图只有聊天预览，原始图片文件仍待 ZIP 附件，尚未完成最终原图美术整合。**
 
-**[点击下载《雨中曲》项目压缩包（约 34 MB）](https://github.com/jiangxinxiao8-art/codex-trail/raw/refs/heads/main/rain-in-rain-app.zip)**
+## 下载与开始
 
-也可以点击本页上方 **Code → Download ZIP** 下载整个仓库，再进入 `rain-in-rain-app` 文件夹。
+[下载 V3 功能预览 ZIP](https://github.com/jiangxinxiao8-art/codex-trail/raw/refs/heads/upgrade/rain-v3-20261111/rain-in-rain-v3.zip)
 
-## 本地运行
+解压到新文件夹，保留旧版。安装 Node.js LTS 后双击项目中的 **`启动雨中曲.cmd`**。首次安装依赖后，自动在本机浏览器打开 localhost。真实模型、WASM、五首歌曲与手写字体均附带。
 
-安装 Node.js 22 或更新版本，在项目文件夹打开终端：
+Windows 启动脚本需在用户本机验证；云端已验证 Node/Vite 和 Chrome 工作流。也可在项目文件夹手动运行：
 
-```sh
-cd rain-in-rain-app
-npm install
-npm run dev
+```powershell
+npm.cmd install
+npm.cmd start
 ```
 
-最新版已附带经过官方 MD5 和固定 SHA256 校验的手部模型，无需另行下载。摄像头画面仅在本地浏览器处理。`npm run assets` 可选用于校验或修复资源。
+- [完整中文说明](rain-in-rain-app/README.md)
+- [实际测试与尚未完成项](rain-in-rain-app/VALIDATION.md)
+- [资源与 SHA256 清单](rain-in-rain-app/ASSETS.json)
+- [V3 原始开发要求](rain-in-rain-app/docs/V3-REQUIREMENTS.md)
 
-旧版模型缺失报错时，可[单独下载手部模型](https://github.com/jiangxinxiao8-art/codex-trail/raw/refs/heads/main/rain-in-rain-app/public/assets/models/hand_landmarker.task)，放入项目的 `public/assets/models/` 后刷新页面。
+## 原图与本机验收
 
-模型未就绪或摄像头不可用时可使用鼠标：移动控制人物，点击模拟捏合，按住空格模拟张掌。五首音乐已包含，无需重新生成。
+请把原始场景、人物设定和动作图作为 ZIP 文件附件上传，即可在保留原文件的前提下继续接入。无需访问 D 盘，也不要求用户手工改配置。游戏设置另有「载入我的插画」，可本地选择文件并仅保存在浏览器。
 
-## 项目说明与验证
-
-- [完整中文说明及故障排查](rain-in-rain-app/README.md)
-- [实际验证记录](rain-in-rain-app/VALIDATION.md)
-- [资源清单与校验值](rain-in-rain-app/ASSETS.json)
-
-已通过构建、6 项单元测试、完整六幕鼠标浏览器流程及五首音乐播放顺序检查。真实摄像头单手识别与实际耳机听感仍需本地验收。三张聊天插画用于风格参考，原始 PNG 文件未包含在项目包内。
-
-官方模型在 Chromium 中已通过初始化与模拟摄像头视频推理测试。真实电脑摄像头和真人手势识别仍需用户验收。
+仍需真实电脑验证摄像头权限、单手稳定性/方向、飞行舒适度、Windows 启动脚本、实际 GPU 性能及耳机音量。云端软件 WebGL 室内帧率较低，不把模拟设备测试称为真人验收。

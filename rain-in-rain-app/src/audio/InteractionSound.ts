@@ -12,5 +12,7 @@ export class InteractionSound {
  puddle(){this.bell.triggerAttackRelease(['D4','F#4','A4','E5'],.8);}
  dance(x:number,now:number){if(now-this.last<220)return;this.last=now;this.drop(Math.min(5,Math.floor(x*6)));}
  motif(){['D5','F5','A5','F5'].forEach((n,i)=>this.later(()=>this.bell.triggerAttackRelease(n,.3),i*.55));}
+ home(kind:string){const note=kind==='lamp'?'A5':kind==='umbrella'?'E5':kind==='record'?'D4':kind==='tea'?'B5':'D5';this.bell.triggerAttackRelease(note,.09,Tone.now(),.25);}
+ ring(index:number){this.bell.triggerAttackRelease(['D5','A5',['E5','B5'],'D6'][index%4],.5,Tone.now(),.4);}
  reset(){this.timers.forEach(id=>Tone.getContext().clearTimeout(id));this.timers=[];this.bell.releaseAll();this.last=-Infinity;}
 }

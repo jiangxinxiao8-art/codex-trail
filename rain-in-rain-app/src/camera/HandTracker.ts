@@ -3,7 +3,9 @@ import { GestureRecognizer, type Input } from './GestureRecognizer';
 export class HandTracker {
   video = document.createElement('video'); private stream?: MediaStream; private detector?: HandLandmarker;
   private gesture = new GestureRecognizer(); private last = 0; private frame = -1; private generation = 0;
+  get active(){return !!this.stream?.getVideoTracks().some(t=>t.readyState==='live')&&!!this.detector;}
   async start() {
+    this.stop();
     const generation = ++this.generation;
     if (!navigator.mediaDevices?.getUserMedia) throw new Error('摄像头需要 localhost 或 HTTPS 安全环境。');
     const response = await fetch('/assets/models/hand_landmarker.task', { cache: 'no-store' });

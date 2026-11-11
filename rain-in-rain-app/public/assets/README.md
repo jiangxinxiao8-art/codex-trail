@@ -1,1 +1,1 @@
-五首上传歌曲在 audio/，保留原名。聊天插画仅用于风格参考。WASM 来自匹配的 npm 安装包。真实手部模型已附带，官方来源及校验信息见 models/provenance.json；无需另行下载。整个 public/assets 应随发布包一起保留。
+五首上传原始 MP3 在 audio/，均保持 SHA256。官方手部模型在 models/，来源与校验见 provenance.json；WASM 来自匹配 npm 包；中文手写字体和 OFL 授权在 fonts/。此次聊天图片预览已作为可见参考，但原始 PNG 未成为可读取文件，images/manifest.json 因此为空，不伪造图片文件。整包保留 public/assets 后可运行程序绘制版。原图 ZIP 到齐后才能完成最终原图整合。

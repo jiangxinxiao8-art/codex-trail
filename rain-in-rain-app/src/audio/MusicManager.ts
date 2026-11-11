@@ -9,7 +9,7 @@ export class MusicManager {
   await Promise.all(this.tracks.map(async(t,i)=>{try{await t.player.load(urls[i]);}catch{errors.push(`第 ${i+1} 首音乐加载失败`);}}));return errors;
  }
  switch(index:number){if(index===this.current)return;const now=Tone.now();for(const [i,t]of this.tracks.entries())if(i!==index&&t.player.state==='started'){t.gain.gain.cancelScheduledValues(now);t.gain.gain.rampTo(0,2.5);this.timers.push(Tone.getContext().setTimeout(()=>{if(this.current!==i&&t.player.state==='started')t.player.stop();},2.7));}
-  this.current=index;const next=this.tracks[index];if(!next?.player.loaded)return;next.gain.gain.cancelScheduledValues(now);next.gain.gain.value=0;next.player.start();next.gain.gain.rampTo(.72,2.5);
+  this.current=index;const next=this.tracks[index];if(!next?.player.loaded)return;next.gain.gain.cancelScheduledValues(now);next.gain.gain.value=0;next.player.start();next.gain.gain.rampTo(index===4?.45:.72,2.5);
  }
  fadeOut(){const track=this.tracks[this.current];if(track)track.gain.gain.rampTo(0,8);}
  reset(){this.timers.forEach(id=>Tone.getContext().clearTimeout(id));this.timers=[];this.current=-1;for(const t of this.tracks){t.player.stop();t.gain.gain.cancelScheduledValues(0);t.gain.gain.value=0;}}

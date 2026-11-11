@@ -26,7 +26,20 @@
       "sha256": "6ed420676118415bf3e075ca4d9028dc0e9550e1a1ed5e6f9868d7b2a9e33557"
     }
   ],
-  "images": "Three visible chat reference images; original downloadable PNG files unavailable. Procedural interactive artwork references their composition and palette.",
+  "images": {
+    "status": "Chat image previews inspected as visual references; original image files unavailable in execution workspace. No original images fabricated.",
+    "manifest": "public/assets/images/manifest.json",
+    "runtime_import": "Settings > 载入我的插画, browser-local IndexedDB, no upload.",
+    "expected_scene_originals": [
+      "雨夜拱桥下的雾光长街.png",
+      "雨中旋律_雾岭梦城.png",
+      "雨夜街巷与伞花倒影.png",
+      "雨幕中的月光之城.png",
+      "雨夜街巷的梦幻光池.png",
+      "雨夜归家的温暖书房.png"
+    ],
+    "character": "Consistent independently articulated character drawn from visible hat/raincoat/bob-hair references; not a static sprite sheet."
+  },
   "model": {
     "path": "public/assets/models/hand_landmarker.task",
     "present": true,
@@ -34,5 +47,14 @@
     "status": "Official version 1 downloaded, publisher MD5 and ZIP CRCs verified.",
     "bytes": 7819105,
     "sha256": "fbc2a30080c3c557093b5ddfc334698132eb341044ccee322ccf8bcf3607cde1"
-  }
+  },
+  "fonts": [
+    {
+      "path": "public/assets/fonts/LongCang-Regular.ttf",
+      "source": "https://raw.githubusercontent.com/google/fonts/main/ofl/longcang/LongCang-Regular.ttf",
+      "license": "public/assets/fonts/OFL-LongCang.txt",
+      "sha256": "e5bf2c3f24ef2327c6f136d8f73e2f9dfdf44896fdbeb35a9515f44777bb91bc",
+      "bytes": 5162508
+    }
+  ]
 }
