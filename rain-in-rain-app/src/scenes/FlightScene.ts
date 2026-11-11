@@ -1,14 +1,15 @@
-import { Container, Graphics } from 'pixi.js';
+import { Container, Graphics, Sprite } from 'pixi.js';
 import { MainCharacter } from '../visual/MainCharacter';
 import { BLUE, GOLD, INK, MAUVE, clamp, damp, seeded } from '../world/math';
 export type Vec3={x:number;y:number;z:number};
 /** Perspective projection of independent world-space boxes, rings and rain (2.5D, no flat-image zoom). */
 export class FlightScene extends Container {
- private sky=new Graphics();private city=new Graphics();private flightEffects=new Graphics();private actor=new MainCharacter();
+ private artwork:Sprite|null=null;private sky=new Graphics();private city=new Graphics();private flightEffects=new Graphics();private actor=new MainCharacter();
  private buildings:{x:number;z:number;w:number;h:number;depth:number;color:number}[]=[];private rain:{x:number;y:number;z:number}[]=[];
  rings=[{x:-100,y:130,z:500},{x:120,y:190,z:1150},{x:0,y:130,z:1850}];
  position3={x:0,y:120,z:0};camera3={x:0,y:210,z:-320};velocity={x:0,y:0};phase:'takeoff'|'flying'|'landing'|'done'='takeoff';elapsed=0;passed=0;collected=0;assisting=false;private lastZ=0;private trail:Vec3[]=[];private collectedIds=new Set<number>();readonly droplets=[{x:-70,y:145,z:340},{x:60,y:175,z:880},{x:10,y:130,z:1580}];
  constructor(){super();this.addChild(this.sky,this.city,this.actor,this.flightEffects);this.actor.back=true;this.visible=false;const r=seeded(50);for(let i=0;i<65;i++)this.buildings.push({x:(i%2?1:-1)*(420+r()*1050),z:250+r()*3600,w:60+r()*130,h:90+r()*550,depth:60+r()*170,color:i%3===0?0x6f7f8e:0x364856});for(let i=0;i<140;i++)this.rain.push({x:(r()-.5)*2600,y:r()*1400-200,z:r()*2400});}
+ setArtwork(sprite:Sprite){this.artwork?.destroy();this.artwork=sprite;this.addChildAt(sprite,0);this.sky.alpha=.38;this.city.alpha=.32;}
  reset(){this.visible=false;this.position3={x:0,y:120,z:0};this.camera3={x:0,y:210,z:-320};this.velocity={x:0,y:0};this.phase='takeoff';this.elapsed=0;this.passed=0;this.collected=0;this.assisting=false;this.lastZ=0;this.trail=[];this.collectedIds.clear();}
  start(){this.reset();this.visible=true;}
  project(p:Vec3){const z=p.z-this.camera3.z;if(z<20)return null;const perspective=690/z;return{x:800+(p.x-this.camera3.x)*perspective,y:420-(p.y-this.camera3.y)*perspective,scale:perspective};}
@@ -39,6 +40,6 @@ export class FlightScene extends Container {
  for(let i=this.passed;i<3;i++){const r=this.rings[i],p=this.project(r);if(!p)continue;const radius=150*p.scale;for(let k=2;k>=0;k--)this.flightEffects.ellipse(p.x,p.y,radius+k*4,radius*.85+k*4).stroke({color:GOLD,width:k===0?2:1,alpha:i===this.passed?.65-k*.15:.18});}
  const dz=this.position3.z-this.lastZ;this.lastZ=this.position3.z;for(const r of this.rain){r.z-=dz*.5+dt*110;r.y-=dt*100;if(r.z<this.position3.z+30)r.z=this.position3.z+2200;if(r.y<0)r.y=1100;const a=this.project(r),b=this.project({...r,z:r.z+35,y:r.y+24});if(a&&b)this.flightEffects.moveTo(a.x,a.y).lineTo(b.x,b.y).stroke({color:INK,width:.7,alpha:.25});}
  for(let i=0;i<3;i++){this.flightEffects.moveTo(150,600+i*20).bezierCurveTo(550,350+i*40,1000,550,1450,260+i*30).stroke({color:i%2?MAUVE:GOLD,width:1,alpha:.16});}
- this.actor.position.set(800+this.velocity.x*.2,this.phase==='takeoff'?710-Math.min(1,this.elapsed/5)*80:this.phase==='landing'?630+Math.min(1,this.elapsed/6)*70:630);this.actor.scale.set(1.15);this.actor.back=true;this.actor.animate(dt,this.velocity.x,this.phase==='takeoff'&&this.elapsed<.9?'crouch':this.phase==='landing'&&this.elapsed>5.7?'land':'glide');
+ this.actor.position.set(800+this.velocity.x*.2,this.phase==='takeoff'?710-Math.min(1,this.elapsed/5)*80:this.phase==='landing'?630+Math.min(1,this.elapsed/6)*70:630);this.actor.size=1.15;this.actor.back=true;this.actor.animate(dt,this.velocity.x,this.phase==='takeoff'&&this.elapsed<.9?'crouch':this.phase==='landing'&&this.elapsed>5.7?'land':'glide');
  }
 }

@@ -1,1 +1,16 @@
-{}
+{
+  "city": "derived/city-clean.png",
+  "far": "originals/ChatGPT 图像 2026年11月6日 11_38_53-1.png",
+  "foreground": "derived/foreground-left.png",
+  "umbrellas": "originals/ChatGPT 图像 2026年11月6日 11_38_56-5.png",
+  "pool": "originals/ChatGPT 图像 2026年11月11日 13_35_52-5.png",
+  "dream": "originals/ChatGPT 图像 2026年11月11日 13_35_50-1.png",
+  "vista": "originals/ChatGPT 图像 2026年11月11日 13_35_50-2.png",
+  "flight": "originals/ChatGPT 图像 2026年11月11日 13_35_52-4.png",
+  "home": "originals/ChatGPT 图像 2026年11月11日 13_38_13.png",
+  "homeClean": "derived/home-clean.png",
+  "micro": "originals/ChatGPT 图像 2026年11月11日 13_35_51-3.png",
+  "farGlow": "originals/ChatGPT 图像 2026年11月6日 11_38_55-4.png",
+  "cityOriginal": "originals/ChatGPT 图像 2026年11月6日 11_38_53-2.png",
+  "foregroundOriginal": "originals/ChatGPT 图像 2026年11月6日 11_38_54-3.png"
+}
