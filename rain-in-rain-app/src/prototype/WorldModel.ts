@@ -53,10 +53,29 @@ export class WorldModel {
   readonly guidedHits = { metal: 0, glass: 0 };
   readonly contacts = { stone: 0, metal: 0, glass: 0, water: 0, roof: 0 };
   readonly notes = new Set<number>();
+  easyMode = true;
+  completion: 'none' | 'natural' | 'assisted' = 'none';
+  private discovered = new Set<'metal' | 'glass'>();
   onImpact: (impact: Impact) => void = () => {};
   onChange: () => void = () => {};
-  get materialsAwake() { return this.guidedHits.metal >= 5 && this.guidedHits.glass >= 5; }
+  get requiredHits() { return this.easyMode ? 2 : 5; }
+  get touchRange() { return this.easyMode ? 6.5 : 3.5; }
+  materialReady(material: 'metal' | 'glass') { return this.discovered.has(material) || this.guidedHits[material] >= this.requiredHits; }
+  get materialsAwake() { return this.materialReady('metal') && this.materialReady('glass'); }
   get gateOpen() { return this.materialsAwake && this.notes.size === 3; }
+  get completed() { return this.completion !== 'none'; }
+  setEasyMode(value: boolean) {
+    for (const material of ['metal','glass'] as const) if (this.materialReady(material)) this.discovered.add(material);
+    this.easyMode=value;
+    for (const material of ['metal','glass'] as const) if (this.materialReady(material)) this.discovered.add(material);
+    this.onChange();
+  }
+  completeWithAssistance() {
+    if (this.completed) return false;
+    for (const material of ['metal','glass'] as const) { this.discovered.add(material); this.guidedHits[material]=Math.max(this.guidedHits[material],this.requiredHits); }
+    for (let i=0;i<BELLS.length;i++) this.notes.add(i);
+    this.completion='assisted';this.onChange();return true;
+  }
   update(dt: number, present: boolean, guide: boolean, windX: number, windZ: number) {
     this.elapsed += dt;
     this.guiding = guide && present;
@@ -87,9 +106,9 @@ export class WorldModel {
   impact(hit: Impact) {
     this.contacts[hit.material]++;
     if (hit.guided && (hit.material === 'metal' || hit.material === 'glass')) {
-      const before = this.materialsAwake;
+      const before = this.materialReady(hit.material);
       this.guidedHits[hit.material]++;
-      if (this.guidedHits[hit.material] === 5 || !before && this.materialsAwake) this.onChange();
+      if (!before && this.materialReady(hit.material)) { this.discovered.add(hit.material); this.onChange(); }
     }
     this.onImpact(hit);
   }
@@ -99,8 +118,10 @@ export class WorldModel {
   }
   touchBell(index: number) {
     const b = BELLS[index];
-    if (!this.materialsAwake || !b || Math.hypot(b.x - this.player.x, b.z - this.player.z) > 3.5) return false;
-    this.notes.add(index); this.onChange(); return true;
+    if (!this.materialsAwake || !b || Math.hypot(b.x - this.player.x, b.z - this.player.z) > this.touchRange) return false;
+    this.notes.add(index);
+    if (this.gateOpen && !this.completed) this.completion='natural';
+    this.onChange(); return true;
   }
 }
 

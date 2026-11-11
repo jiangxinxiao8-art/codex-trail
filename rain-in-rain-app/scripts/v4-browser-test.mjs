@@ -21,6 +21,7 @@ try{
   };
  });
  await page.goto(server.url+'/?inspect=1');await expect(page.locator('#stage')).toHaveAttribute('data-ready','true',{timeout:30000});await page.click('#mouse-start');await expect(page.locator('#intro')).toBeHidden({timeout:30000});
+ await page.click('#settings-toggle');await page.uncheck('#easy-mode');await page.uncheck('#dwell-touch');await page.click('#settings-close');
  const state=()=>page.evaluate(()=>window.__rainV4.inspect());
  const initial=await state();expect(initial.metrics.pipelineCalls).toBe(1);expect(initial.musicLoaded).toBe(5);expect(initial.metrics.calls).toBeGreaterThan(0);expect(imageRequests).toEqual([]);
  async function walkTo(x,z){
@@ -46,7 +47,7 @@ try{
  for(let i=0;i<3;i++){
   const b=(await state()).bells[i];const q=await page.evaluate(p=>window.__rainV4.project(p),b);expect(q.visible).toBe(true);await page.mouse.click(q.x,q.y);await page.waitForTimeout(400);
  }
- await page.waitForFunction(()=>window.__rainV4.inspect().gateOpen,null,{timeout:10000});await page.waitForTimeout(1500);await page.screenshot({path:'test-results/v4/open-street.png'});expect((await state()).audio.note).toBe(3);console.log('靠近实际三维悬滴、不同旋律音符、院门独立转动通过。');
+ await page.waitForFunction(()=>window.__rainV4.inspect().gateOpen,null,{timeout:10000});await expect(page.locator('#finish-dialog')).toBeVisible();await expect(page.locator('#finish-copy')).toContainText('你没有卡关');await page.screenshot({path:'test-results/v4/completed.png'});await page.click('#finish-explore');await page.waitForTimeout(1500);await page.screenshot({path:'test-results/v4/open-street.png'});expect((await state()).audio.note).toBe(3);console.log('靠近实际三维悬滴、不同旋律音符、院门独立转动通过。');
  await walkTo(15.5,-3.6);await page.screenshot({path:'test-results/v4/courtyard.png'});expect((await state()).puddles).toEqual(initial.puddles);await walkTo(15.5,2.8);await walkTo(-11.7,3.4);await page.screenshot({path:'test-results/v4/return-water.png'});expect((await state()).puddles).toEqual(initial.puddles);console.log('进入新路径并返回原水洼，世界位置不随相机改变。');
  const before=await state();const geometryChecks=await page.evaluate(()=>{let positions=0,bad=0;window.__rainV4.scene.traverse(o=>{const a=o.geometry?.getAttribute('position');if(a){for(let i=0;i<a.count;i++){positions++;if(!Number.isFinite(a.getX(i)+a.getY(i)+a.getZ(i)))bad++;}}});return{positions,bad};});expect(geometryChecks.bad).toBe(0);expect(geometryChecks.positions).toBeGreaterThan(500);
  await page.click('#view-toggle');await page.waitForTimeout(2600);await page.screenshot({path:'test-results/v4/space-orbit.png'});const rotated=await state();expect(Math.abs(rotated.camera[0]-before.camera[0])).toBeGreaterThan(10);expect(rotated.puddles).toEqual(before.puddles);console.log('真实镜头绕转、有限几何数据、共享世界坐标通过。');

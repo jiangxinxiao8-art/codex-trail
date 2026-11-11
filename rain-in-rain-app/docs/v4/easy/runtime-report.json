@@ -1,0 +1,275 @@
+{
+  "glass": {
+    "peak": 0.08568118512630463,
+    "rms": 0.012582740874786167
+  },
+  "note": {
+    "peak": 0.18819810450077057,
+    "rms": 0.01682001877962493
+  },
+  "assisted": {
+    "phase": "paused",
+    "mode": "mouse",
+    "player": {
+      "x": -13,
+      "y": 0,
+      "z": 2.8,
+      "vx": 0,
+      "vz": 0,
+      "yaw": 1.5707963267948966,
+      "distance": 0
+    },
+    "wind": {
+      "x": 0,
+      "z": 0
+    },
+    "contacts": {
+      "stone": 1839,
+      "metal": 88,
+      "glass": 1,
+      "water": 73,
+      "roof": 108
+    },
+    "guided": {
+      "metal": 2,
+      "glass": 2
+    },
+    "notes": [
+      0,
+      1,
+      2
+    ],
+    "gateOpen": true,
+    "completed": true,
+    "completion": "assisted",
+    "easyMode": true,
+    "focusedDrop": -1,
+    "dwellProgress": 0,
+    "guide": {
+      "active": false,
+      "destination": "metal"
+    },
+    "musicDucking": 0.32,
+    "materialsAwake": true,
+    "elapsed": 2.916666666666661,
+    "puddles": [
+      {
+        "id": "entry-water",
+        "x": -12,
+        "z": 3.4,
+        "rx": 2.05,
+        "rz": 1.1
+      },
+      {
+        "id": "listening-water",
+        "x": 3,
+        "z": 3,
+        "rx": 2.25,
+        "rz": 1.3
+      },
+      {
+        "id": "courtyard-water",
+        "x": 16,
+        "z": -3.6,
+        "rx": 1.9,
+        "rz": 1.2
+      }
+    ],
+    "surfaces": [
+      {
+        "id": "tin-awning",
+        "material": "metal",
+        "axis": "y",
+        "at": 2.8,
+        "a": [
+          -10.1,
+          -5.9
+        ],
+        "b": [
+          -3.1,
+          1.4
+        ]
+      },
+      {
+        "id": "shop-window",
+        "material": "glass",
+        "axis": "z",
+        "at": -1.6,
+        "a": [
+          -2,
+          2
+        ],
+        "b": [
+          0.9,
+          3.6
+        ]
+      },
+      {
+        "id": "roof-0",
+        "material": "roof",
+        "axis": "y",
+        "at": 7.16,
+        "a": [
+          -31.5,
+          -24.5
+        ],
+        "b": [
+          -11,
+          -7
+        ]
+      },
+      {
+        "id": "roof-1",
+        "material": "roof",
+        "axis": "y",
+        "at": 6.36,
+        "a": [
+          -20,
+          -14
+        ],
+        "b": [
+          -7.6000000000000005,
+          -3.2
+        ]
+      },
+      {
+        "id": "roof-2",
+        "material": "roof",
+        "axis": "y",
+        "at": 5.5600000000000005,
+        "a": [
+          -10.6,
+          -5.4
+        ],
+        "b": [
+          -7,
+          -3
+        ]
+      },
+      {
+        "id": "roof-3",
+        "material": "roof",
+        "axis": "y",
+        "at": 6.26,
+        "a": [
+          -2.6,
+          2.6
+        ],
+        "b": [
+          -6.4,
+          -1.6
+        ]
+      },
+      {
+        "id": "roof-4",
+        "material": "roof",
+        "axis": "y",
+        "at": 7.96,
+        "a": [
+          3.5,
+          9.5
+        ],
+        "b": [
+          -8,
+          -3.1999999999999997
+        ]
+      },
+      {
+        "id": "roof-5",
+        "material": "roof",
+        "axis": "y",
+        "at": 6.76,
+        "a": [
+          18.9,
+          25.1
+        ],
+        "b": [
+          -7.9,
+          -2.9000000000000004
+        ]
+      },
+      {
+        "id": "roof-6",
+        "material": "roof",
+        "axis": "y",
+        "at": 5.0600000000000005,
+        "a": [
+          12.5,
+          18.5
+        ],
+        "b": [
+          -12.25,
+          -8.75
+        ]
+      },
+      {
+        "id": "roof-7",
+        "material": "roof",
+        "axis": "y",
+        "at": 5.16,
+        "a": [
+          27.5,
+          34.5
+        ],
+        "b": [
+          -12,
+          -6
+        ]
+      }
+    ],
+    "bells": [
+      {
+        "x": 8.4,
+        "y": 2.3,
+        "z": 1.3
+      },
+      {
+        "x": 9.8,
+        "y": 2.7,
+        "z": 1.3
+      },
+      {
+        "x": 11.2,
+        "y": 2.1,
+        "z": 1.3
+      }
+    ],
+    "feet": [
+      [
+        -13,
+        0.055,
+        2.9299999999999997
+      ],
+      [
+        -13,
+        0.055,
+        2.67
+      ]
+    ],
+    "audio": {
+      "metal": 2,
+      "glass": 0,
+      "water": 1,
+      "stone": 0,
+      "note": 3
+    },
+    "musicLoaded": 5,
+    "frames": 9,
+    "averageFPS": 16.703786191398162,
+    "metrics": {
+      "calls": 9,
+      "triangles": 2542,
+      "geometries": 9,
+      "textures": 5,
+      "reflectionFrames": 16,
+      "pipelineCalls": 1,
+      "pixelRatio": 1
+    },
+    "camera": [
+      -5.544257557046458,
+      7.8,
+      23.697437539417407
+    ]
+  },
+  "errors": []
+}

@@ -1,6 +1,6 @@
 {
   "name": "sing-in-the-rain",
-  "version": "4.0.0-prototype.1",
+  "version": "4.0.1-easy.1",
   "private": true,
   "type": "module",
   "scripts": {
@@ -17,7 +17,8 @@
     "test:flight": "node scripts/flight-detail-test.mjs",
     "test:v4": "node scripts/v4-browser-test.mjs",
     "test:v4:visual": "node scripts/v4-visual-check.mjs",
-    "test:v4:camera": "node scripts/v4-camera-test.mjs"
+    "test:v4:camera": "node scripts/v4-camera-test.mjs",
+    "test:v4:easy": "node scripts/v4-easy-test.mjs"
   },
   "dependencies": {
     "@mediapipe/tasks-vision": "0.10.22-rc.20250304",

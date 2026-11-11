@@ -2,6 +2,7 @@ import * as T from 'three';
 import { Reflector } from 'three/addons/objects/Reflector.js';
 import { InkBatch, outlined, paper } from './Ink';
 import { Character } from './Character';
+import { pickDrop } from './Access';
 import { BELLS, BUILDINGS, PUDDLES, SURFACES, WorldModel, RainModel, smooth, waterAt, type Impact, type Vec3 } from './WorldModel';
 
 export class StreetCamera {
@@ -45,6 +46,7 @@ export class WorldView {
   private reflectionFrames=0;
   private noteMeshes:T.Mesh[]=[];
   private noteTimes=[-10,-10,-10];
+  private noteHalos:T.LineLoop[]=[];private focusedNote=-1;private glassPulseTime=-10;private glassFrame!:T.LineLoop;
   private windows:T.Mesh[]=[];
   private gate=new T.Group();private gateRight=new T.Group();
   private car=new T.Group();
@@ -63,7 +65,7 @@ export class WorldView {
     checkScene.add(new T.Mesh(checkGeometry,checkMaterial));this.renderer.render(checkScene,checkCamera);this.pipelineCalls=this.renderer.info.render.calls;checkGeometry.dispose();checkMaterial.dispose();
     if(this.pipelineCalls<1)throw new Error('三维渲染器未能绘制校验物体');
     this.scene.background=new T.Color(0x0b0c0d);this.scene.fog=new T.FogExp2(0x0b0c0d,.019);
-    this.makeCity();this.makeCar();this.scene.add(this.character.render);
+    this.makeCity();this.glassFrame=new T.LineLoop(new T.BufferGeometry().setFromPoints([new T.Vector3(-2,.9,-1.55),new T.Vector3(2,.9,-1.55),new T.Vector3(2,3.6,-1.55),new T.Vector3(-2,3.6,-1.55)]),new T.LineBasicMaterial({color:0xe3e4d8,transparent:true,opacity:0,depthWrite:false}));this.scene.add(this.glassFrame);this.makeCar();this.scene.add(this.character.render);
     this.rain=new RainModel(world);this.rainPositions=new Float32Array(this.rain.drops.length*6);
     this.rainGeometry.setAttribute('position',new T.BufferAttribute(this.rainPositions,3).setUsage(T.DynamicDrawUsage));
     this.rainLines=new T.LineSegments(this.rainGeometry,new T.LineBasicMaterial({color:0x90918b,transparent:true,opacity:.31,depthWrite:false}));this.rainLines.frustumCulled=false;this.scene.add(this.rainLines);
@@ -123,7 +125,7 @@ export class WorldView {
     for(const x of [0,.6,1.2,1.8,2.4,3])gateBatch.line(x,0,0,x,2.1,0);
     gateBatch.line(0,2.1,0,3,2.1,0);gateBatch.line(0,0,0,3,0,0);
     const gatePanel=gateBatch.build();this.gate.add(gatePanel);this.gate.position.set(12.5,.03,-1.5);this.gateRight.add(gatePanel.clone(true));this.gateRight.position.set(18.5,.03,-1.5);this.gateRight.rotation.y=Math.PI;this.scene.add(this.gate,this.gateRight);
-    BELLS.forEach((p,i)=>{const shape=new T.LatheGeometry([new T.Vector2(0,-.2),new T.Vector2(.1,-.09),new T.Vector2(.105,.01),new T.Vector2(0,.2)],12);const bell=outlined(shape,0x414641,.8);bell.position.set(p.x,p.y,p.z);bell.name='suspended-drop-'+i;this.noteMeshes.push(bell);this.scene.add(bell);});
+    BELLS.forEach((p,i)=>{const shape=new T.LatheGeometry([new T.Vector2(0,-.2),new T.Vector2(.1,-.09),new T.Vector2(.105,.01),new T.Vector2(0,.2)],12);const bell=outlined(shape,0x414641,.8);bell.position.set(p.x,p.y,p.z);bell.name='suspended-drop-'+i;this.noteMeshes.push(bell);const halo=new T.LineLoop(new T.BufferGeometry().setFromPoints(Array.from({length:40},(_,j)=>new T.Vector3(Math.cos(j*Math.PI/20)*.48,Math.sin(j*Math.PI/20)*.48,0))),new T.LineBasicMaterial({color:0xd6dccb,transparent:true,opacity:.3,depthWrite:false}));halo.position.copy(bell.position);this.noteHalos.push(halo);this.scene.add(bell,halo);});
   }
   private makeLamp(batch:InkBatch,x:number,z:number){
     batch.add(new T.CylinderGeometry(.035,.06,4.8,8),new T.Vector3(x,2.4,z));
@@ -166,6 +168,8 @@ export class WorldView {
     if(hit.material==='water'){const rings=(this.reflector.material as T.ShaderMaterial).uniforms.rings.value as T.Vector4[];rings[this.effectIndex%rings.length].set(hit.x,hit.z,this.world.elapsed,hit.source==='foot'?.8:.35);}
   }
   playNote(index:number){this.noteTimes[index]=this.world.elapsed;}
+  focusNote(index:number){this.focusedNote=index;}
+  glassFeedback(){this.glassPulseTime=this.world.elapsed;}
   update(dt:number){
     const w=this.world;this.rig.update(w,dt);this.character.update(w,dt);
     let n=0;for(const d of this.rain.drops){this.rainPositions[n++]=d.x;this.rainPositions[n++]=d.y;this.rainPositions[n++]=d.z;this.rainPositions[n++]=d.x-d.vx*.035;this.rainPositions[n++]=d.y-d.vy*.035;this.rainPositions[n++]=d.z-d.vz*.035;}
@@ -181,7 +185,8 @@ export class WorldView {
     const awake=w.materialsAwake?1:0;paper.uniforms.awake.value=smooth(paper.uniforms.awake.value,awake,1.5,dt);
     this.windows.forEach((window,i)=>{const value=(w.gateOpen?.11:awake*.065)+(i===2?.005:0);(window.material as T.MeshBasicMaterial).color.setRGB(value,value,value*.97);});
     this.gate.rotation.y=smooth(this.gate.rotation.y,w.gateOpen?-Math.PI*.53:0,1.7,dt);this.gateRight.rotation.y=smooth(this.gateRight.rotation.y,w.gateOpen?Math.PI*1.53:Math.PI,1.7,dt);
-    this.noteMeshes.forEach((mesh,i)=>{const power=Math.exp(-(w.elapsed-this.noteTimes[i])*2.7),scale=1+power*.18;mesh.scale.setScalar(scale);(mesh.material as T.MeshBasicMaterial).color.setScalar(w.materialsAwake?.14+power*.4:.045);mesh.position.y=BELLS[i].y+Math.sin(w.elapsed*1.3+i)*.028;});
+    this.noteMeshes.forEach((mesh,i)=>{const power=Math.exp(-(w.elapsed-this.noteTimes[i])*3.4),scale=2.2*(1+power*.38);mesh.scale.setScalar(scale);(mesh.material as T.MeshBasicMaterial).color.setScalar(w.materialsAwake?(w.notes.has(i)?.16:.3)+power*.4:.045);mesh.position.y=BELLS[i].y+Math.sin(w.elapsed*1.3+i)*.028;const halo=this.noteHalos[i];halo.position.copy(mesh.position);halo.quaternion.copy(this.rig.camera.quaternion);halo.visible=w.materialsAwake&&Math.hypot(w.player.x-mesh.position.x,w.player.z-mesh.position.z)<9;(halo.material as T.LineBasicMaterial).opacity=this.focusedNote===i?.9:w.notes.has(i)?.16:.4;halo.scale.setScalar(1+power*.35);});
+    (this.glassFrame.material as T.LineBasicMaterial).opacity=Math.max(0,1-(w.elapsed-this.glassPulseTime)/.55)*.82;
     this.windHint.visible=w.guiding;this.windHint.position.set(w.player.x,0,w.player.z);
     const x=-28+(w.elapsed*2)%59;this.car.position.x=x;for(const wheel of this.wheels)wheel.rotation.y=-x/.24;
     if(Math.abs(x-this.lastCarX)>.38){if(waterAt(x,4.3))w.impact({x,y:.025,z:4.3,material:'water',source:'foot',guided:false,strength:.5});this.lastCarX=x;}
@@ -190,7 +195,10 @@ export class WorldView {
   }
   screen(point:Vec3){const v=new T.Vector3(point.x,point.y,point.z).project(this.rig.camera);return{x:(v.x*.5+.5)*this.width,y:(-v.y*.5+.5)*this.height,visible:v.z<1&&Math.abs(v.x)<.96&&Math.abs(v.y)<.91};}
   ground(x:number,y:number){this.raycaster.setFromCamera(new T.Vector2(x*2-1,1-y*2),this.rig.camera);const p=new T.Vector3();return this.raycaster.ray.intersectPlane(this.floor,p)?p:null;}
-  bellAt(x:number,y:number){this.raycaster.setFromCamera(new T.Vector2(x*2-1,1-y*2),this.rig.camera);const intersections=this.raycaster.intersectObjects(this.noteMeshes,false);if(intersections.length)return this.noteMeshes.indexOf(intersections[0].object as T.Mesh);const hit=new T.Vector3();let nearest=Infinity,index=-1;this.noteMeshes.forEach((mesh,i)=>{if(this.raycaster.ray.intersectSphere(new T.Sphere(mesh.position,.34),hit)){const d=hit.distanceTo(this.raycaster.ray.origin);if(d<nearest){nearest=d;index=i;}}});return index;}
+  bellAt(x:number,y:number){
+    const p=this.world.player;
+    return pickDrop(this.noteMeshes.map((mesh,index)=>{const screen=this.screen(mesh.position);return{index,...screen,distance:Math.hypot(mesh.position.x-p.x,mesh.position.z-p.z),collected:this.world.notes.has(index)};}),x*this.width,y*this.height,this.world.easyMode?Math.max(64,Math.min(108,Math.min(this.width,this.height)*.11)):24,this.world.touchRange,this.world.easyMode&&!this.world.completed);
+  }
   resize(){const w=this.host.clientWidth,h=this.host.clientHeight;this.width=w;this.height=h;this.renderer.setSize(w,h);this.rig.resize(w,h);}
   dispose(){this.renderer.setAnimationLoop(null);this.reflector.dispose();const geometries=new Set<T.BufferGeometry>(),materials=new Set<T.Material>();this.scene.traverse(o=>{const mesh=o as T.Mesh;if(mesh.geometry)geometries.add(mesh.geometry);if(mesh.material)for(const mat of Array.isArray(mesh.material)?mesh.material:[mesh.material])materials.add(mat);});geometries.forEach(g=>g.dispose());materials.forEach(m=>m.dispose());this.renderer.dispose();this.renderer.domElement.remove();}
   get metrics(){return{calls:this.renderer.info.render.calls,triangles:this.renderer.info.render.triangles,geometries:this.renderer.info.memory.geometries,textures:this.renderer.info.memory.textures,reflectionFrames:this.reflectionFrames,pipelineCalls:this.pipelineCalls};}
