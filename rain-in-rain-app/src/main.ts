@@ -1,15 +1,11 @@
-import './style.css';
-import { GameController } from './app/GameController';
-document.querySelector('#app')!.innerHTML=`
-<div id="stage" role="img" aria-label="手绘雨夜城市互动舞台"></div><div id="vignette"></div>
-<header><div class="brand">雨中曲 <span class="edition">　AN INTERACTIVE POEM</span></div><div class="top-actions"><button id="pause" class="icon" aria-label="暂停" hidden>Ⅱ</button><button id="camera-preview-toggle" class="icon" aria-label="摄像头预览" aria-pressed="false">▣</button><button id="mute" class="icon" aria-label="静音">♫</button><button id="settings-toggle" class="icon" aria-label="声音与操作设置">☷</button><button id="fullscreen" class="icon" aria-label="全屏">⛶</button></div></header>
-<section id="intro"><p class="eyebrow">一场关于雨、声音与自己的旅程</p><h1 class="title">雨中曲</h1><h2 class="english">Sing in the Rain</h2><p class="intro-line">伸出你的手，开始一场雨中的旅行。</p><button id="start" class="primary" disabled>开始体验　↗</button><button id="mouse-start" class="text-button" disabled>或使用鼠标，走进雨里 →</button><div class="intro-notes"><span>◌　约 5–6 分钟</span><span>✧　建议佩戴耳机</span><span>⌁　摄像头画面仅本地处理</span></div></section>
-<div id="film-black" hidden></div><div id="film-credits" aria-label="制作署名" hidden></div><button id="skip-intro" class="text-button" hidden>跳过开场 ↗</button>
-<section id="caption" aria-live="polite" hidden><div id="scene-name"></div><h2 id="line"></h2><p id="hint"></p></section>
-<aside id="settings" hidden><h2>雨的声音</h2><label>总音量<input id="master" type="range" min="0" max="1" step=".01" value=".7"></label><label>环境雨声<input id="environment" type="range" min="0" max="1" step=".01" value=".24"></label><label>背景音乐<input id="background" type="range" min="0" max="1" step=".01" value=".65"></label><label>互动音符<input id="interaction" type="range" min="0" max="1" step=".01" value=".65"></label><button id="switch-camera" class="text-button">重新连接摄像头 →</button><button id="assist-now" class="text-button">示范当前操作 →</button><button id="art-toggle" class="text-button">载入我的插画 →</button><button id="switch-mode" class="text-button">切换鼠标模式 →</button><button id="restart" class="text-button">重新开始 →</button><p>鼠标移动控制人物，点击模拟捏合，按住空格模拟张掌。雨声为临时合成环境音。</p><label for="file-input">导入五首本地 MP3</label><input id="file-input" type="file" accept="audio/mpeg,.mp3" multiple><p>所选文件只在当前浏览器使用，不会上传。</p></aside>
-<aside id="camera-preview" hidden><p id="preview-status">未检测到手部</p></aside>
-<section id="art-dialog" role="dialog" aria-label="载入原始插画" hidden><div class="art-inner"><button id="art-close" class="text-button">关闭 ×</button><h2>这座城市，你的画册</h2><p>选择对应的原始图片，只保存在当前浏览器中。街道图可作底图；人物、室内与动作图供画册参考，交互物件始终独立运动。</p><div id="art-slots"></div></div></section>
-<div id="controls"><div><span class="status-dot"></span><span id="mode-label">摄像头交互 · 本地处理</span><nav id="progress" aria-label="六幕剧情进度">${Array.from({length:6},()=>'<span class="chapter"></span>').join('')}</nav></div><div class="bottom-right">LISTEN TO THE RAIN. FIND YOUR RHYTHM.</div></div>
-<div id="notice" role="status" hidden></div><button id="assist" hidden><svg class="gesture-demo" viewBox="0 0 36 40" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="M11 23V10q0-4 3-4t3 4v11V6q0-4 3-4t3 4v16V10q0-3 3-3t3 3v15q0 12-12 12Q8 37 5 28l-3-7q-1-4 2-4t7 6Z"/></svg>需要帮助？点击示范这一步</button><div id="paused" hidden>雨，等你回来。</div>
-<section id="finish" hidden><p class="eyebrow">FIN · THANK YOU FOR DANCING</p><h2>雨中曲</h2><p class="english">Sing in the Rain</p><p>雨没有停。<br>但这一次，我不再害怕它。</p><button id="replay" class="primary">再走进这场雨 ↗</button></section>`;
-export const game=new GameController();game.init().catch(e=>{document.querySelector('#notice')!.textContent='画面初始化失败：'+String(e);(document.querySelector('#notice') as HTMLElement).hidden=false;});
+export {};
+// The complete V3 remains available while V4 is validated incrementally.
+const loading = new URLSearchParams(location.search).get('version') === '3'
+  ? import('./legacy-main')
+  : import('./prototype/main');
+loading.catch(error => {
+  const message = document.createElement('p');
+  message.setAttribute('role', 'alert');
+  message.textContent = '页面未能载入，请刷新后重试。' + String(error);
+  document.querySelector('#app')!.append(message);
+});

@@ -11,7 +11,10 @@ if errorlevel 1 (
   pause
   exit /b 1
 )
-if not exist node_modules\vite\bin\vite.js (
+set RAIN_NEEDS_INSTALL=
+if not exist node_modules\vite\bin\vite.js set RAIN_NEEDS_INSTALL=1
+if not exist node_modules\three\package.json set RAIN_NEEDS_INSTALL=1
+if defined RAIN_NEEDS_INSTALL (
   echo 正在准备项目依赖，首次可能需要几分钟……
   call npm.cmd ci
   if errorlevel 1 goto failed

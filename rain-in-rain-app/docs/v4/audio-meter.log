@@ -1,0 +1,30 @@
+Input #0, matroska,webm, from 'test-results/v4/audio-session.webm':
+  Metadata:
+    encoder         : Chrome
+  Duration: N/A, start: 0.000000, bitrate: N/A
+  Stream #0:0(eng): Audio: opus, 48000 Hz, stereo, fltp (default)
+Stream mapping:
+  Stream #0:0 -> #0:0 (opus (native) -> pcm_s16le (native))
+Press [q] to stop, [?] for help
+Output #0, null, to 'pipe:':
+  Metadata:
+    encoder         : Lavf61.7.103
+  Stream #0:0(eng): Audio: pcm_s16le, 48000 Hz, stereo, s16, 1536 kb/s (default)
+      Metadata:
+        encoder         : Lavc61.19.101 pcm_s16le
+[Parsed_ebur128_0 @ 0x7fa6f4002600] Summary:
+
+  Integrated loudness:
+    I:         -25.0 LUFS
+    Threshold: -35.3 LUFS
+
+  Loudness range:
+    LRA:         6.3 LU
+    Threshold: -45.3 LUFS
+    LRA low:   -28.7 LUFS
+    LRA high:  -22.4 LUFS
+
+  True peak:
+    Peak:      -10.8 dBFS
+[out#0/null @ 0x555f10e79600] video:0KiB audio:21578KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: unknown
+size=N/A time=00:02:01.92 bitrate=N/A speed= 113x

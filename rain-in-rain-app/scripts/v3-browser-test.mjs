@@ -1,3 +1,4 @@
+import {legacyURL} from './legacy-url.mjs';
 import { chromium, expect } from '@playwright/test';
 import { mkdir } from 'node:fs/promises';
 await mkdir('test-results/v3',{recursive:true});
@@ -5,7 +6,7 @@ const browser=await chromium.launch({executablePath:process.env.CHROME_PATH||'/u
 try{
  const page=await browser.newPage({viewport:{width:1280,height:720}});const errors=[],started=Date.now();page.on('pageerror',e=>errors.push(e.message));
  await page.addInitScript(()=>{window.__musicStarts=[];const start=AudioBufferSourceNode.prototype.start;AudioBufferSourceNode.prototype.start=function(...args){if(this.buffer?.duration>100)window.__musicStarts.push(this.buffer.duration);return start.apply(this,args);};});
- await page.goto(process.env.BASE_URL||'http://localhost:5173');await page.waitForSelector('canvas');await page.click('#mouse-start');await expect(page.locator('#skip-intro')).toBeVisible({timeout:30000});
+ await page.goto(legacyURL());await page.waitForSelector('canvas');await page.click('#mouse-start');await expect(page.locator('#skip-intro')).toBeVisible({timeout:30000});
  if(process.env.SKIP_FILM==='1')await page.click('#skip-intro');await expect(page.locator('#caption')).toBeVisible({timeout:60000});await expect(page.locator('#film-credits')).toBeHidden();await expect(page.locator('#stage')).toHaveAttribute('data-scene','CITY');console.log(process.env.SKIP_FILM==='1'?'跳过片头并交接控制通过':'电影开场自动结束并交接控制通过');
  const status=()=>page.locator('#stage').evaluate(e=>({...e.dataset}));
  async function clickTarget(){await waitIdle();const p=JSON.parse((await status()).target);await page.mouse.move(p.x*.8,p.y*.8);await page.waitForTimeout(650);const q=JSON.parse((await status()).target);await page.mouse.click(q.x*.8,q.y*.8);await expect(page.locator('#stage')).toHaveAttribute('data-busy','true',{timeout:5000});}

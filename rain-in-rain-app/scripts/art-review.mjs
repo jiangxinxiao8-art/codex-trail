@@ -1,8 +1,9 @@
+import {legacyURL} from './legacy-url.mjs';
 import { chromium, expect } from '@playwright/test';
 import { mkdir } from 'node:fs/promises';
 await mkdir('test-results/art',{recursive:true});
 const browser=await chromium.launch({executablePath:process.env.CHROME_PATH||'/usr/bin/chromium',headless:true,args:['--no-sandbox','--use-angle=swiftshader','--enable-unsafe-swiftshader']});
-try {const page=await browser.newPage({viewport:{width:1280,height:720}}),errors=[];page.on('pageerror',e=>errors.push(e.message));await page.route('**/src/main.ts*',async route=>{const response=await route.fetch();await route.fulfill({response,body:(await response.text())+'\nwindow.__artReview = game;'});});await page.goto('http://localhost:5173');await expect(page.locator('#start')).toBeEnabled({timeout:60000});await page.waitForTimeout(1200);await page.screenshot({path:'test-results/art/title.png'});
+try {const page=await browser.newPage({viewport:{width:1280,height:720}}),errors=[];page.on('pageerror',e=>errors.push(e.message));await page.route('**/src/legacy-main.ts*',async route=>{const response=await route.fetch();await route.fulfill({response,body:(await response.text())+'\nwindow.__artReview = game;'});});await page.goto(legacyURL());await expect(page.locator('#start')).toBeEnabled({timeout:60000});await page.waitForTimeout(1200);await page.screenshot({path:'test-results/art/title.png'});
  const loaded=await page.evaluate(()=>{const g=window.__artReview;return ['city','far','foreground','umbrellas','pool','dream','vista','flight','home','homeClean','micro'].every(k=>g.stage.illustrations.has(k));});expect(loaded).toBe(true);
  await page.click('#mouse-start');await page.waitForSelector('#skip-intro:visible');await page.click('#skip-intro');await page.waitForTimeout(3200);await page.screenshot({path:'test-results/art/city.png'});
  await page.evaluate(()=>{const g=window.__artReview;g.machine.index=2;g.machine.progress=0;g.enter();g.stage.plant(g.movement.x+60);});await page.waitForTimeout(4200);await page.screenshot({path:'test-results/art/umbrellas.png'});

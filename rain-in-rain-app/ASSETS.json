@@ -115,7 +115,8 @@
       "foreground-left.png": "Transparent left shop/awning/foliage extracted from 11_38_54-3. Runtime crop discards other regions."
     },
     "runtime_import": "Settings > 载入我的插画, browser-local IndexedDB, no upload.",
-    "character": "Scene ZIP does not contain character/action sheets. Existing independently articulated reference-drawn character remains in use."
+    "character": "Scene ZIP does not contain character/action sheets. Existing independently articulated reference-drawn character remains in use.",
+    "v4_runtime_use": "No full scene images are requested by V4. Preserved for concepts and the ?version=3 legacy route."
   },
   "model": {
     "path": "public/assets/models/hand_landmarker.task",
@@ -133,5 +134,63 @@
       "sha256": "e5bf2c3f24ef2327c6f136d8f73e2f9dfdf44896fdbeb35a9515f44777bb91bc",
       "bytes": 5162508
     }
-  ]
+  ],
+  "v4": {
+    "status": "Prototype A; not final production artwork.",
+    "art_direction": "docs/v4/ART-DIRECTION.md",
+    "source_kind": "project-authored procedural geometry, GLSL and a 64x64 data texture; no new AI raster generation",
+    "units": "metres; +Y up; +Z towards viewer",
+    "assets": [
+      {
+        "id": "city",
+        "source": "src/prototype/Ink.ts + WorldView.ts",
+        "license": "Project-authored for the repository owner; no third-party visual pack",
+        "approval_status": "prototype-in-engine-review",
+        "technical_checks_passed": true
+      },
+      {
+        "id": "raincoat-character",
+        "source": "src/prototype/Character.ts",
+        "license": "Project-authored for the repository owner; no third-party visual pack",
+        "approval_status": "prototype-in-engine-review",
+        "technical_checks_passed": true
+      },
+      {
+        "id": "weather",
+        "source": "src/prototype/WorldModel.ts + WorldView.ts",
+        "license": "Project-authored for the repository owner; no third-party visual pack",
+        "approval_status": "prototype-in-engine-review",
+        "technical_checks_passed": true
+      },
+      {
+        "id": "world-puddles",
+        "source": "src/prototype/WorldModel.ts + WorldView.ts",
+        "license": "Project-authored for the repository owner; no third-party visual pack",
+        "approval_status": "prototype-in-engine-review",
+        "technical_checks_passed": true
+      },
+      {
+        "id": "lamp-car-gates",
+        "source": "src/prototype/WorldView.ts",
+        "license": "Project-authored for the repository owner; no third-party visual pack",
+        "approval_status": "prototype-in-engine-review",
+        "technical_checks_passed": true
+      },
+      {
+        "id": "material-voices",
+        "source": "src/prototype/MaterialAudio.ts",
+        "license": "Project-authored for the repository owner; no third-party visual pack",
+        "approval_status": "prototype-in-engine-review",
+        "technical_checks_passed": true
+      },
+      {
+        "id": "favicon",
+        "source": "public/favicon.svg",
+        "license": "Project-authored for the repository owner; no third-party visual pack",
+        "approval_status": "prototype-in-engine-review",
+        "technical_checks_passed": true
+      }
+    ],
+    "third_party_runtime": "Three.js MIT; saved copy at public/assets/licenses/three-LICENSE.txt. Existing dependency licences remain applicable."
+  }
 }
