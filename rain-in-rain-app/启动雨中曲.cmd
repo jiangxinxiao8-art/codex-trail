@@ -14,11 +14,15 @@ if errorlevel 1 (
 set RAIN_NEEDS_INSTALL=
 if not exist node_modules\vite\bin\vite.js set RAIN_NEEDS_INSTALL=1
 if not exist node_modules\three\package.json set RAIN_NEEDS_INSTALL=1
-if defined RAIN_NEEDS_INSTALL (
-  echo 正在准备项目依赖，首次可能需要几分钟……
-  call npm.cmd ci
-  if errorlevel 1 goto failed
-)
+set "RAIN_INSTALL_LOG=%~dp0安装日志.txt"
+if not defined RAIN_NEEDS_INSTALL goto assets
+echo 正在准备项目依赖，首次可能需要几分钟……
+call npm.cmd ci --no-audit --no-fund >"%RAIN_INSTALL_LOG%" 2>&1
+if not errorlevel 1 goto assets
+echo 严格安装未完成，正在尝试兼容安装……
+call npm.cmd install --no-audit --no-fund >>"%RAIN_INSTALL_LOG%" 2>&1
+if errorlevel 1 goto install_failed
+:assets
 call npm.cmd run assets
 if errorlevel 1 goto failed
 echo 浏览器将自动打开。体验期间请保持此窗口开启。
@@ -35,6 +39,11 @@ fnm use 24 >nul 2>&1
 if not errorlevel 1 exit /b 0
 fnm use 22 >nul 2>&1
 exit /b 0
+:install_failed
+echo 依赖安装未完成，完整原因已记录在：
+echo "%RAIN_INSTALL_LOG%"
+type "%RAIN_INSTALL_LOG%"
+goto failed
 :failed
 echo 启动遇到问题，请保留本窗口并截图。
 pause
