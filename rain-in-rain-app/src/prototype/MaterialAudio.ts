@@ -17,10 +17,11 @@ export class MaterialAudio {
     if (hit.material === 'roof') return;
     const distance = Math.hypot(hit.x - world.player.x, hit.z - world.player.z);
     if (distance > 8 || hit.material === 'stone' && hit.source === 'rain') return;
-    const now=Tone.now();if(!this.budget.allow(hit.material,now,hit.source==='rain'))return;
+    const material=hit.material==='umbrella'?'water':hit.material;
+    const now=Tone.now();if(!this.budget.allow(material,now,hit.source==='rain'))return;
     this.pan.pan.rampTo(clamp((hit.x - world.player.x) / 7, -.8, .8), .035);
     const velocity=hit.material==='glass'?clamp((hit.guided?.9:.65)/(1+distance*distance*.025),.28,.9):clamp((hit.guided?.7:.4)/(1+distance*distance*.065),.08,.8);
-    const material=hit.material;this.played[material]++;
+    this.played[material]++;
     if(material==='metal')this.metal.triggerAttackRelease(this.played.metal%2?'D4':'A4',.08,now,velocity);
     if(material==='glass'){this.glass.triggerAttackRelease(this.played.glass%2?'E5':'B5',.12,now,velocity);this.focus('glass');}
     if(material==='water')this.water.triggerAttackRelease(hit.source==='foot'?'D3':'A3',.07,now,velocity);

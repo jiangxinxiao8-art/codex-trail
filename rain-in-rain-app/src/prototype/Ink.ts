@@ -6,7 +6,7 @@ export const lineMaterial = new T.LineBasicMaterial({ color: INK, transparent: t
 const grainData=new Uint8Array(64*64);let grainSeed=92;for(let i=0;i<grainData.length;i++){grainSeed=Math.imul(grainSeed,1664525)+1013904223|0;grainData[i]=grainSeed>>>24;}
 const grainTexture=new T.DataTexture(grainData,64,64,T.RedFormat);grainTexture.wrapS=grainTexture.wrapT=T.RepeatWrapping;grainTexture.minFilter=grainTexture.magFilter=T.LinearFilter;grainTexture.generateMipmaps=false;grainTexture.needsUpdate=true;
 export const paper = new T.ShaderMaterial({
-  uniforms: { awake: { value: 0 }, grainTex:{value:grainTexture} },
+  uniforms: { awake: { value: 0 },dream:{value:0}, grainTex:{value:grainTexture} },
   vertexShader: `varying vec3 vWorld;varying float vTone;uniform float awake;
   void main(){vec4 p=modelMatrix*vec4(position,1.);vWorld=p.xyz;vec3 n=normalize(mat3(modelMatrix)*normal);
     float light=max(0.,dot(n,normalize(vec3(-.4,.8,1.))));
@@ -14,10 +14,10 @@ export const paper = new T.ShaderMaterial({
     float tone=.0035+light*.005+lamp*(.003+awake*.009);
     vTone=mix(tone,.003,1.-exp(-length(cameraPosition-p.xyz)*.014));
     gl_Position=projectionMatrix*viewMatrix*p;}`,
-  fragmentShader: `varying vec3 vWorld;varying float vTone;uniform sampler2D grainTex;
+  fragmentShader: `varying vec3 vWorld;varying float vTone;uniform sampler2D grainTex;uniform float dream;
   void main(){float grain=texture2D(grainTex,(vWorld.xy+vWorld.z*.17)*.7).r;
     float d=abs(fract((vWorld.x+vWorld.y)*7.)-.5);float hatch=1.-smoothstep(.025,.025+max(.001,fwidth(vWorld.x+vWorld.y)),d);
-    gl_FragColor=vec4(vec3(vTone+grain*.001+hatch*.0008),1.);
+    vec3 tint=mix(vec3(1.),vec3(.78,.91,1.15),dream);gl_FragColor=vec4((vec3(vTone+grain*.001+hatch*.0008)+dream*.004)*tint,1.);
     #include <colorspace_fragment>
   }`,
 });

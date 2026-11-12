@@ -136,7 +136,7 @@
     }
   ],
   "v4": {
-    "status": "Prototype A; not final production artwork.",
+    "status": "Seven-chapter playable journey with ending; procedural stylized game assets, not cinematic production artwork.",
     "art_direction": "docs/v4/ART-DIRECTION.md",
     "source_kind": "project-authored procedural geometry, GLSL and a 64x64 data texture; no new AI raster generation",
     "units": "metres; +Y up; +Z towards viewer",
@@ -145,49 +145,81 @@
         "id": "city",
         "source": "src/prototype/Ink.ts + WorldView.ts",
         "license": "Project-authored for the repository owner; no third-party visual pack",
-        "approval_status": "prototype-in-engine-review",
+        "approval_status": "in-engine-reviewed",
         "technical_checks_passed": true
       },
       {
         "id": "raincoat-character",
         "source": "src/prototype/Character.ts",
         "license": "Project-authored for the repository owner; no third-party visual pack",
-        "approval_status": "prototype-in-engine-review",
+        "approval_status": "in-engine-reviewed",
         "technical_checks_passed": true
       },
       {
         "id": "weather",
         "source": "src/prototype/WorldModel.ts + WorldView.ts",
         "license": "Project-authored for the repository owner; no third-party visual pack",
-        "approval_status": "prototype-in-engine-review",
+        "approval_status": "in-engine-reviewed",
         "technical_checks_passed": true
       },
       {
         "id": "world-puddles",
         "source": "src/prototype/WorldModel.ts + WorldView.ts",
         "license": "Project-authored for the repository owner; no third-party visual pack",
-        "approval_status": "prototype-in-engine-review",
+        "approval_status": "in-engine-reviewed",
         "technical_checks_passed": true
       },
       {
         "id": "lamp-car-gates",
         "source": "src/prototype/WorldView.ts",
         "license": "Project-authored for the repository owner; no third-party visual pack",
-        "approval_status": "prototype-in-engine-review",
+        "approval_status": "in-engine-reviewed",
         "technical_checks_passed": true
       },
       {
         "id": "material-voices",
         "source": "src/prototype/MaterialAudio.ts",
         "license": "Project-authored for the repository owner; no third-party visual pack",
-        "approval_status": "prototype-in-engine-review",
+        "approval_status": "in-engine-reviewed",
         "technical_checks_passed": true
       },
       {
         "id": "favicon",
         "source": "public/favicon.svg",
         "license": "Project-authored for the repository owner; no third-party visual pack",
-        "approval_status": "prototype-in-engine-review",
+        "approval_status": "in-engine-reviewed",
+        "technical_checks_passed": true
+      },
+      {
+        "id": "alley-instruments",
+        "source": "src/prototype/JourneyView.ts + Journey.ts",
+        "source_kind": "project-authored procedural geometry",
+        "license": "Project-authored for the repository owner; no third-party visual pack",
+        "approval_status": "in-engine-reviewed",
+        "technical_checks_passed": true
+      },
+      {
+        "id": "umbrella-garden",
+        "source": "src/prototype/JourneyView.ts + Journey.ts",
+        "source_kind": "project-authored procedural geometry",
+        "license": "Project-authored for the repository owner; no third-party visual pack",
+        "approval_status": "in-engine-reviewed",
+        "technical_checks_passed": true
+      },
+      {
+        "id": "flight-city-and-bridges",
+        "source": "src/prototype/JourneyView.ts + Journey.ts",
+        "source_kind": "project-authored procedural geometry",
+        "license": "Project-authored for the repository owner; no third-party visual pack",
+        "approval_status": "in-engine-reviewed",
+        "technical_checks_passed": true
+      },
+      {
+        "id": "room-furniture-and-lighting",
+        "source": "src/prototype/JourneyView.ts + Journey.ts",
+        "source_kind": "project-authored procedural geometry",
+        "license": "Project-authored for the repository owner; no third-party visual pack",
+        "approval_status": "in-engine-reviewed",
         "technical_checks_passed": true
       }
     ],

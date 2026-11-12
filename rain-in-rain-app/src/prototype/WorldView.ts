@@ -6,18 +6,21 @@ import { pickDrop } from './Access';
 import { BELLS, BUILDINGS, PUDDLES, SURFACES, WorldModel, RainModel, smooth, waterAt, type Impact, type Vec3 } from './WorldModel';
 
 export class StreetCamera {
-  readonly camera = new T.PerspectiveCamera(34, 16 / 9, .15, 130);
+  readonly camera = new T.PerspectiveCamera(34, 16 / 9, .08, 230);
+  shot:{position:Vec3;target:Vec3;fov?:number}|null=null;
   readonly focus = new T.Vector3(-10, 1.9, 0);
   observing = false;
   reducedMotion = typeof matchMedia!=='undefined'&&matchMedia('(prefers-reduced-motion: reduce)').matches;
   private yaw = .22;
   constructor(){this.camera.position.set(-4,9,24);this.camera.lookAt(this.focus);}
   update(world:WorldModel,dt:number){
+    if(this.shot){const rate=this.reducedMotion?10:3;const s=this.shot;this.camera.position.lerp(new T.Vector3(s.position.x,s.position.y,s.position.z),1-Math.exp(-rate*dt));this.focus.lerp(new T.Vector3(s.target.x,s.target.y,s.target.z),1-Math.exp(-rate*dt));this.camera.fov=smooth(this.camera.fov,s.fov??38,3,dt);this.camera.updateProjectionMatrix();this.camera.lookAt(this.focus);this.camera.updateMatrixWorld();return;}
+    this.camera.fov=smooth(this.camera.fov,34,3,dt);this.camera.updateProjectionMatrix();
     const p=world.player,lead=T.MathUtils.clamp(p.vx*.4,-1.1,1.1);
-    this.focus.x=smooth(this.focus.x,T.MathUtils.clamp(p.x+2+lead,-18,20),this.reducedMotion?12:4.5,dt);
+    this.focus.x=smooth(this.focus.x,T.MathUtils.clamp(p.x+2+lead,-18,world.freeExplore?40:20),this.reducedMotion?12:4.5,dt);
     this.focus.z=smooth(this.focus.z,p.z*.25-1.4,4.5,dt);
     this.yaw=smooth(this.yaw,this.observing?-.78:.22,this.reducedMotion?16:2,dt);
-    this.camera.position.set(this.focus.x+Math.sin(this.yaw)*25,7.8,this.focus.z+Math.cos(this.yaw)*25);
+    this.camera.position.lerp(new T.Vector3(this.focus.x+Math.sin(this.yaw)*25,7.8,this.focus.z+Math.cos(this.yaw)*25),1-Math.exp(-4*dt));
     this.camera.lookAt(this.focus);
     this.camera.updateMatrixWorld();
   }
@@ -64,6 +67,7 @@ export class WorldView {
     const checkScene=new T.Scene(),checkCamera=new T.PerspectiveCamera(45,1,.1,10),checkGeometry=new T.BoxGeometry(1,1,1),checkMaterial=new T.MeshNormalMaterial();checkCamera.position.z=3;
     checkScene.add(new T.Mesh(checkGeometry,checkMaterial));this.renderer.render(checkScene,checkCamera);this.pipelineCalls=this.renderer.info.render.calls;checkGeometry.dispose();checkMaterial.dispose();
     if(this.pipelineCalls<1)throw new Error('三维渲染器未能绘制校验物体');
+    this.scene.add(new T.HemisphereLight(0xffffff,0x272b2b,.85));this.renderer.shadowMap.enabled=true;this.renderer.shadowMap.type=T.PCFShadowMap;
     this.scene.background=new T.Color(0x0b0c0d);this.scene.fog=new T.FogExp2(0x0b0c0d,.019);
     this.makeCity();this.glassFrame=new T.LineLoop(new T.BufferGeometry().setFromPoints([new T.Vector3(-2,.9,-1.55),new T.Vector3(2,.9,-1.55),new T.Vector3(2,3.6,-1.55),new T.Vector3(-2,3.6,-1.55)]),new T.LineBasicMaterial({color:0xe3e4d8,transparent:true,opacity:0,depthWrite:false}));this.scene.add(this.glassFrame);this.makeCar();this.scene.add(this.character.render);
     this.rain=new RainModel(world);this.rainPositions=new Float32Array(this.rain.drops.length*6);
@@ -137,10 +141,10 @@ export class WorldView {
   }
   private makeWater(){
     const water=new Reflector(new T.PlaneGeometry(80,32),{textureWidth:512,textureHeight:256,multisample:0,clipBias:.004,shader:{
-      name:'handwritten-world-water',uniforms:{color:{value:new T.Color(0xaaa9a2)},tDiffuse:{value:null},textureMatrix:{value:new T.Matrix4()},time:{value:0},puddles:{value:PUDDLES.map(p=>new T.Vector4(p.x,p.z,p.rx,p.rz))},rings:{value:Array.from({length:16},()=>new T.Vector4(0,0,-100,0))}},
+      name:'handwritten-world-water',uniforms:{color:{value:new T.Color(0xaaa9a2)},tDiffuse:{value:null},textureMatrix:{value:new T.Matrix4()},time:{value:0},puddles:{value:[...PUDDLES.map(p=>new T.Vector4(p.x,p.z,p.rx,p.rz)),new T.Vector4(30.5,3.2,.001,.001),new T.Vector4(17.5,-3.4,.001,.001)]},rings:{value:Array.from({length:16},()=>new T.Vector4(0,0,-100,0))}},
       vertexShader:`uniform mat4 textureMatrix;varying vec4 vReflection;varying vec3 vWorld;void main(){vWorld=(modelMatrix*vec4(position,1.)).xyz;vReflection=textureMatrix*vec4(position,1.);gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.);}`,
-      fragmentShader:`uniform sampler2D tDiffuse;uniform float time;uniform vec4 puddles[3];uniform vec4 rings[16];varying vec4 vReflection;varying vec3 vWorld;
-      void main(){float edge=10.;for(int i=0;i<3;i++){vec2 q=(vWorld.xz-puddles[i].xy)/puddles[i].zw;float d=length(q);d+=sin(q.x*12.+q.y*8.)*.018;edge=min(edge,d);}if(edge>1.)discard;
+      fragmentShader:`uniform sampler2D tDiffuse;uniform float time;uniform vec4 puddles[5];uniform vec4 rings[16];varying vec4 vReflection;varying vec3 vWorld;
+      void main(){float edge=10.;for(int i=0;i<5;i++){vec2 q=(vWorld.xz-puddles[i].xy)/puddles[i].zw;float d=length(q);d+=sin(q.x*12.+q.y*8.)*.018;edge=min(edge,d);}if(edge>1.)discard;
       float wave=0.;for(int i=0;i<16;i++){float age=time-rings[i].z;float r=length(vWorld.xz-rings[i].xy);float band=abs(r-age*1.45);float line=1.-smoothstep(.018,.055,band);wave+=line*max(0.,1.-age/1.3)*rings[i].w;}
       vec4 uv=vReflection;uv.xy+=vec2(sin(vWorld.z*16.+time*2.),cos(vWorld.x*12.-time*2.))*.0007*uv.w;
       vec3 reflected=texture2DProj(tDiffuse,uv).rgb;float border=smoothstep(.94,.985,edge)*(1.-smoothstep(.985,1.,edge));
@@ -171,7 +175,7 @@ export class WorldView {
   focusNote(index:number){this.focusedNote=index;}
   glassFeedback(){this.glassPulseTime=this.world.elapsed;}
   update(dt:number){
-    const w=this.world;this.rig.update(w,dt);this.character.update(w,dt);
+    const w=this.world;const pp=(this.reflector.material as T.ShaderMaterial).uniforms.puddles.value as T.Vector4[];const extra=w.extraPuddles[0];pp[3].set(extra?.x??30.5,extra?.z??3.2,extra?.rx??.001,extra?.rz??.001);const instrument=w.extraPuddles.find(p=>p.id==='instrument-water');pp[4].set(17.5,-3.4,instrument?.rx??.001,instrument?.rz??.001);this.reflector.visible=w.weatherMode!=='room'&&w.weatherMode!=='flight';this.rig.update(w,dt);this.character.update(w,dt);
     let n=0;for(const d of this.rain.drops){this.rainPositions[n++]=d.x;this.rainPositions[n++]=d.y;this.rainPositions[n++]=d.z;this.rainPositions[n++]=d.x-d.vx*.035;this.rainPositions[n++]=d.y-d.vy*.035;this.rainPositions[n++]=d.z-d.vz*.035;}
     this.rainGeometry.attributes.position.needsUpdate=true;
     n=0;const line=(x:number,y:number,z:number,xx:number,yy:number,zz:number,brightness:number)=>{for(const v of [x,y,z,xx,yy,zz])this.effectPositions[n++]=v;for(let i=n-6;i<n;i++)this.effectColors[i]=brightness;};

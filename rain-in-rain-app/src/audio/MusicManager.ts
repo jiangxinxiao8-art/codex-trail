@@ -14,5 +14,6 @@ export class MusicManager {
  fadeOut(){const track=this.tracks[this.current];if(track)track.gain.gain.rampTo(0,8);}
  reset(){this.timers.forEach(id=>Tone.getContext().clearTimeout(id));this.timers=[];this.current=-1;for(const t of this.tracks){t.player.stop();t.gain.gain.cancelScheduledValues(0);t.gain.gain.value=0;}}
  private disposeTracks(){this.reset();for(const t of this.tracks){t.player.dispose();t.gain.dispose();}this.tracks=[];}
+ get activeIndex(){return this.current;}
  get loaded(){return this.tracks.filter(t=>t.player.loaded).length;}
 }

@@ -45,24 +45,25 @@ export class Character {
     // Keep the full spatial rig, render its independently transformed pieces in two draws.
     const pieces:T.Mesh[]=[];let vertices=0,lineVertices=0;
     this.root.traverse(object=>{if(object instanceof T.Mesh){pieces.push(object);vertices+=object.geometry.index?object.geometry.index.count:object.geometry.attributes.position.count;}if(object instanceof T.Line){const positions=object.geometry.getAttribute('position');const loop=object instanceof T.LineLoop;this.strokes.push({line:object,positions,loop});lineVertices+=loop?positions.count*2:positions.count;}});
-    this.batches=new T.BatchedMesh(pieces.length,vertices,0,new T.MeshBasicMaterial({color:0xffffff}));this.batches.frustumCulled=false;this.batches.perObjectFrustumCulled=false;this.batches.sortObjects=false;
+    this.batches=new T.BatchedMesh(pieces.length,vertices,0,new T.MeshLambertMaterial({color:0xffffff}));this.batches.castShadow=true;this.batches.receiveShadow=true;this.batches.frustumCulled=false;this.batches.perObjectFrustumCulled=false;this.batches.sortObjects=false;
     for(const mesh of pieces){const geometry=mesh.geometry.index?mesh.geometry.toNonIndexed():mesh.geometry.clone();geometry.clearGroups();const geometryId=this.batches.addGeometry(geometry),id=this.batches.addInstance(geometryId);this.batches.setColorAt(id,(mesh.material as T.MeshBasicMaterial).color);this.instances.push({mesh,id});geometry.dispose();}
     this.inkPositions=new Float32Array(lineVertices*3);const inkGeometry=new T.BufferGeometry();inkGeometry.setAttribute('position',new T.BufferAttribute(this.inkPositions,3).setUsage(T.DynamicDrawUsage));this.ink=new T.LineSegments(inkGeometry,new T.LineBasicMaterial({color:0xb9b9b3,transparent:true,opacity:.62}));this.ink.frustumCulled=false;
     this.root.visible=false;this.render.add(this.root,this.batches,this.ink);
   }
+  handWorld(){return this.arms[0].localToWorld(new T.Vector3(-.05,-.36,0));}
   private bone(mesh:T.Mesh,start:T.Vector3,end:T.Vector3){this.dir.copy(end).sub(start);mesh.position.copy(start).add(end).multiplyScalar(.5);mesh.scale.y=this.dir.length();mesh.quaternion.setFromUnitVectors(this.up,this.dir.normalize());}
   update(world:WorldModel,dt:number){
     const p=world.player,speed=Math.hypot(p.vx,p.vz),walk=speed>.03,phase=p.distance/1.2;
-    this.root.position.set(p.x,0,p.z);this.root.rotation.y=p.yaw;
-    const step=Math.sin(phase*Math.PI*2);this.torso.position.y=Math.abs(step)*.012*Math.min(1,speed);this.torso.rotation.x=world.guiding?-.035:-Math.min(.04,speed*.015);
+    const pose=world.animation;this.root.position.set(p.x,p.y,p.z);this.root.rotation.z=pose.bank;this.root.rotation.y=p.yaw;
+    const step=Math.sin(phase*Math.PI*2);this.torso.position.y=Math.abs(step)*.012*Math.min(1,speed)-pose.crouch*.24-pose.sit*.19-Math.sin(pose.land*Math.PI)*.12;this.torso.rotation.x=(world.guiding?-.035:-Math.min(.04,speed*.015))-pose.flight*.2+pose.crouch*.17;this.torso.rotation.z=Math.sin(world.elapsed*2.8)*pose.dance*.07;
     this.head.rotation.x=world.guiding?-.1:Math.sin(world.elapsed*1.4)*.012;
-    this.arms.forEach((arm,i)=>{const desired=world.guiding?-.48:Math.sin(phase*Math.PI*2+i*Math.PI)*.34*Math.min(1,speed);arm.rotation.x+=(desired-arm.rotation.x)*(1-Math.exp(-9*dt));arm.rotation.z=(i?1:-1)*(world.guiding?.4:.03);});
+    this.arms.forEach((arm,i)=>{const desired=pose.cup&&i===0?-1.4:pose.flight?-.2:world.guiding?-.48:Math.sin(phase*Math.PI*2+i*Math.PI)*.34*Math.min(1,speed);arm.rotation.x+=(desired-arm.rotation.x)*(1-Math.exp(-9*dt));arm.rotation.z=(i?1:-1)*(pose.flight?1.2:world.guiding?.4:.03)+Math.sin(world.elapsed*2.8+i)*pose.dance*.12;});
     this.legs.forEach((leg,i)=>{
       const side=i?1:-1,f=(phase+i*.5)%1,stance=walk&&f<.5;
       let z=0,y=.055;
       if(walk){if(stance){if(!leg.planted){leg.anchor.set(p.x+Math.sin(p.yaw)*.29+Math.cos(p.yaw)*side*.13,0,p.z+Math.cos(p.yaw)*.29-Math.sin(p.yaw)*side*.13);}const dx=leg.anchor.x-p.x,dz=leg.anchor.z-p.z;z=dx*Math.sin(p.yaw)+dz*Math.cos(p.yaw);}else{const t=(f-.5)/.5;z=-.31+.6*t;y+=Math.sin(t*Math.PI)*.09;}}
       leg.planted=stance;z=T.MathUtils.clamp(z,-.32,.32);
-      const hip=new T.Vector3(side*.13,.66,0),foot=new T.Vector3(side*.13,y,z),dy=foot.y-hip.y,d=Math.min(.699,Math.hypot(z,dy)),bend=Math.sqrt(Math.max(0,.35*.35-d*d/4));
+      y+=pose.flight*.36;z-=pose.flight*.27;z+=pose.sit*.44;const hip=new T.Vector3(side*.13,.66-pose.sit*.17-pose.crouch*.12,0),foot=new T.Vector3(side*.13,y,z),dy=foot.y-hip.y,d=Math.min(.699,Math.hypot(z,dy)),bend=Math.sqrt(Math.max(0,.35*.35-d*d/4));
       const knee=new T.Vector3(side*.13,(hip.y+foot.y)/2+z/Math.max(d,.001)*bend,z/2-dy/Math.max(d,.001)*bend);
       this.bone(leg.upper,hip,knee);this.bone(leg.lower,knee,foot);leg.shoe.position.copy(foot);leg.shoe.position.z+=.04;
       this.footWorld[i].copy(foot).applyAxisAngle(this.up,p.yaw).add(this.root.position);

@@ -1,0 +1,5722 @@
+{
+  "seconds": 140.868,
+  "timeline": [
+    {
+      "name": "01-street",
+      "time": 19.385,
+      "state": {
+        "chapter": 1,
+        "chapterName": "城市的噪音",
+        "ready": false,
+        "story": {
+          "voices": [],
+          "planted": [],
+          "pool": 0,
+          "umbrellaHits": 0,
+          "surface": 0,
+          "dive": -1,
+          "dream": 0,
+          "danceEnergy": 0,
+          "danceVoices": [],
+          "flightPart": 1,
+          "flightSpeed": 0,
+          "flightTime": 0,
+          "route": "left",
+          "autopilot": true,
+          "landed": false,
+          "roomVisited": [],
+          "lamp": false,
+          "record": false,
+          "cup": false,
+          "seated": false,
+          "won": false,
+          "walking": false
+        },
+        "storyView": {
+          "lampIntensity": 0,
+          "recordRotation": 0,
+          "cupPosition": [
+            48,
+            1.12,
+            -102.8
+          ],
+          "umbrellas": [
+            {
+              "position": [
+                21.5,
+                0,
+                3.2
+              ],
+              "scale": 0.001
+            },
+            {
+              "position": [
+                25.5,
+                0,
+                3.2
+              ],
+              "scale": 0.001
+            },
+            {
+              "position": [
+                27.5,
+                0,
+                5.3
+              ],
+              "scale": 0.001
+            }
+          ],
+          "shadowMap": true,
+          "roomVisible": false
+        },
+        "musicIndex": 0,
+        "targets": [],
+        "phase": "play",
+        "mode": "mouse",
+        "player": {
+          "x": -11.07187630820109,
+          "y": 0,
+          "z": 2.8,
+          "vx": 0,
+          "vz": 0,
+          "yaw": 1.5707963267948966,
+          "distance": 1.9281236917989109
+        },
+        "wind": {
+          "x": 0,
+          "z": 0
+        },
+        "contacts": {
+          "stone": 6146,
+          "metal": 265,
+          "glass": 7,
+          "water": 244,
+          "roof": 386,
+          "umbrella": 0
+        },
+        "guided": {
+          "metal": 0,
+          "glass": 0
+        },
+        "notes": [],
+        "gateOpen": false,
+        "completed": false,
+        "completion": "none",
+        "easyMode": true,
+        "focusedDrop": -1,
+        "dwellProgress": 0,
+        "guide": {
+          "active": false,
+          "destination": "metal"
+        },
+        "musicDucking": 1,
+        "materialsAwake": false,
+        "elapsed": 9.733333333333396,
+        "puddles": [
+          {
+            "id": "entry-water",
+            "x": -12,
+            "z": 3.4,
+            "rx": 2.05,
+            "rz": 1.1
+          },
+          {
+            "id": "listening-water",
+            "x": 3,
+            "z": 3,
+            "rx": 2.25,
+            "rz": 1.3
+          },
+          {
+            "id": "courtyard-water",
+            "x": 16,
+            "z": -3.6,
+            "rx": 1.9,
+            "rz": 1.2
+          }
+        ],
+        "surfaces": [
+          {
+            "id": "tin-awning",
+            "material": "metal",
+            "axis": "y",
+            "at": 2.8,
+            "a": [
+              -10.1,
+              -5.9
+            ],
+            "b": [
+              -3.1,
+              1.4
+            ]
+          },
+          {
+            "id": "shop-window",
+            "material": "glass",
+            "axis": "z",
+            "at": -1.6,
+            "a": [
+              -2,
+              2
+            ],
+            "b": [
+              0.9,
+              3.6
+            ]
+          },
+          {
+            "id": "roof-0",
+            "material": "roof",
+            "axis": "y",
+            "at": 7.16,
+            "a": [
+              -31.5,
+              -24.5
+            ],
+            "b": [
+              -11,
+              -7
+            ]
+          },
+          {
+            "id": "roof-1",
+            "material": "roof",
+            "axis": "y",
+            "at": 6.36,
+            "a": [
+              -20,
+              -14
+            ],
+            "b": [
+              -7.6000000000000005,
+              -3.2
+            ]
+          },
+          {
+            "id": "roof-2",
+            "material": "roof",
+            "axis": "y",
+            "at": 5.5600000000000005,
+            "a": [
+              -10.6,
+              -5.4
+            ],
+            "b": [
+              -7,
+              -3
+            ]
+          },
+          {
+            "id": "roof-3",
+            "material": "roof",
+            "axis": "y",
+            "at": 6.26,
+            "a": [
+              -2.6,
+              2.6
+            ],
+            "b": [
+              -6.4,
+              -1.6
+            ]
+          },
+          {
+            "id": "roof-4",
+            "material": "roof",
+            "axis": "y",
+            "at": 7.96,
+            "a": [
+              3.5,
+              9.5
+            ],
+            "b": [
+              -8,
+              -3.1999999999999997
+            ]
+          },
+          {
+            "id": "roof-5",
+            "material": "roof",
+            "axis": "y",
+            "at": 6.76,
+            "a": [
+              18.9,
+              25.1
+            ],
+            "b": [
+              -7.9,
+              -2.9000000000000004
+            ]
+          },
+          {
+            "id": "roof-6",
+            "material": "roof",
+            "axis": "y",
+            "at": 5.0600000000000005,
+            "a": [
+              12.5,
+              18.5
+            ],
+            "b": [
+              -12.25,
+              -8.75
+            ]
+          },
+          {
+            "id": "roof-7",
+            "material": "roof",
+            "axis": "y",
+            "at": 5.16,
+            "a": [
+              27.5,
+              34.5
+            ],
+            "b": [
+              -12,
+              -6
+            ]
+          }
+        ],
+        "bells": [
+          {
+            "x": 8.4,
+            "y": 2.3,
+            "z": 1.3
+          },
+          {
+            "x": 9.8,
+            "y": 2.7,
+            "z": 1.3
+          },
+          {
+            "x": 11.2,
+            "y": 2.1,
+            "z": 1.3
+          }
+        ],
+        "feet": [
+          [
+            -11.07187630820109,
+            0.055,
+            2.9299999999999997
+          ],
+          [
+            -11.07187630820109,
+            0.055,
+            2.67
+          ]
+        ],
+        "audio": {
+          "metal": 20,
+          "glass": 0,
+          "water": 15,
+          "stone": 0,
+          "note": 0
+        },
+        "musicLoaded": 5,
+        "frames": 61,
+        "averageFPS": 6.851930896590863,
+        "metrics": {
+          "calls": 34,
+          "triangles": 2846,
+          "geometries": 32,
+          "textures": 5,
+          "reflectionFrames": 56,
+          "pipelineCalls": 1,
+          "pixelRatio": 0.65
+        },
+        "camera": [
+          -3.616335083634122,
+          7.802513711262395,
+          23.72879353696927
+        ]
+      }
+    },
+    {
+      "name": "01-melody",
+      "time": 40.375,
+      "state": {
+        "chapter": 1,
+        "chapterName": "城市的噪音",
+        "ready": true,
+        "story": {
+          "voices": [],
+          "planted": [],
+          "pool": 0,
+          "umbrellaHits": 0,
+          "surface": 0,
+          "dive": -1,
+          "dream": 0,
+          "danceEnergy": 0,
+          "danceVoices": [],
+          "flightPart": 1,
+          "flightSpeed": 0,
+          "flightTime": 0,
+          "route": "left",
+          "autopilot": true,
+          "landed": false,
+          "roomVisited": [],
+          "lamp": false,
+          "record": false,
+          "cup": false,
+          "seated": false,
+          "won": false,
+          "walking": false
+        },
+        "storyView": {
+          "lampIntensity": 0,
+          "recordRotation": 0,
+          "cupPosition": [
+            48,
+            1.12,
+            -102.8
+          ],
+          "umbrellas": [
+            {
+              "position": [
+                21.5,
+                0,
+                3.2
+              ],
+              "scale": 0.001
+            },
+            {
+              "position": [
+                25.5,
+                0,
+                3.2
+              ],
+              "scale": 0.001
+            },
+            {
+              "position": [
+                27.5,
+                0,
+                5.3
+              ],
+              "scale": 0.001
+            }
+          ],
+          "shadowMap": true,
+          "roomVisible": false
+        },
+        "musicIndex": 0,
+        "targets": [],
+        "phase": "play",
+        "mode": "mouse",
+        "player": {
+          "x": 9.730263599753805,
+          "y": 0,
+          "z": 2.8,
+          "vx": 0,
+          "vz": 0,
+          "yaw": 1.5707963267948966,
+          "distance": 22.73026359975381
+        },
+        "wind": {
+          "x": 0,
+          "z": -4.5830471529654804e-24
+        },
+        "contacts": {
+          "stone": 19209,
+          "metal": 886,
+          "glass": 14,
+          "water": 838,
+          "roof": 1340,
+          "umbrella": 0
+        },
+        "guided": {
+          "metal": 3,
+          "glass": 2
+        },
+        "notes": [
+          1,
+          0,
+          2
+        ],
+        "gateOpen": true,
+        "completed": true,
+        "completion": "natural",
+        "easyMode": true,
+        "focusedDrop": -1,
+        "dwellProgress": 0,
+        "guide": {
+          "active": false,
+          "destination": "notes"
+        },
+        "musicDucking": 1,
+        "materialsAwake": true,
+        "elapsed": 30.666666666666206,
+        "puddles": [
+          {
+            "id": "entry-water",
+            "x": -12,
+            "z": 3.4,
+            "rx": 2.05,
+            "rz": 1.1
+          },
+          {
+            "id": "listening-water",
+            "x": 3,
+            "z": 3,
+            "rx": 2.25,
+            "rz": 1.3
+          },
+          {
+            "id": "courtyard-water",
+            "x": 16,
+            "z": -3.6,
+            "rx": 1.9,
+            "rz": 1.2
+          }
+        ],
+        "surfaces": [
+          {
+            "id": "tin-awning",
+            "material": "metal",
+            "axis": "y",
+            "at": 2.8,
+            "a": [
+              -10.1,
+              -5.9
+            ],
+            "b": [
+              -3.1,
+              1.4
+            ]
+          },
+          {
+            "id": "shop-window",
+            "material": "glass",
+            "axis": "z",
+            "at": -1.6,
+            "a": [
+              -2,
+              2
+            ],
+            "b": [
+              0.9,
+              3.6
+            ]
+          },
+          {
+            "id": "roof-0",
+            "material": "roof",
+            "axis": "y",
+            "at": 7.16,
+            "a": [
+              -31.5,
+              -24.5
+            ],
+            "b": [
+              -11,
+              -7
+            ]
+          },
+          {
+            "id": "roof-1",
+            "material": "roof",
+            "axis": "y",
+            "at": 6.36,
+            "a": [
+              -20,
+              -14
+            ],
+            "b": [
+              -7.6000000000000005,
+              -3.2
+            ]
+          },
+          {
+            "id": "roof-2",
+            "material": "roof",
+            "axis": "y",
+            "at": 5.5600000000000005,
+            "a": [
+              -10.6,
+              -5.4
+            ],
+            "b": [
+              -7,
+              -3
+            ]
+          },
+          {
+            "id": "roof-3",
+            "material": "roof",
+            "axis": "y",
+            "at": 6.26,
+            "a": [
+              -2.6,
+              2.6
+            ],
+            "b": [
+              -6.4,
+              -1.6
+            ]
+          },
+          {
+            "id": "roof-4",
+            "material": "roof",
+            "axis": "y",
+            "at": 7.96,
+            "a": [
+              3.5,
+              9.5
+            ],
+            "b": [
+              -8,
+              -3.1999999999999997
+            ]
+          },
+          {
+            "id": "roof-5",
+            "material": "roof",
+            "axis": "y",
+            "at": 6.76,
+            "a": [
+              18.9,
+              25.1
+            ],
+            "b": [
+              -7.9,
+              -2.9000000000000004
+            ]
+          },
+          {
+            "id": "roof-6",
+            "material": "roof",
+            "axis": "y",
+            "at": 5.0600000000000005,
+            "a": [
+              12.5,
+              18.5
+            ],
+            "b": [
+              -12.25,
+              -8.75
+            ]
+          },
+          {
+            "id": "roof-7",
+            "material": "roof",
+            "axis": "y",
+            "at": 5.16,
+            "a": [
+              27.5,
+              34.5
+            ],
+            "b": [
+              -12,
+              -6
+            ]
+          }
+        ],
+        "bells": [
+          {
+            "x": 8.4,
+            "y": 2.3,
+            "z": 1.3
+          },
+          {
+            "x": 9.8,
+            "y": 2.7,
+            "z": 1.3
+          },
+          {
+            "x": 11.2,
+            "y": 2.1,
+            "z": 1.3
+          }
+        ],
+        "feet": [
+          [
+            9.730263599753805,
+            0.055,
+            2.9299999999999997
+          ],
+          [
+            9.730263599753805,
+            0.055,
+            2.67
+          ]
+        ],
+        "audio": {
+          "metal": 43,
+          "glass": 3,
+          "water": 64,
+          "stone": 12,
+          "note": 3
+        },
+        "musicLoaded": 5,
+        "frames": 294,
+        "averageFPS": 9.835868132455873,
+        "metrics": {
+          "calls": 43,
+          "triangles": 2904,
+          "geometries": 38,
+          "textures": 5,
+          "reflectionFrames": 182,
+          "pipelineCalls": 1,
+          "pixelRatio": 0.65
+        },
+        "camera": [
+          17.18600536569604,
+          7.8,
+          23.69743623326514
+        ]
+      }
+    },
+    {
+      "name": "02-alley",
+      "time": 51.347,
+      "state": {
+        "chapter": 2,
+        "chapterName": "让雨唱一首歌",
+        "ready": false,
+        "story": {
+          "voices": [],
+          "planted": [],
+          "pool": 0,
+          "umbrellaHits": 0,
+          "surface": 0,
+          "dive": -1,
+          "dream": 0,
+          "danceEnergy": 0,
+          "danceVoices": [],
+          "flightPart": 1,
+          "flightSpeed": 0,
+          "flightTime": 0,
+          "route": "left",
+          "autopilot": true,
+          "landed": false,
+          "roomVisited": [],
+          "lamp": false,
+          "record": false,
+          "cup": false,
+          "seated": false,
+          "won": false,
+          "walking": false
+        },
+        "storyView": {
+          "lampIntensity": 0,
+          "recordRotation": 0,
+          "cupPosition": [
+            48,
+            1.12,
+            -102.8
+          ],
+          "umbrellas": [
+            {
+              "position": [
+                21.5,
+                0,
+                3.2
+              ],
+              "scale": 0.001
+            },
+            {
+              "position": [
+                25.5,
+                0,
+                3.2
+              ],
+              "scale": 0.001
+            },
+            {
+              "position": [
+                27.5,
+                0,
+                5.3
+              ],
+              "scale": 0.001
+            }
+          ],
+          "shadowMap": true,
+          "roomVisible": false
+        },
+        "musicIndex": 1,
+        "targets": [
+          {
+            "id": "tin",
+            "x": 13.5,
+            "y": 1.5,
+            "z": -3.4,
+            "label": "檐下的风铃",
+            "hint": "轻触，听一声金属的回响"
+          },
+          {
+            "id": "glass",
+            "x": 15.5,
+            "y": 2.1,
+            "z": -5.2,
+            "label": "巷口的玻璃",
+            "hint": "让玻璃接上这一段旋律"
+          },
+          {
+            "id": "water",
+            "x": 17.5,
+            "y": 0.1,
+            "z": -3.4,
+            "label": "低声唱歌的水",
+            "hint": "轻触水面，听低音散开"
+          }
+        ],
+        "phase": "play",
+        "mode": "mouse",
+        "player": {
+          "x": 15.499578391378622,
+          "y": 0,
+          "z": -3.327857092145292,
+          "vx": 0,
+          "vz": 0,
+          "yaw": 3.135748644327492,
+          "distance": 34.562557608688095
+        },
+        "wind": {
+          "x": 0,
+          "z": -5.956042949927657e-48
+        },
+        "contacts": {
+          "stone": 26104,
+          "metal": 1019,
+          "glass": 19,
+          "water": 1084,
+          "roof": 2309,
+          "umbrella": 0
+        },
+        "guided": {
+          "metal": 3,
+          "glass": 2
+        },
+        "notes": [
+          1,
+          0,
+          2
+        ],
+        "gateOpen": true,
+        "completed": true,
+        "completion": "natural",
+        "easyMode": true,
+        "focusedDrop": -1,
+        "dwellProgress": 0,
+        "guide": {
+          "active": false,
+          "destination": "notes"
+        },
+        "musicDucking": 1,
+        "materialsAwake": true,
+        "elapsed": 41.666666666665584,
+        "puddles": [
+          {
+            "id": "entry-water",
+            "x": -12,
+            "z": 3.4,
+            "rx": 2.05,
+            "rz": 1.1
+          },
+          {
+            "id": "listening-water",
+            "x": 3,
+            "z": 3,
+            "rx": 2.25,
+            "rz": 1.3
+          },
+          {
+            "id": "courtyard-water",
+            "x": 16,
+            "z": -3.6,
+            "rx": 1.9,
+            "rz": 1.2
+          }
+        ],
+        "surfaces": [
+          {
+            "id": "tin-awning",
+            "material": "metal",
+            "axis": "y",
+            "at": 2.8,
+            "a": [
+              -10.1,
+              -5.9
+            ],
+            "b": [
+              -3.1,
+              1.4
+            ]
+          },
+          {
+            "id": "shop-window",
+            "material": "glass",
+            "axis": "z",
+            "at": -1.6,
+            "a": [
+              -2,
+              2
+            ],
+            "b": [
+              0.9,
+              3.6
+            ]
+          },
+          {
+            "id": "roof-0",
+            "material": "roof",
+            "axis": "y",
+            "at": 7.16,
+            "a": [
+              -31.5,
+              -24.5
+            ],
+            "b": [
+              -11,
+              -7
+            ]
+          },
+          {
+            "id": "roof-1",
+            "material": "roof",
+            "axis": "y",
+            "at": 6.36,
+            "a": [
+              -20,
+              -14
+            ],
+            "b": [
+              -7.6000000000000005,
+              -3.2
+            ]
+          },
+          {
+            "id": "roof-2",
+            "material": "roof",
+            "axis": "y",
+            "at": 5.5600000000000005,
+            "a": [
+              -10.6,
+              -5.4
+            ],
+            "b": [
+              -7,
+              -3
+            ]
+          },
+          {
+            "id": "roof-3",
+            "material": "roof",
+            "axis": "y",
+            "at": 6.26,
+            "a": [
+              -2.6,
+              2.6
+            ],
+            "b": [
+              -6.4,
+              -1.6
+            ]
+          },
+          {
+            "id": "roof-4",
+            "material": "roof",
+            "axis": "y",
+            "at": 7.96,
+            "a": [
+              3.5,
+              9.5
+            ],
+            "b": [
+              -8,
+              -3.1999999999999997
+            ]
+          },
+          {
+            "id": "roof-5",
+            "material": "roof",
+            "axis": "y",
+            "at": 6.76,
+            "a": [
+              18.9,
+              25.1
+            ],
+            "b": [
+              -7.9,
+              -2.9000000000000004
+            ]
+          },
+          {
+            "id": "roof-6",
+            "material": "roof",
+            "axis": "y",
+            "at": 5.0600000000000005,
+            "a": [
+              12.5,
+              18.5
+            ],
+            "b": [
+              -12.25,
+              -8.75
+            ]
+          },
+          {
+            "id": "roof-7",
+            "material": "roof",
+            "axis": "y",
+            "at": 5.16,
+            "a": [
+              27.5,
+              34.5
+            ],
+            "b": [
+              -12,
+              -6
+            ]
+          }
+        ],
+        "bells": [
+          {
+            "x": 8.4,
+            "y": 2.3,
+            "z": 1.3
+          },
+          {
+            "x": 9.8,
+            "y": 2.7,
+            "z": 1.3
+          },
+          {
+            "x": 11.2,
+            "y": 2.1,
+            "z": 1.3
+          }
+        ],
+        "feet": [
+          [
+            15.629576171476064,
+            0.055,
+            -3.327097375265575
+          ],
+          [
+            15.36958061128118,
+            0.055,
+            -3.3286168090250094
+          ]
+        ],
+        "audio": {
+          "metal": 63,
+          "glass": 3,
+          "water": 85,
+          "stone": 18,
+          "note": 3
+        },
+        "musicLoaded": 5,
+        "frames": 416,
+        "averageFPS": 10.176548437678543,
+        "metrics": {
+          "calls": 87,
+          "triangles": 6858,
+          "geometries": 64,
+          "textures": 5,
+          "reflectionFrames": 247,
+          "pipelineCalls": 1,
+          "pixelRatio": 0.65
+        },
+        "camera": [
+          22.955324811331664,
+          7.8,
+          22.166167574858886
+        ]
+      }
+    },
+    {
+      "name": "03-umbrella-water",
+      "time": 65.552,
+      "state": {
+        "chapter": 3,
+        "chapterName": "种下雨伞",
+        "ready": true,
+        "story": {
+          "voices": [
+            "glass",
+            "tin",
+            "water"
+          ],
+          "planted": [
+            0,
+            1
+          ],
+          "pool": 1,
+          "umbrellaHits": 8,
+          "surface": 0,
+          "dive": -1,
+          "dream": 0,
+          "danceEnergy": 0,
+          "danceVoices": [],
+          "flightPart": 1,
+          "flightSpeed": 0,
+          "flightTime": 0,
+          "route": "left",
+          "autopilot": true,
+          "landed": false,
+          "roomVisited": [],
+          "lamp": false,
+          "record": false,
+          "cup": false,
+          "seated": false,
+          "won": false,
+          "walking": false
+        },
+        "storyView": {
+          "lampIntensity": 0,
+          "recordRotation": 0,
+          "cupPosition": [
+            48,
+            1.12,
+            -102.8
+          ],
+          "umbrellas": [
+            {
+              "position": [
+                21.5,
+                0,
+                3.2
+              ],
+              "scale": 0.9997024417340871
+            },
+            {
+              "position": [
+                25.5,
+                0,
+                3.2
+              ],
+              "scale": 0.9981638797629568
+            },
+            {
+              "position": [
+                27.5,
+                0,
+                5.3
+              ],
+              "scale": 0.001
+            }
+          ],
+          "shadowMap": true,
+          "roomVisible": false
+        },
+        "musicIndex": 1,
+        "targets": [
+          {
+            "id": "seed-2",
+            "x": 27.5,
+            "y": 0.08,
+            "z": 5.3,
+            "label": "另一片安静的伞影",
+            "hint": "这里也可以种伞"
+          }
+        ],
+        "phase": "play",
+        "mode": "mouse",
+        "player": {
+          "x": 20.727897808115145,
+          "y": 0,
+          "z": 3.1940555217260185,
+          "vx": 0,
+          "vz": 0,
+          "yaw": 1.4885371864717705,
+          "distance": 45.872063103541876
+        },
+        "wind": {
+          "x": 0,
+          "z": -1.844040551271239e-78
+        },
+        "contacts": {
+          "stone": 34819,
+          "metal": 1107,
+          "glass": 24,
+          "water": 1421,
+          "roof": 3602,
+          "umbrella": 40
+        },
+        "guided": {
+          "metal": 3,
+          "glass": 2
+        },
+        "notes": [
+          1,
+          0,
+          2
+        ],
+        "gateOpen": true,
+        "completed": true,
+        "completion": "natural",
+        "easyMode": true,
+        "focusedDrop": -1,
+        "dwellProgress": 0,
+        "guide": {
+          "active": false,
+          "destination": "notes"
+        },
+        "musicDucking": 1,
+        "materialsAwake": true,
+        "elapsed": 55.716666666664786,
+        "puddles": [
+          {
+            "id": "entry-water",
+            "x": -12,
+            "z": 3.4,
+            "rx": 2.05,
+            "rz": 1.1
+          },
+          {
+            "id": "listening-water",
+            "x": 3,
+            "z": 3,
+            "rx": 2.25,
+            "rz": 1.3
+          },
+          {
+            "id": "courtyard-water",
+            "x": 16,
+            "z": -3.6,
+            "rx": 1.9,
+            "rz": 1.2
+          }
+        ],
+        "surfaces": [
+          {
+            "id": "tin-awning",
+            "material": "metal",
+            "axis": "y",
+            "at": 2.8,
+            "a": [
+              -10.1,
+              -5.9
+            ],
+            "b": [
+              -3.1,
+              1.4
+            ]
+          },
+          {
+            "id": "shop-window",
+            "material": "glass",
+            "axis": "z",
+            "at": -1.6,
+            "a": [
+              -2,
+              2
+            ],
+            "b": [
+              0.9,
+              3.6
+            ]
+          },
+          {
+            "id": "roof-0",
+            "material": "roof",
+            "axis": "y",
+            "at": 7.16,
+            "a": [
+              -31.5,
+              -24.5
+            ],
+            "b": [
+              -11,
+              -7
+            ]
+          },
+          {
+            "id": "roof-1",
+            "material": "roof",
+            "axis": "y",
+            "at": 6.36,
+            "a": [
+              -20,
+              -14
+            ],
+            "b": [
+              -7.6000000000000005,
+              -3.2
+            ]
+          },
+          {
+            "id": "roof-2",
+            "material": "roof",
+            "axis": "y",
+            "at": 5.5600000000000005,
+            "a": [
+              -10.6,
+              -5.4
+            ],
+            "b": [
+              -7,
+              -3
+            ]
+          },
+          {
+            "id": "roof-3",
+            "material": "roof",
+            "axis": "y",
+            "at": 6.26,
+            "a": [
+              -2.6,
+              2.6
+            ],
+            "b": [
+              -6.4,
+              -1.6
+            ]
+          },
+          {
+            "id": "roof-4",
+            "material": "roof",
+            "axis": "y",
+            "at": 7.96,
+            "a": [
+              3.5,
+              9.5
+            ],
+            "b": [
+              -8,
+              -3.1999999999999997
+            ]
+          },
+          {
+            "id": "roof-5",
+            "material": "roof",
+            "axis": "y",
+            "at": 6.76,
+            "a": [
+              18.9,
+              25.1
+            ],
+            "b": [
+              -7.9,
+              -2.9000000000000004
+            ]
+          },
+          {
+            "id": "roof-6",
+            "material": "roof",
+            "axis": "y",
+            "at": 5.0600000000000005,
+            "a": [
+              12.5,
+              18.5
+            ],
+            "b": [
+              -12.25,
+              -8.75
+            ]
+          },
+          {
+            "id": "roof-7",
+            "material": "roof",
+            "axis": "y",
+            "at": 5.16,
+            "a": [
+              27.5,
+              34.5
+            ],
+            "b": [
+              -12,
+              -6
+            ]
+          }
+        ],
+        "bells": [
+          {
+            "x": 8.4,
+            "y": 2.3,
+            "z": 1.3
+          },
+          {
+            "x": 9.8,
+            "y": 2.7,
+            "z": 1.3
+          },
+          {
+            "x": 11.2,
+            "y": 2.1,
+            "z": 1.3
+          }
+        ],
+        "feet": [
+          [
+            20.717216175718423,
+            0.055,
+            3.3236159428790133
+          ],
+          [
+            20.738579440511867,
+            0.055,
+            3.0644951005730237
+          ]
+        ],
+        "audio": {
+          "metal": 78,
+          "glass": 4,
+          "water": 115,
+          "stone": 25,
+          "note": 8
+        },
+        "musicLoaded": 5,
+        "frames": 571,
+        "averageFPS": 10.36931843977086,
+        "metrics": {
+          "calls": 87,
+          "triangles": 6432,
+          "geometries": 65,
+          "textures": 5,
+          "reflectionFrames": 325,
+          "pipelineCalls": 1,
+          "pixelRatio": 0.65
+        },
+        "camera": [
+          28.183642556619276,
+          7.8,
+          23.795949975670933
+        ]
+      }
+    },
+    {
+      "name": "04-water-close",
+      "time": 78.183,
+      "state": {
+        "chapter": 4,
+        "chapterName": "水里的另一个世界",
+        "ready": false,
+        "story": {
+          "voices": [
+            "glass",
+            "tin",
+            "water"
+          ],
+          "planted": [
+            0,
+            1
+          ],
+          "pool": 1,
+          "umbrellaHits": 8,
+          "surface": 2.5166666666666626,
+          "dive": 2.199999999999997,
+          "dream": 0,
+          "danceEnergy": 0,
+          "danceVoices": [],
+          "flightPart": 1,
+          "flightSpeed": 0,
+          "flightTime": 0,
+          "route": "left",
+          "autopilot": true,
+          "landed": false,
+          "roomVisited": [],
+          "lamp": false,
+          "record": false,
+          "cup": false,
+          "seated": false,
+          "won": false,
+          "walking": false
+        },
+        "storyView": {
+          "lampIntensity": 0,
+          "recordRotation": 0,
+          "cupPosition": [
+            48,
+            1.12,
+            -102.8
+          ],
+          "umbrellas": [
+            {
+              "position": [
+                21.5,
+                0,
+                3.2
+              ],
+              "scale": 0.9999999999999999
+            },
+            {
+              "position": [
+                25.5,
+                0,
+                3.2
+              ],
+              "scale": 0.9999999999999999
+            },
+            {
+              "position": [
+                27.5,
+                0,
+                5.3
+              ],
+              "scale": 0.001
+            }
+          ],
+          "shadowMap": true,
+          "roomVisible": false
+        },
+        "musicIndex": 2,
+        "targets": [
+          {
+            "id": "pond",
+            "x": 30.5,
+            "y": 0.04,
+            "z": 3.2,
+            "label": "水里的另一个世界",
+            "hint": "靠近，轻轻拨动水面"
+          }
+        ],
+        "phase": "play",
+        "mode": "mouse",
+        "player": {
+          "x": 30.427881200581695,
+          "y": -0.2999999999999984,
+          "z": 3.199956129333498,
+          "vx": 0,
+          "vz": 0,
+          "yaw": 1.570188015765809,
+          "distance": 55.57204829071145
+        },
+        "wind": {
+          "x": 0,
+          "z": -9.497307964779825e-106
+        },
+        "contacts": {
+          "stone": 42918,
+          "metal": 1182,
+          "glass": 24,
+          "water": 1764,
+          "roof": 3718,
+          "umbrella": 332
+        },
+        "guided": {
+          "metal": 3,
+          "glass": 2
+        },
+        "notes": [
+          1,
+          0,
+          2
+        ],
+        "gateOpen": true,
+        "completed": true,
+        "completion": "natural",
+        "easyMode": true,
+        "focusedDrop": -1,
+        "dwellProgress": 0,
+        "guide": {
+          "active": false,
+          "destination": "notes"
+        },
+        "musicDucking": 1,
+        "materialsAwake": true,
+        "elapsed": 68.28333333333075,
+        "puddles": [
+          {
+            "id": "entry-water",
+            "x": -12,
+            "z": 3.4,
+            "rx": 2.05,
+            "rz": 1.1
+          },
+          {
+            "id": "listening-water",
+            "x": 3,
+            "z": 3,
+            "rx": 2.25,
+            "rz": 1.3
+          },
+          {
+            "id": "courtyard-water",
+            "x": 16,
+            "z": -3.6,
+            "rx": 1.9,
+            "rz": 1.2
+          }
+        ],
+        "surfaces": [
+          {
+            "id": "tin-awning",
+            "material": "metal",
+            "axis": "y",
+            "at": 2.8,
+            "a": [
+              -10.1,
+              -5.9
+            ],
+            "b": [
+              -3.1,
+              1.4
+            ]
+          },
+          {
+            "id": "shop-window",
+            "material": "glass",
+            "axis": "z",
+            "at": -1.6,
+            "a": [
+              -2,
+              2
+            ],
+            "b": [
+              0.9,
+              3.6
+            ]
+          },
+          {
+            "id": "roof-0",
+            "material": "roof",
+            "axis": "y",
+            "at": 7.16,
+            "a": [
+              -31.5,
+              -24.5
+            ],
+            "b": [
+              -11,
+              -7
+            ]
+          },
+          {
+            "id": "roof-1",
+            "material": "roof",
+            "axis": "y",
+            "at": 6.36,
+            "a": [
+              -20,
+              -14
+            ],
+            "b": [
+              -7.6000000000000005,
+              -3.2
+            ]
+          },
+          {
+            "id": "roof-2",
+            "material": "roof",
+            "axis": "y",
+            "at": 5.5600000000000005,
+            "a": [
+              -10.6,
+              -5.4
+            ],
+            "b": [
+              -7,
+              -3
+            ]
+          },
+          {
+            "id": "roof-3",
+            "material": "roof",
+            "axis": "y",
+            "at": 6.26,
+            "a": [
+              -2.6,
+              2.6
+            ],
+            "b": [
+              -6.4,
+              -1.6
+            ]
+          },
+          {
+            "id": "roof-4",
+            "material": "roof",
+            "axis": "y",
+            "at": 7.96,
+            "a": [
+              3.5,
+              9.5
+            ],
+            "b": [
+              -8,
+              -3.1999999999999997
+            ]
+          },
+          {
+            "id": "roof-5",
+            "material": "roof",
+            "axis": "y",
+            "at": 6.76,
+            "a": [
+              18.9,
+              25.1
+            ],
+            "b": [
+              -7.9,
+              -2.9000000000000004
+            ]
+          },
+          {
+            "id": "roof-6",
+            "material": "roof",
+            "axis": "y",
+            "at": 5.0600000000000005,
+            "a": [
+              12.5,
+              18.5
+            ],
+            "b": [
+              -12.25,
+              -8.75
+            ]
+          },
+          {
+            "id": "roof-7",
+            "material": "roof",
+            "axis": "y",
+            "at": 5.16,
+            "a": [
+              27.5,
+              34.5
+            ],
+            "b": [
+              -12,
+              -6
+            ]
+          }
+        ],
+        "bells": [
+          {
+            "x": 8.4,
+            "y": 2.3,
+            "z": 1.3
+          },
+          {
+            "x": 9.8,
+            "y": 2.7,
+            "z": 1.3
+          },
+          {
+            "x": 11.2,
+            "y": 2.1,
+            "z": 1.3
+          }
+        ],
+        "feet": [
+          [
+            30.42780212015279,
+            -0.24499999999999839,
+            3.3299561052807487
+          ],
+          [
+            30.4279602810106,
+            -0.24499999999999839,
+            3.069956153386247
+          ]
+        ],
+        "audio": {
+          "metal": 78,
+          "glass": 4,
+          "water": 155,
+          "stone": 31,
+          "note": 10
+        },
+        "musicLoaded": 5,
+        "frames": 689,
+        "averageFPS": 10.179387700225975,
+        "metrics": {
+          "calls": 25,
+          "triangles": 2098,
+          "geometries": 75,
+          "textures": 5,
+          "reflectionFrames": 403,
+          "pipelineCalls": 1,
+          "pixelRatio": 0.65
+        },
+        "camera": [
+          30.791738634128745,
+          0.7711544445464167,
+          5.038312011625721
+        ]
+      }
+    },
+    {
+      "name": "05-dream",
+      "time": 83.341,
+      "state": {
+        "chapter": 5,
+        "chapterName": "让城市起舞",
+        "ready": false,
+        "story": {
+          "voices": [
+            "glass",
+            "tin",
+            "water"
+          ],
+          "planted": [
+            0,
+            1
+          ],
+          "pool": 1,
+          "umbrellaHits": 8,
+          "surface": 2.5166666666666626,
+          "dive": -1,
+          "dream": 1,
+          "danceEnergy": 0,
+          "danceVoices": [],
+          "flightPart": 1,
+          "flightSpeed": 0,
+          "flightTime": 0,
+          "route": "left",
+          "autopilot": true,
+          "landed": false,
+          "roomVisited": [],
+          "lamp": false,
+          "record": false,
+          "cup": false,
+          "seated": false,
+          "won": false,
+          "walking": false
+        },
+        "storyView": {
+          "lampIntensity": 0,
+          "recordRotation": 0,
+          "cupPosition": [
+            48,
+            1.12,
+            -102.8
+          ],
+          "umbrellas": [
+            {
+              "position": [
+                21.5,
+                0,
+                3.2
+              ],
+              "scale": 1
+            },
+            {
+              "position": [
+                25.5,
+                0,
+                3.2
+              ],
+              "scale": 1
+            },
+            {
+              "position": [
+                27.5,
+                0,
+                5.3
+              ],
+              "scale": 0.001
+            }
+          ],
+          "shadowMap": true,
+          "roomVisible": false
+        },
+        "musicIndex": 3,
+        "targets": [
+          {
+            "id": "conduct",
+            "x": 30.5,
+            "y": 0.1,
+            "z": 3.2,
+            "label": "把风交给这座城",
+            "hint": "张掌引风，或轻触这里开始演奏"
+          }
+        ],
+        "phase": "play",
+        "mode": "mouse",
+        "player": {
+          "x": 30.934788142213854,
+          "y": 0,
+          "z": 3.837944760253034,
+          "vx": 0.46187313136001834,
+          "vz": -0.5961968322548378,
+          "yaw": 2.007457925834674,
+          "distance": 56.51362882247795
+        },
+        "wind": {
+          "x": 0,
+          "z": -1.840785991299074e-116
+        },
+        "contacts": {
+          "stone": 46125,
+          "metal": 1205,
+          "glass": 24,
+          "water": 1892,
+          "roof": 3750,
+          "umbrella": 438
+        },
+        "guided": {
+          "metal": 3,
+          "glass": 2
+        },
+        "notes": [
+          1,
+          0,
+          2
+        ],
+        "gateOpen": true,
+        "completed": true,
+        "completion": "natural",
+        "easyMode": true,
+        "focusedDrop": -1,
+        "dwellProgress": 0,
+        "guide": {
+          "active": false,
+          "destination": "notes"
+        },
+        "musicDucking": 1,
+        "materialsAwake": true,
+        "elapsed": 73.2166666666638,
+        "puddles": [
+          {
+            "id": "entry-water",
+            "x": -12,
+            "z": 3.4,
+            "rx": 2.05,
+            "rz": 1.1
+          },
+          {
+            "id": "listening-water",
+            "x": 3,
+            "z": 3,
+            "rx": 2.25,
+            "rz": 1.3
+          },
+          {
+            "id": "courtyard-water",
+            "x": 16,
+            "z": -3.6,
+            "rx": 1.9,
+            "rz": 1.2
+          }
+        ],
+        "surfaces": [
+          {
+            "id": "tin-awning",
+            "material": "metal",
+            "axis": "y",
+            "at": 2.8,
+            "a": [
+              -10.1,
+              -5.9
+            ],
+            "b": [
+              -3.1,
+              1.4
+            ]
+          },
+          {
+            "id": "shop-window",
+            "material": "glass",
+            "axis": "z",
+            "at": -1.6,
+            "a": [
+              -2,
+              2
+            ],
+            "b": [
+              0.9,
+              3.6
+            ]
+          },
+          {
+            "id": "roof-0",
+            "material": "roof",
+            "axis": "y",
+            "at": 7.16,
+            "a": [
+              -31.5,
+              -24.5
+            ],
+            "b": [
+              -11,
+              -7
+            ]
+          },
+          {
+            "id": "roof-1",
+            "material": "roof",
+            "axis": "y",
+            "at": 6.36,
+            "a": [
+              -20,
+              -14
+            ],
+            "b": [
+              -7.6000000000000005,
+              -3.2
+            ]
+          },
+          {
+            "id": "roof-2",
+            "material": "roof",
+            "axis": "y",
+            "at": 5.5600000000000005,
+            "a": [
+              -10.6,
+              -5.4
+            ],
+            "b": [
+              -7,
+              -3
+            ]
+          },
+          {
+            "id": "roof-3",
+            "material": "roof",
+            "axis": "y",
+            "at": 6.26,
+            "a": [
+              -2.6,
+              2.6
+            ],
+            "b": [
+              -6.4,
+              -1.6
+            ]
+          },
+          {
+            "id": "roof-4",
+            "material": "roof",
+            "axis": "y",
+            "at": 7.96,
+            "a": [
+              3.5,
+              9.5
+            ],
+            "b": [
+              -8,
+              -3.1999999999999997
+            ]
+          },
+          {
+            "id": "roof-5",
+            "material": "roof",
+            "axis": "y",
+            "at": 6.76,
+            "a": [
+              18.9,
+              25.1
+            ],
+            "b": [
+              -7.9,
+              -2.9000000000000004
+            ]
+          },
+          {
+            "id": "roof-6",
+            "material": "roof",
+            "axis": "y",
+            "at": 5.0600000000000005,
+            "a": [
+              12.5,
+              18.5
+            ],
+            "b": [
+              -12.25,
+              -8.75
+            ]
+          },
+          {
+            "id": "roof-7",
+            "material": "roof",
+            "axis": "y",
+            "at": 5.16,
+            "a": [
+              27.5,
+              34.5
+            ],
+            "b": [
+              -12,
+              -6
+            ]
+          }
+        ],
+        "bells": [
+          {
+            "x": 8.4,
+            "y": 2.3,
+            "z": 1.3
+          },
+          {
+            "x": 9.8,
+            "y": 2.7,
+            "z": 1.3
+          },
+          {
+            "x": 11.2,
+            "y": 2.1,
+            "z": 1.3
+          }
+        ],
+        "feet": [
+          [
+            31.2525561966731,
+            0.055,
+            3.8331008398176043
+          ],
+          [
+            30.70186358445546,
+            0.10544274117888047,
+            3.803191490558612
+          ]
+        ],
+        "audio": {
+          "metal": 78,
+          "glass": 4,
+          "water": 171,
+          "stone": 31,
+          "note": 10
+        },
+        "musicLoaded": 5,
+        "frames": 750,
+        "averageFPS": 10.306841543991943,
+        "metrics": {
+          "calls": 69,
+          "triangles": 6292,
+          "geometries": 75,
+          "textures": 5,
+          "reflectionFrames": 433,
+          "pipelineCalls": 1,
+          "pixelRatio": 0.65
+        },
+        "camera": [
+          38.35014746653755,
+          7.773331385443183,
+          23.900094454169338
+        ]
+      }
+    },
+    {
+      "name": "05-city-music",
+      "time": 88.889,
+      "state": {
+        "chapter": 5,
+        "chapterName": "让城市起舞",
+        "ready": true,
+        "story": {
+          "voices": [
+            "glass",
+            "tin",
+            "water"
+          ],
+          "planted": [
+            0,
+            1
+          ],
+          "pool": 1,
+          "umbrellaHits": 8,
+          "surface": 2.5166666666666626,
+          "dive": -1,
+          "dream": 1,
+          "danceEnergy": 5.366666666666653,
+          "danceVoices": [
+            "chime",
+            "water",
+            "wind"
+          ],
+          "flightPart": 1,
+          "flightSpeed": 0,
+          "flightTime": 0,
+          "route": "left",
+          "autopilot": true,
+          "landed": false,
+          "roomVisited": [],
+          "lamp": false,
+          "record": false,
+          "cup": false,
+          "seated": false,
+          "won": false,
+          "walking": false
+        },
+        "storyView": {
+          "lampIntensity": 0,
+          "recordRotation": 0,
+          "cupPosition": [
+            48,
+            1.12,
+            -102.8
+          ],
+          "umbrellas": [
+            {
+              "position": [
+                21.5,
+                0,
+                3.2
+              ],
+              "scale": 1
+            },
+            {
+              "position": [
+                25.5,
+                0,
+                3.2
+              ],
+              "scale": 1
+            },
+            {
+              "position": [
+                27.5,
+                0,
+                5.3
+              ],
+              "scale": 0.001
+            }
+          ],
+          "shadowMap": true,
+          "roomVisible": false
+        },
+        "musicIndex": 3,
+        "targets": [
+          {
+            "id": "conduct",
+            "x": 30.5,
+            "y": 0.1,
+            "z": 3.2,
+            "label": "把风交给这座城",
+            "hint": "张掌引风，或轻触这里开始演奏"
+          }
+        ],
+        "phase": "play",
+        "mode": "mouse",
+        "player": {
+          "x": 31.585327152807356,
+          "y": 0,
+          "z": 1.768234605431907,
+          "vx": 0.4033466309580239,
+          "vz": -1.340638465543493,
+          "yaw": 2.849324469909581,
+          "distance": 58.68568382898691
+        },
+        "wind": {
+          "x": 3.6443108964796864,
+          "z": 3.8640334922277586
+        },
+        "contacts": {
+          "stone": 49837,
+          "metal": 1212,
+          "glass": 24,
+          "water": 2038,
+          "roof": 3802,
+          "umbrella": 557
+        },
+        "guided": {
+          "metal": 3,
+          "glass": 2
+        },
+        "notes": [
+          1,
+          0,
+          2
+        ],
+        "gateOpen": true,
+        "completed": true,
+        "completion": "natural",
+        "easyMode": true,
+        "focusedDrop": -1,
+        "dwellProgress": 0,
+        "guide": {
+          "active": false,
+          "destination": "notes"
+        },
+        "musicDucking": 0.32,
+        "materialsAwake": true,
+        "elapsed": 78.86666666666348,
+        "puddles": [
+          {
+            "id": "entry-water",
+            "x": -12,
+            "z": 3.4,
+            "rx": 2.05,
+            "rz": 1.1
+          },
+          {
+            "id": "listening-water",
+            "x": 3,
+            "z": 3,
+            "rx": 2.25,
+            "rz": 1.3
+          },
+          {
+            "id": "courtyard-water",
+            "x": 16,
+            "z": -3.6,
+            "rx": 1.9,
+            "rz": 1.2
+          }
+        ],
+        "surfaces": [
+          {
+            "id": "tin-awning",
+            "material": "metal",
+            "axis": "y",
+            "at": 2.8,
+            "a": [
+              -10.1,
+              -5.9
+            ],
+            "b": [
+              -3.1,
+              1.4
+            ]
+          },
+          {
+            "id": "shop-window",
+            "material": "glass",
+            "axis": "z",
+            "at": -1.6,
+            "a": [
+              -2,
+              2
+            ],
+            "b": [
+              0.9,
+              3.6
+            ]
+          },
+          {
+            "id": "roof-0",
+            "material": "roof",
+            "axis": "y",
+            "at": 7.16,
+            "a": [
+              -31.5,
+              -24.5
+            ],
+            "b": [
+              -11,
+              -7
+            ]
+          },
+          {
+            "id": "roof-1",
+            "material": "roof",
+            "axis": "y",
+            "at": 6.36,
+            "a": [
+              -20,
+              -14
+            ],
+            "b": [
+              -7.6000000000000005,
+              -3.2
+            ]
+          },
+          {
+            "id": "roof-2",
+            "material": "roof",
+            "axis": "y",
+            "at": 5.5600000000000005,
+            "a": [
+              -10.6,
+              -5.4
+            ],
+            "b": [
+              -7,
+              -3
+            ]
+          },
+          {
+            "id": "roof-3",
+            "material": "roof",
+            "axis": "y",
+            "at": 6.26,
+            "a": [
+              -2.6,
+              2.6
+            ],
+            "b": [
+              -6.4,
+              -1.6
+            ]
+          },
+          {
+            "id": "roof-4",
+            "material": "roof",
+            "axis": "y",
+            "at": 7.96,
+            "a": [
+              3.5,
+              9.5
+            ],
+            "b": [
+              -8,
+              -3.1999999999999997
+            ]
+          },
+          {
+            "id": "roof-5",
+            "material": "roof",
+            "axis": "y",
+            "at": 6.76,
+            "a": [
+              18.9,
+              25.1
+            ],
+            "b": [
+              -7.9,
+              -2.9000000000000004
+            ]
+          },
+          {
+            "id": "roof-6",
+            "material": "roof",
+            "axis": "y",
+            "at": 5.0600000000000005,
+            "a": [
+              12.5,
+              18.5
+            ],
+            "b": [
+              -12.25,
+              -8.75
+            ]
+          },
+          {
+            "id": "roof-7",
+            "material": "roof",
+            "axis": "y",
+            "at": 5.16,
+            "a": [
+              27.5,
+              34.5
+            ],
+            "b": [
+              -12,
+              -6
+            ]
+          }
+        ],
+        "bells": [
+          {
+            "x": 8.4,
+            "y": 2.3,
+            "z": 1.3
+          },
+          {
+            "x": 9.8,
+            "y": 2.7,
+            "z": 1.3
+          },
+          {
+            "x": 11.2,
+            "y": 2.1,
+            "z": 1.3
+          }
+        ],
+        "feet": [
+          [
+            31.760433115614735,
+            0.10571066308597568,
+            1.637457277286686
+          ],
+          [
+            31.43010522077453,
+            0.055,
+            1.8329267008734242
+          ]
+        ],
+        "audio": {
+          "metal": 78,
+          "glass": 4,
+          "water": 192,
+          "stone": 31,
+          "note": 17
+        },
+        "musicLoaded": 5,
+        "frames": 804,
+        "averageFPS": 10.252761168049853,
+        "metrics": {
+          "calls": 72,
+          "triangles": 6004,
+          "geometries": 76,
+          "textures": 5,
+          "reflectionFrames": 466,
+          "pipelineCalls": 1,
+          "pixelRatio": 0.65
+        },
+        "camera": [
+          39.058870150603376,
+          7.799999999995928,
+          23.553804985494757
+        ]
+      }
+    },
+    {
+      "name": "06-takeoff",
+      "time": 91.634,
+      "state": {
+        "chapter": 6,
+        "chapterName": "飞过这座城市",
+        "ready": false,
+        "story": {
+          "voices": [
+            "glass",
+            "tin",
+            "water"
+          ],
+          "planted": [
+            0,
+            1
+          ],
+          "pool": 1,
+          "umbrellaHits": 8,
+          "surface": 2.5166666666666626,
+          "dive": -1,
+          "dream": 1,
+          "danceEnergy": 5.549999999999986,
+          "danceVoices": [
+            "chime",
+            "water",
+            "wind"
+          ],
+          "flightPart": 1,
+          "flightSpeed": 0,
+          "flightTime": 2.416666666666663,
+          "route": "left",
+          "autopilot": true,
+          "landed": false,
+          "roomVisited": [],
+          "lamp": false,
+          "record": false,
+          "cup": false,
+          "seated": false,
+          "won": false,
+          "walking": false
+        },
+        "storyView": {
+          "lampIntensity": 0,
+          "recordRotation": 0,
+          "cupPosition": [
+            48,
+            1.12,
+            -102.8
+          ],
+          "umbrellas": [
+            {
+              "position": [
+                21.5,
+                0,
+                3.2
+              ],
+              "scale": 1
+            },
+            {
+              "position": [
+                25.5,
+                0,
+                3.2
+              ],
+              "scale": 1
+            },
+            {
+              "position": [
+                27.5,
+                0,
+                5.3
+              ],
+              "scale": 0.001
+            }
+          ],
+          "shadowMap": true,
+          "roomVisible": true
+        },
+        "musicIndex": 3,
+        "targets": [],
+        "phase": "play",
+        "mode": "mouse",
+        "player": {
+          "x": 31.65928270537902,
+          "y": 7.810657407407399,
+          "z": 1.5224534957198663,
+          "vx": 0.40349129100520686,
+          "vz": -1.340594934379118,
+          "yaw": 3.141592653589793,
+          "distance": 58.94235049565358
+        },
+        "wind": {
+          "x": 3.1520094173151776,
+          "z": 3.67143159783767
+        },
+        "contacts": {
+          "stone": 51497,
+          "metal": 1222,
+          "glass": 24,
+          "water": 2094,
+          "roof": 3851,
+          "umbrella": 584
+        },
+        "guided": {
+          "metal": 3,
+          "glass": 2
+        },
+        "notes": [
+          1,
+          0,
+          2
+        ],
+        "gateOpen": true,
+        "completed": true,
+        "completion": "natural",
+        "easyMode": true,
+        "focusedDrop": -1,
+        "dwellProgress": 0,
+        "guide": {
+          "active": false,
+          "destination": "notes"
+        },
+        "musicDucking": 1,
+        "materialsAwake": true,
+        "elapsed": 81.46666666666333,
+        "puddles": [
+          {
+            "id": "entry-water",
+            "x": -12,
+            "z": 3.4,
+            "rx": 2.05,
+            "rz": 1.1
+          },
+          {
+            "id": "listening-water",
+            "x": 3,
+            "z": 3,
+            "rx": 2.25,
+            "rz": 1.3
+          },
+          {
+            "id": "courtyard-water",
+            "x": 16,
+            "z": -3.6,
+            "rx": 1.9,
+            "rz": 1.2
+          }
+        ],
+        "surfaces": [
+          {
+            "id": "tin-awning",
+            "material": "metal",
+            "axis": "y",
+            "at": 2.8,
+            "a": [
+              -10.1,
+              -5.9
+            ],
+            "b": [
+              -3.1,
+              1.4
+            ]
+          },
+          {
+            "id": "shop-window",
+            "material": "glass",
+            "axis": "z",
+            "at": -1.6,
+            "a": [
+              -2,
+              2
+            ],
+            "b": [
+              0.9,
+              3.6
+            ]
+          },
+          {
+            "id": "roof-0",
+            "material": "roof",
+            "axis": "y",
+            "at": 7.16,
+            "a": [
+              -31.5,
+              -24.5
+            ],
+            "b": [
+              -11,
+              -7
+            ]
+          },
+          {
+            "id": "roof-1",
+            "material": "roof",
+            "axis": "y",
+            "at": 6.36,
+            "a": [
+              -20,
+              -14
+            ],
+            "b": [
+              -7.6000000000000005,
+              -3.2
+            ]
+          },
+          {
+            "id": "roof-2",
+            "material": "roof",
+            "axis": "y",
+            "at": 5.5600000000000005,
+            "a": [
+              -10.6,
+              -5.4
+            ],
+            "b": [
+              -7,
+              -3
+            ]
+          },
+          {
+            "id": "roof-3",
+            "material": "roof",
+            "axis": "y",
+            "at": 6.26,
+            "a": [
+              -2.6,
+              2.6
+            ],
+            "b": [
+              -6.4,
+              -1.6
+            ]
+          },
+          {
+            "id": "roof-4",
+            "material": "roof",
+            "axis": "y",
+            "at": 7.96,
+            "a": [
+              3.5,
+              9.5
+            ],
+            "b": [
+              -8,
+              -3.1999999999999997
+            ]
+          },
+          {
+            "id": "roof-5",
+            "material": "roof",
+            "axis": "y",
+            "at": 6.76,
+            "a": [
+              18.9,
+              25.1
+            ],
+            "b": [
+              -7.9,
+              -2.9000000000000004
+            ]
+          },
+          {
+            "id": "roof-6",
+            "material": "roof",
+            "axis": "y",
+            "at": 5.0600000000000005,
+            "a": [
+              12.5,
+              18.5
+            ],
+            "b": [
+              -12.25,
+              -8.75
+            ]
+          },
+          {
+            "id": "roof-7",
+            "material": "roof",
+            "axis": "y",
+            "at": 5.16,
+            "a": [
+              27.5,
+              34.5
+            ],
+            "b": [
+              -12,
+              -6
+            ]
+          }
+        ],
+        "bells": [
+          {
+            "x": 8.4,
+            "y": 2.3,
+            "z": 1.3
+          },
+          {
+            "x": 9.8,
+            "y": 2.7,
+            "z": 1.3
+          },
+          {
+            "x": 11.2,
+            "y": 2.1,
+            "z": 1.3
+          }
+        ],
+        "feet": [
+          [
+            31.78928270537902,
+            8.192657407407399,
+            1.5944856683092872
+          ],
+          [
+            31.52928270537902,
+            8.253697721109736,
+            1.9353530000662893
+          ]
+        ],
+        "audio": {
+          "metal": 78,
+          "glass": 4,
+          "water": 199,
+          "stone": 32,
+          "note": 17
+        },
+        "musicLoaded": 5,
+        "frames": 840,
+        "averageFPS": 10.34700657404474,
+        "metrics": {
+          "calls": 49,
+          "triangles": 6526,
+          "geometries": 99,
+          "textures": 8,
+          "reflectionFrames": 467,
+          "pipelineCalls": 1,
+          "pixelRatio": 0.65
+        },
+        "camera": [
+          32.76389693368131,
+          9.733555857507756,
+          9.532575440041887
+        ]
+      }
+    },
+    {
+      "name": "06-rooftops",
+      "time": 96.177,
+      "state": {
+        "chapter": 6,
+        "chapterName": "飞过这座城市",
+        "ready": false,
+        "story": {
+          "voices": [
+            "glass",
+            "tin",
+            "water"
+          ],
+          "planted": [
+            0,
+            1
+          ],
+          "pool": 1,
+          "umbrellaHits": 8,
+          "surface": 2.5166666666666626,
+          "dive": -1,
+          "dream": 1,
+          "danceEnergy": 5.549999999999986,
+          "danceVoices": [
+            "chime",
+            "water",
+            "wind"
+          ],
+          "flightPart": 1,
+          "flightSpeed": 4.589579118991854,
+          "flightTime": 6.949999999999981,
+          "route": "left",
+          "autopilot": true,
+          "landed": false,
+          "roomVisited": [],
+          "lamp": false,
+          "record": false,
+          "cup": false,
+          "seated": false,
+          "won": false,
+          "walking": false
+        },
+        "storyView": {
+          "lampIntensity": 0,
+          "recordRotation": 0,
+          "cupPosition": [
+            48,
+            1.12,
+            -102.8
+          ],
+          "umbrellas": [
+            {
+              "position": [
+                21.5,
+                0,
+                3.2
+              ],
+              "scale": 1
+            },
+            {
+              "position": [
+                25.5,
+                0,
+                3.2
+              ],
+              "scale": 1
+            },
+            {
+              "position": [
+                27.5,
+                0,
+                5.3
+              ],
+              "scale": 0.001
+            }
+          ],
+          "shadowMap": true,
+          "roomVisible": true
+        },
+        "musicIndex": 3,
+        "targets": [],
+        "phase": "play",
+        "mode": "mouse",
+        "player": {
+          "x": 32.00145096844779,
+          "y": 8,
+          "z": -15.247373462647793,
+          "vx": -0.008090292144438675,
+          "vz": -4.589579118991854,
+          "yaw": 3.1408645272967934,
+          "distance": 58.94235049565358
+        },
+        "wind": {
+          "x": 3.1520094173151776,
+          "z": 3.67143159783767
+        },
+        "contacts": {
+          "stone": 53351,
+          "metal": 1229,
+          "glass": 24,
+          "water": 2182,
+          "roof": 3953,
+          "umbrella": 613
+        },
+        "guided": {
+          "metal": 3,
+          "glass": 2
+        },
+        "notes": [
+          1,
+          0,
+          2
+        ],
+        "gateOpen": true,
+        "completed": true,
+        "completion": "natural",
+        "easyMode": true,
+        "focusedDrop": -1,
+        "dwellProgress": 0,
+        "guide": {
+          "active": false,
+          "destination": "notes"
+        },
+        "musicDucking": 0.42964978584025787,
+        "materialsAwake": true,
+        "elapsed": 85.9999999999964,
+        "puddles": [
+          {
+            "id": "entry-water",
+            "x": -12,
+            "z": 3.4,
+            "rx": 2.05,
+            "rz": 1.1
+          },
+          {
+            "id": "listening-water",
+            "x": 3,
+            "z": 3,
+            "rx": 2.25,
+            "rz": 1.3
+          },
+          {
+            "id": "courtyard-water",
+            "x": 16,
+            "z": -3.6,
+            "rx": 1.9,
+            "rz": 1.2
+          }
+        ],
+        "surfaces": [
+          {
+            "id": "tin-awning",
+            "material": "metal",
+            "axis": "y",
+            "at": 2.8,
+            "a": [
+              -10.1,
+              -5.9
+            ],
+            "b": [
+              -3.1,
+              1.4
+            ]
+          },
+          {
+            "id": "shop-window",
+            "material": "glass",
+            "axis": "z",
+            "at": -1.6,
+            "a": [
+              -2,
+              2
+            ],
+            "b": [
+              0.9,
+              3.6
+            ]
+          },
+          {
+            "id": "roof-0",
+            "material": "roof",
+            "axis": "y",
+            "at": 7.16,
+            "a": [
+              -31.5,
+              -24.5
+            ],
+            "b": [
+              -11,
+              -7
+            ]
+          },
+          {
+            "id": "roof-1",
+            "material": "roof",
+            "axis": "y",
+            "at": 6.36,
+            "a": [
+              -20,
+              -14
+            ],
+            "b": [
+              -7.6000000000000005,
+              -3.2
+            ]
+          },
+          {
+            "id": "roof-2",
+            "material": "roof",
+            "axis": "y",
+            "at": 5.5600000000000005,
+            "a": [
+              -10.6,
+              -5.4
+            ],
+            "b": [
+              -7,
+              -3
+            ]
+          },
+          {
+            "id": "roof-3",
+            "material": "roof",
+            "axis": "y",
+            "at": 6.26,
+            "a": [
+              -2.6,
+              2.6
+            ],
+            "b": [
+              -6.4,
+              -1.6
+            ]
+          },
+          {
+            "id": "roof-4",
+            "material": "roof",
+            "axis": "y",
+            "at": 7.96,
+            "a": [
+              3.5,
+              9.5
+            ],
+            "b": [
+              -8,
+              -3.1999999999999997
+            ]
+          },
+          {
+            "id": "roof-5",
+            "material": "roof",
+            "axis": "y",
+            "at": 6.76,
+            "a": [
+              18.9,
+              25.1
+            ],
+            "b": [
+              -7.9,
+              -2.9000000000000004
+            ]
+          },
+          {
+            "id": "roof-6",
+            "material": "roof",
+            "axis": "y",
+            "at": 5.0600000000000005,
+            "a": [
+              12.5,
+              18.5
+            ],
+            "b": [
+              -12.25,
+              -8.75
+            ]
+          },
+          {
+            "id": "roof-7",
+            "material": "roof",
+            "axis": "y",
+            "at": 5.16,
+            "a": [
+              27.5,
+              34.5
+            ],
+            "b": [
+              -12,
+              -6
+            ]
+          }
+        ],
+        "bells": [
+          {
+            "x": 8.4,
+            "y": 2.3,
+            "z": 1.3
+          },
+          {
+            "x": 9.8,
+            "y": 2.7,
+            "z": 1.3
+          },
+          {
+            "x": 11.2,
+            "y": 2.1,
+            "z": 1.3
+          }
+        ],
+        "feet": [
+          [
+            32.13102133951197,
+            8.415,
+            -14.65727896263759
+          ],
+          [
+            31.87113233882563,
+            8.476040313702338,
+            -14.80981873072495
+          ]
+        ],
+        "audio": {
+          "metal": 78,
+          "glass": 4,
+          "water": 205,
+          "stone": 32,
+          "note": 18
+        },
+        "musicLoaded": 5,
+        "frames": 930,
+        "averageFPS": 10.848428785897145,
+        "metrics": {
+          "calls": 46,
+          "triangles": 6516,
+          "geometries": 99,
+          "textures": 8,
+          "reflectionFrames": 467,
+          "pipelineCalls": 1,
+          "pixelRatio": 0.65
+        },
+        "camera": [
+          33.10480644555831,
+          11.099998325426856,
+          -5.897178505163958
+        ]
+      }
+    },
+    {
+      "name": "06-windway",
+      "time": 102.974,
+      "state": {
+        "chapter": 6,
+        "chapterName": "飞过这座城市",
+        "ready": false,
+        "story": {
+          "voices": [
+            "glass",
+            "tin",
+            "water"
+          ],
+          "planted": [
+            0,
+            1
+          ],
+          "pool": 1,
+          "umbrellaHits": 8,
+          "surface": 2.5166666666666626,
+          "dive": -1,
+          "dream": 1,
+          "danceEnergy": 5.549999999999986,
+          "danceVoices": [
+            "chime",
+            "water",
+            "wind"
+          ],
+          "flightPart": 2,
+          "flightSpeed": 4.599999253057052,
+          "flightTime": 13.76666666666693,
+          "route": "right",
+          "autopilot": true,
+          "landed": false,
+          "roomVisited": [],
+          "lamp": false,
+          "record": false,
+          "cup": false,
+          "seated": false,
+          "won": false,
+          "walking": false
+        },
+        "storyView": {
+          "lampIntensity": 0,
+          "recordRotation": 0,
+          "cupPosition": [
+            48,
+            1.12,
+            -102.8
+          ],
+          "umbrellas": [
+            {
+              "position": [
+                21.5,
+                0,
+                3.2
+              ],
+              "scale": 1
+            },
+            {
+              "position": [
+                25.5,
+                0,
+                3.2
+              ],
+              "scale": 1
+            },
+            {
+              "position": [
+                27.5,
+                0,
+                5.3
+              ],
+              "scale": 0.001
+            }
+          ],
+          "shadowMap": true,
+          "roomVisible": true
+        },
+        "musicIndex": 3,
+        "targets": [],
+        "phase": "play",
+        "mode": "mouse",
+        "player": {
+          "x": 42.42429521082033,
+          "y": 9.994476465631744,
+          "z": -46.59668367317482,
+          "vx": 1.822189831037364,
+          "vz": -4.599999253057052,
+          "yaw": 3.305589738383156,
+          "distance": 58.94235049565358
+        },
+        "wind": {
+          "x": 3.1520094173151776,
+          "z": 3.67143159783767
+        },
+        "contacts": {
+          "stone": 55748,
+          "metal": 1229,
+          "glass": 24,
+          "water": 2189,
+          "roof": 4637,
+          "umbrella": 613
+        },
+        "guided": {
+          "metal": 3,
+          "glass": 2
+        },
+        "notes": [
+          1,
+          0,
+          2
+        ],
+        "gateOpen": true,
+        "completed": true,
+        "completion": "natural",
+        "easyMode": true,
+        "focusedDrop": -1,
+        "dwellProgress": 0,
+        "guide": {
+          "active": false,
+          "destination": "notes"
+        },
+        "musicDucking": 1,
+        "materialsAwake": true,
+        "elapsed": 92.81666666666268,
+        "puddles": [
+          {
+            "id": "entry-water",
+            "x": -12,
+            "z": 3.4,
+            "rx": 2.05,
+            "rz": 1.1
+          },
+          {
+            "id": "listening-water",
+            "x": 3,
+            "z": 3,
+            "rx": 2.25,
+            "rz": 1.3
+          },
+          {
+            "id": "courtyard-water",
+            "x": 16,
+            "z": -3.6,
+            "rx": 1.9,
+            "rz": 1.2
+          }
+        ],
+        "surfaces": [
+          {
+            "id": "tin-awning",
+            "material": "metal",
+            "axis": "y",
+            "at": 2.8,
+            "a": [
+              -10.1,
+              -5.9
+            ],
+            "b": [
+              -3.1,
+              1.4
+            ]
+          },
+          {
+            "id": "shop-window",
+            "material": "glass",
+            "axis": "z",
+            "at": -1.6,
+            "a": [
+              -2,
+              2
+            ],
+            "b": [
+              0.9,
+              3.6
+            ]
+          },
+          {
+            "id": "roof-0",
+            "material": "roof",
+            "axis": "y",
+            "at": 7.16,
+            "a": [
+              -31.5,
+              -24.5
+            ],
+            "b": [
+              -11,
+              -7
+            ]
+          },
+          {
+            "id": "roof-1",
+            "material": "roof",
+            "axis": "y",
+            "at": 6.36,
+            "a": [
+              -20,
+              -14
+            ],
+            "b": [
+              -7.6000000000000005,
+              -3.2
+            ]
+          },
+          {
+            "id": "roof-2",
+            "material": "roof",
+            "axis": "y",
+            "at": 5.5600000000000005,
+            "a": [
+              -10.6,
+              -5.4
+            ],
+            "b": [
+              -7,
+              -3
+            ]
+          },
+          {
+            "id": "roof-3",
+            "material": "roof",
+            "axis": "y",
+            "at": 6.26,
+            "a": [
+              -2.6,
+              2.6
+            ],
+            "b": [
+              -6.4,
+              -1.6
+            ]
+          },
+          {
+            "id": "roof-4",
+            "material": "roof",
+            "axis": "y",
+            "at": 7.96,
+            "a": [
+              3.5,
+              9.5
+            ],
+            "b": [
+              -8,
+              -3.1999999999999997
+            ]
+          },
+          {
+            "id": "roof-5",
+            "material": "roof",
+            "axis": "y",
+            "at": 6.76,
+            "a": [
+              18.9,
+              25.1
+            ],
+            "b": [
+              -7.9,
+              -2.9000000000000004
+            ]
+          },
+          {
+            "id": "roof-6",
+            "material": "roof",
+            "axis": "y",
+            "at": 5.0600000000000005,
+            "a": [
+              12.5,
+              18.5
+            ],
+            "b": [
+              -12.25,
+              -8.75
+            ]
+          },
+          {
+            "id": "roof-7",
+            "material": "roof",
+            "axis": "y",
+            "at": 5.16,
+            "a": [
+              27.5,
+              34.5
+            ],
+            "b": [
+              -12,
+              -6
+            ]
+          }
+        ],
+        "bells": [
+          {
+            "x": 8.4,
+            "y": 2.3,
+            "z": 1.3
+          },
+          {
+            "x": 9.8,
+            "y": 2.7,
+            "z": 1.3
+          },
+          {
+            "x": 11.2,
+            "y": 2.1,
+            "z": 1.3
+          }
+        ],
+        "feet": [
+          [
+            42.64887609077442,
+            10.409476465631743,
+            -46.03582412894022
+          ],
+          [
+            42.36749142522052,
+            10.470516779334082,
+            -46.14368210739806
+          ]
+        ],
+        "audio": {
+          "metal": 78,
+          "glass": 4,
+          "water": 205,
+          "stone": 32,
+          "note": 18
+        },
+        "musicLoaded": 5,
+        "frames": 1066,
+        "averageFPS": 11.519455019553732,
+        "metrics": {
+          "calls": 40,
+          "triangles": 6304,
+          "geometries": 99,
+          "textures": 8,
+          "reflectionFrames": 467,
+          "pipelineCalls": 1,
+          "pixelRatio": 0.65
+        },
+        "camera": [
+          42.81207502180364,
+          13.118201432572528,
+          -37.215684920044
+        ]
+      }
+    },
+    {
+      "name": "06-warm-window",
+      "time": 107.934,
+      "state": {
+        "chapter": 6,
+        "chapterName": "飞过这座城市",
+        "ready": false,
+        "story": {
+          "voices": [
+            "glass",
+            "tin",
+            "water"
+          ],
+          "planted": [
+            0,
+            1
+          ],
+          "pool": 1,
+          "umbrellaHits": 8,
+          "surface": 2.5166666666666626,
+          "dive": -1,
+          "dream": 1,
+          "danceEnergy": 5.549999999999986,
+          "danceVoices": [
+            "chime",
+            "water",
+            "wind"
+          ],
+          "flightPart": 3,
+          "flightSpeed": 4.8865383886346825,
+          "flightTime": 18.683333333333554,
+          "route": "right",
+          "autopilot": true,
+          "landed": false,
+          "roomVisited": [],
+          "lamp": false,
+          "record": false,
+          "cup": false,
+          "seated": false,
+          "won": false,
+          "walking": false
+        },
+        "storyView": {
+          "lampIntensity": 0,
+          "recordRotation": 0,
+          "cupPosition": [
+            48,
+            1.12,
+            -102.8
+          ],
+          "umbrellas": [
+            {
+              "position": [
+                21.5,
+                0,
+                3.2
+              ],
+              "scale": 1
+            },
+            {
+              "position": [
+                25.5,
+                0,
+                3.2
+              ],
+              "scale": 1
+            },
+            {
+              "position": [
+                27.5,
+                0,
+                5.3
+              ],
+              "scale": 0.001
+            }
+          ],
+          "shadowMap": true,
+          "roomVisible": true
+        },
+        "musicIndex": 3,
+        "targets": [],
+        "phase": "play",
+        "mode": "mouse",
+        "player": {
+          "x": 44.52163087103747,
+          "y": 9.42101465924669,
+          "z": -69.37105806893824,
+          "vx": 2.0719652506092894,
+          "vz": -4.8865383886346825,
+          "yaw": 3.3280695261446294,
+          "distance": 58.94235049565358
+        },
+        "wind": {
+          "x": 3.1520094173151776,
+          "z": 3.67143159783767
+        },
+        "contacts": {
+          "stone": 57445,
+          "metal": 1229,
+          "glass": 24,
+          "water": 2195,
+          "roof": 5005,
+          "umbrella": 613
+        },
+        "guided": {
+          "metal": 3,
+          "glass": 2
+        },
+        "notes": [
+          1,
+          0,
+          2
+        ],
+        "gateOpen": true,
+        "completed": true,
+        "completion": "natural",
+        "easyMode": true,
+        "focusedDrop": -1,
+        "dwellProgress": 0,
+        "guide": {
+          "active": false,
+          "destination": "notes"
+        },
+        "musicDucking": 1,
+        "materialsAwake": true,
+        "elapsed": 97.73333333332907,
+        "puddles": [
+          {
+            "id": "entry-water",
+            "x": -12,
+            "z": 3.4,
+            "rx": 2.05,
+            "rz": 1.1
+          },
+          {
+            "id": "listening-water",
+            "x": 3,
+            "z": 3,
+            "rx": 2.25,
+            "rz": 1.3
+          },
+          {
+            "id": "courtyard-water",
+            "x": 16,
+            "z": -3.6,
+            "rx": 1.9,
+            "rz": 1.2
+          }
+        ],
+        "surfaces": [
+          {
+            "id": "tin-awning",
+            "material": "metal",
+            "axis": "y",
+            "at": 2.8,
+            "a": [
+              -10.1,
+              -5.9
+            ],
+            "b": [
+              -3.1,
+              1.4
+            ]
+          },
+          {
+            "id": "shop-window",
+            "material": "glass",
+            "axis": "z",
+            "at": -1.6,
+            "a": [
+              -2,
+              2
+            ],
+            "b": [
+              0.9,
+              3.6
+            ]
+          },
+          {
+            "id": "roof-0",
+            "material": "roof",
+            "axis": "y",
+            "at": 7.16,
+            "a": [
+              -31.5,
+              -24.5
+            ],
+            "b": [
+              -11,
+              -7
+            ]
+          },
+          {
+            "id": "roof-1",
+            "material": "roof",
+            "axis": "y",
+            "at": 6.36,
+            "a": [
+              -20,
+              -14
+            ],
+            "b": [
+              -7.6000000000000005,
+              -3.2
+            ]
+          },
+          {
+            "id": "roof-2",
+            "material": "roof",
+            "axis": "y",
+            "at": 5.5600000000000005,
+            "a": [
+              -10.6,
+              -5.4
+            ],
+            "b": [
+              -7,
+              -3
+            ]
+          },
+          {
+            "id": "roof-3",
+            "material": "roof",
+            "axis": "y",
+            "at": 6.26,
+            "a": [
+              -2.6,
+              2.6
+            ],
+            "b": [
+              -6.4,
+              -1.6
+            ]
+          },
+          {
+            "id": "roof-4",
+            "material": "roof",
+            "axis": "y",
+            "at": 7.96,
+            "a": [
+              3.5,
+              9.5
+            ],
+            "b": [
+              -8,
+              -3.1999999999999997
+            ]
+          },
+          {
+            "id": "roof-5",
+            "material": "roof",
+            "axis": "y",
+            "at": 6.76,
+            "a": [
+              18.9,
+              25.1
+            ],
+            "b": [
+              -7.9,
+              -2.9000000000000004
+            ]
+          },
+          {
+            "id": "roof-6",
+            "material": "roof",
+            "axis": "y",
+            "at": 5.0600000000000005,
+            "a": [
+              12.5,
+              18.5
+            ],
+            "b": [
+              -12.25,
+              -8.75
+            ]
+          },
+          {
+            "id": "roof-7",
+            "material": "roof",
+            "axis": "y",
+            "at": 5.16,
+            "a": [
+              27.5,
+              34.5
+            ],
+            "b": [
+              -12,
+              -6
+            ]
+          }
+        ],
+        "bells": [
+          {
+            "x": 8.4,
+            "y": 2.3,
+            "z": 1.3
+          },
+          {
+            "x": 9.8,
+            "y": 2.7,
+            "z": 1.3
+          },
+          {
+            "x": 11.2,
+            "y": 2.1,
+            "z": 1.3
+          }
+        ],
+        "feet": [
+          [
+            44.75876195008922,
+            9.83601465924669,
+            -68.81538833668017
+          ],
+          [
+            44.475023958866494,
+            9.897054972949029,
+            -68.91689412894239
+          ]
+        ],
+        "audio": {
+          "metal": 78,
+          "glass": 4,
+          "water": 205,
+          "stone": 32,
+          "note": 18
+        },
+        "musicLoaded": 5,
+        "frames": 1177,
+        "averageFPS": 12.078001106209653,
+        "metrics": {
+          "calls": 36,
+          "triangles": 5096,
+          "geometries": 99,
+          "textures": 8,
+          "reflectionFrames": 467,
+          "pipelineCalls": 1,
+          "pixelRatio": 0.65
+        },
+        "camera": [
+          45.078506035075506,
+          12.73851997673945,
+          -59.893363161223995
+        ]
+      }
+    },
+    {
+      "name": "07-room-dark",
+      "time": 120.44,
+      "state": {
+        "chapter": 7,
+        "chapterName": "一盏灯，一场雨",
+        "ready": false,
+        "story": {
+          "voices": [
+            "glass",
+            "tin",
+            "water"
+          ],
+          "planted": [
+            0,
+            1
+          ],
+          "pool": 1,
+          "umbrellaHits": 8,
+          "surface": 2.5166666666666626,
+          "dive": -1,
+          "dream": 1,
+          "danceEnergy": 5.549999999999986,
+          "danceVoices": [
+            "chime",
+            "water",
+            "wind"
+          ],
+          "flightPart": 3,
+          "flightSpeed": 1.7063283857941587,
+          "flightTime": 26.48333333333311,
+          "route": "right",
+          "autopilot": true,
+          "landed": true,
+          "roomVisited": [],
+          "lamp": false,
+          "record": false,
+          "cup": false,
+          "seated": false,
+          "won": false,
+          "walking": false
+        },
+        "storyView": {
+          "lampIntensity": 0,
+          "recordRotation": 0,
+          "cupPosition": [
+            48,
+            1.12,
+            -102.8
+          ],
+          "umbrellas": [
+            {
+              "position": [
+                21.5,
+                0,
+                3.2
+              ],
+              "scale": 1
+            },
+            {
+              "position": [
+                25.5,
+                0,
+                3.2
+              ],
+              "scale": 1
+            },
+            {
+              "position": [
+                27.5,
+                0,
+                5.3
+              ],
+              "scale": 0.001
+            }
+          ],
+          "shadowMap": true,
+          "roomVisible": true
+        },
+        "musicIndex": 4,
+        "targets": [
+          {
+            "id": "window",
+            "x": 46,
+            "y": 2.2,
+            "z": -105.7,
+            "label": "窗外的雨",
+            "hint": "轻触窗户，听近一些"
+          },
+          {
+            "id": "lamp",
+            "x": 49,
+            "y": 1.8,
+            "z": -102.8,
+            "label": "一盏小灯",
+            "hint": "轻触灯罩，点亮房间"
+          },
+          {
+            "id": "record",
+            "x": 50.5,
+            "y": 1.15,
+            "z": -102.8,
+            "label": "熟悉的旋律",
+            "hint": "让唱片转起来"
+          },
+          {
+            "id": "cup",
+            "x": 48,
+            "y": 1.25,
+            "z": -102.8,
+            "label": "一杯热茶",
+            "hint": "捧起来，暖一暖手"
+          }
+        ],
+        "phase": "play",
+        "mode": "mouse",
+        "player": {
+          "x": 46.066859058669,
+          "y": 0,
+          "z": -99.93237469023671,
+          "vx": 0.058042285867937124,
+          "vz": -1.3987963014861116,
+          "yaw": 3.100125179267025,
+          "distance": 64.8765243789456
+        },
+        "wind": {
+          "x": 1.961856246613725e-10,
+          "z": 2.2851521238055378e-10
+        },
+        "contacts": {
+          "stone": 64058,
+          "metal": 1229,
+          "glass": 24,
+          "water": 2195,
+          "roof": 5933,
+          "umbrella": 613
+        },
+        "guided": {
+          "metal": 3,
+          "glass": 2
+        },
+        "notes": [
+          1,
+          0,
+          2
+        ],
+        "gateOpen": true,
+        "completed": true,
+        "completion": "natural",
+        "easyMode": true,
+        "focusedDrop": -1,
+        "dwellProgress": 0,
+        "guide": {
+          "active": false,
+          "destination": "notes"
+        },
+        "musicDucking": 1,
+        "materialsAwake": true,
+        "elapsed": 110.23333333332836,
+        "puddles": [
+          {
+            "id": "entry-water",
+            "x": -12,
+            "z": 3.4,
+            "rx": 2.05,
+            "rz": 1.1
+          },
+          {
+            "id": "listening-water",
+            "x": 3,
+            "z": 3,
+            "rx": 2.25,
+            "rz": 1.3
+          },
+          {
+            "id": "courtyard-water",
+            "x": 16,
+            "z": -3.6,
+            "rx": 1.9,
+            "rz": 1.2
+          }
+        ],
+        "surfaces": [
+          {
+            "id": "tin-awning",
+            "material": "metal",
+            "axis": "y",
+            "at": 2.8,
+            "a": [
+              -10.1,
+              -5.9
+            ],
+            "b": [
+              -3.1,
+              1.4
+            ]
+          },
+          {
+            "id": "shop-window",
+            "material": "glass",
+            "axis": "z",
+            "at": -1.6,
+            "a": [
+              -2,
+              2
+            ],
+            "b": [
+              0.9,
+              3.6
+            ]
+          },
+          {
+            "id": "roof-0",
+            "material": "roof",
+            "axis": "y",
+            "at": 7.16,
+            "a": [
+              -31.5,
+              -24.5
+            ],
+            "b": [
+              -11,
+              -7
+            ]
+          },
+          {
+            "id": "roof-1",
+            "material": "roof",
+            "axis": "y",
+            "at": 6.36,
+            "a": [
+              -20,
+              -14
+            ],
+            "b": [
+              -7.6000000000000005,
+              -3.2
+            ]
+          },
+          {
+            "id": "roof-2",
+            "material": "roof",
+            "axis": "y",
+            "at": 5.5600000000000005,
+            "a": [
+              -10.6,
+              -5.4
+            ],
+            "b": [
+              -7,
+              -3
+            ]
+          },
+          {
+            "id": "roof-3",
+            "material": "roof",
+            "axis": "y",
+            "at": 6.26,
+            "a": [
+              -2.6,
+              2.6
+            ],
+            "b": [
+              -6.4,
+              -1.6
+            ]
+          },
+          {
+            "id": "roof-4",
+            "material": "roof",
+            "axis": "y",
+            "at": 7.96,
+            "a": [
+              3.5,
+              9.5
+            ],
+            "b": [
+              -8,
+              -3.1999999999999997
+            ]
+          },
+          {
+            "id": "roof-5",
+            "material": "roof",
+            "axis": "y",
+            "at": 6.76,
+            "a": [
+              18.9,
+              25.1
+            ],
+            "b": [
+              -7.9,
+              -2.9000000000000004
+            ]
+          },
+          {
+            "id": "roof-6",
+            "material": "roof",
+            "axis": "y",
+            "at": 5.0600000000000005,
+            "a": [
+              12.5,
+              18.5
+            ],
+            "b": [
+              -12.25,
+              -8.75
+            ]
+          },
+          {
+            "id": "roof-7",
+            "material": "roof",
+            "axis": "y",
+            "at": 5.16,
+            "a": [
+              27.5,
+              34.5
+            ],
+            "b": [
+              -12,
+              -6
+            ]
+          }
+        ],
+        "bells": [
+          {
+            "x": 8.4,
+            "y": 2.3,
+            "z": 1.3
+          },
+          {
+            "x": 9.8,
+            "y": 2.7,
+            "z": 1.3
+          },
+          {
+            "x": 11.2,
+            "y": 2.1,
+            "z": 1.3
+          }
+        ],
+        "feet": [
+          [
+            46.20876942526126,
+            0.055,
+            -100.21673616416322
+          ],
+          [
+            45.92729194361762,
+            0.09010407057100367,
+            -99.70448900393113
+          ]
+        ],
+        "audio": {
+          "metal": 78,
+          "glass": 4,
+          "water": 205,
+          "stone": 42,
+          "note": 18
+        },
+        "musicLoaded": 5,
+        "frames": 1404,
+        "averageFPS": 12.768778699057572,
+        "metrics": {
+          "calls": 31,
+          "triangles": 5088,
+          "geometries": 99,
+          "textures": 8,
+          "reflectionFrames": 467,
+          "pipelineCalls": 1,
+          "pixelRatio": 0.65
+        },
+        "camera": [
+          54.999994299361546,
+          7.6999969745013885,
+          -88.49999799371267
+        ]
+      }
+    },
+    {
+      "name": "07-lamp-warm",
+      "time": 122.268,
+      "state": {
+        "chapter": 7,
+        "chapterName": "一盏灯，一场雨",
+        "ready": false,
+        "story": {
+          "voices": [
+            "glass",
+            "tin",
+            "water"
+          ],
+          "planted": [
+            0,
+            1
+          ],
+          "pool": 1,
+          "umbrellaHits": 8,
+          "surface": 2.5166666666666626,
+          "dive": -1,
+          "dream": 1,
+          "danceEnergy": 5.549999999999986,
+          "danceVoices": [
+            "chime",
+            "water",
+            "wind"
+          ],
+          "flightPart": 3,
+          "flightSpeed": 1.7063283857941587,
+          "flightTime": 26.48333333333311,
+          "route": "right",
+          "autopilot": true,
+          "landed": true,
+          "roomVisited": [
+            "lamp"
+          ],
+          "lamp": true,
+          "record": false,
+          "cup": false,
+          "seated": false,
+          "won": false,
+          "walking": false
+        },
+        "storyView": {
+          "lampIntensity": 31.982379003362276,
+          "recordRotation": 0,
+          "cupPosition": [
+            48,
+            1.12,
+            -102.8
+          ],
+          "umbrellas": [
+            {
+              "position": [
+                21.5,
+                0,
+                3.2
+              ],
+              "scale": 1
+            },
+            {
+              "position": [
+                25.5,
+                0,
+                3.2
+              ],
+              "scale": 1
+            },
+            {
+              "position": [
+                27.5,
+                0,
+                5.3
+              ],
+              "scale": 0.001
+            }
+          ],
+          "shadowMap": true,
+          "roomVisible": true
+        },
+        "musicIndex": 4,
+        "targets": [
+          {
+            "id": "window",
+            "x": 46,
+            "y": 2.2,
+            "z": -105.7,
+            "label": "窗外的雨",
+            "hint": "轻触窗户，听近一些"
+          },
+          {
+            "id": "lamp",
+            "x": 49,
+            "y": 1.8,
+            "z": -102.8,
+            "label": "一盏小灯",
+            "hint": "轻触灯罩，点亮房间"
+          },
+          {
+            "id": "record",
+            "x": 50.5,
+            "y": 1.15,
+            "z": -102.8,
+            "label": "熟悉的旋律",
+            "hint": "让唱片转起来"
+          },
+          {
+            "id": "cup",
+            "x": 48,
+            "y": 1.25,
+            "z": -102.8,
+            "label": "一杯热茶",
+            "hint": "捧起来，暖一暖手"
+          }
+        ],
+        "phase": "play",
+        "mode": "mouse",
+        "player": {
+          "x": 46.176171126544276,
+          "y": 0,
+          "z": -102.56677442887322,
+          "vx": 0.058041725998354304,
+          "vz": -1.3987963247174808,
+          "yaw": 3.1001223918495078,
+          "distance": 67.51319104561226
+        },
+        "wind": {
+          "x": 1.5961026196199246e-14,
+          "z": 1.8591256608793632e-14
+        },
+        "contacts": {
+          "stone": 65392,
+          "metal": 1229,
+          "glass": 24,
+          "water": 2195,
+          "roof": 5933,
+          "umbrella": 613
+        },
+        "guided": {
+          "metal": 3,
+          "glass": 2
+        },
+        "notes": [
+          1,
+          0,
+          2
+        ],
+        "gateOpen": true,
+        "completed": true,
+        "completion": "natural",
+        "easyMode": true,
+        "focusedDrop": -1,
+        "dwellProgress": 0,
+        "guide": {
+          "active": false,
+          "destination": "notes"
+        },
+        "musicDucking": 1,
+        "materialsAwake": true,
+        "elapsed": 112.11666666666159,
+        "puddles": [
+          {
+            "id": "entry-water",
+            "x": -12,
+            "z": 3.4,
+            "rx": 2.05,
+            "rz": 1.1
+          },
+          {
+            "id": "listening-water",
+            "x": 3,
+            "z": 3,
+            "rx": 2.25,
+            "rz": 1.3
+          },
+          {
+            "id": "courtyard-water",
+            "x": 16,
+            "z": -3.6,
+            "rx": 1.9,
+            "rz": 1.2
+          }
+        ],
+        "surfaces": [
+          {
+            "id": "tin-awning",
+            "material": "metal",
+            "axis": "y",
+            "at": 2.8,
+            "a": [
+              -10.1,
+              -5.9
+            ],
+            "b": [
+              -3.1,
+              1.4
+            ]
+          },
+          {
+            "id": "shop-window",
+            "material": "glass",
+            "axis": "z",
+            "at": -1.6,
+            "a": [
+              -2,
+              2
+            ],
+            "b": [
+              0.9,
+              3.6
+            ]
+          },
+          {
+            "id": "roof-0",
+            "material": "roof",
+            "axis": "y",
+            "at": 7.16,
+            "a": [
+              -31.5,
+              -24.5
+            ],
+            "b": [
+              -11,
+              -7
+            ]
+          },
+          {
+            "id": "roof-1",
+            "material": "roof",
+            "axis": "y",
+            "at": 6.36,
+            "a": [
+              -20,
+              -14
+            ],
+            "b": [
+              -7.6000000000000005,
+              -3.2
+            ]
+          },
+          {
+            "id": "roof-2",
+            "material": "roof",
+            "axis": "y",
+            "at": 5.5600000000000005,
+            "a": [
+              -10.6,
+              -5.4
+            ],
+            "b": [
+              -7,
+              -3
+            ]
+          },
+          {
+            "id": "roof-3",
+            "material": "roof",
+            "axis": "y",
+            "at": 6.26,
+            "a": [
+              -2.6,
+              2.6
+            ],
+            "b": [
+              -6.4,
+              -1.6
+            ]
+          },
+          {
+            "id": "roof-4",
+            "material": "roof",
+            "axis": "y",
+            "at": 7.96,
+            "a": [
+              3.5,
+              9.5
+            ],
+            "b": [
+              -8,
+              -3.1999999999999997
+            ]
+          },
+          {
+            "id": "roof-5",
+            "material": "roof",
+            "axis": "y",
+            "at": 6.76,
+            "a": [
+              18.9,
+              25.1
+            ],
+            "b": [
+              -7.9,
+              -2.9000000000000004
+            ]
+          },
+          {
+            "id": "roof-6",
+            "material": "roof",
+            "axis": "y",
+            "at": 5.0600000000000005,
+            "a": [
+              12.5,
+              18.5
+            ],
+            "b": [
+              -12.25,
+              -8.75
+            ]
+          },
+          {
+            "id": "roof-7",
+            "material": "roof",
+            "axis": "y",
+            "at": 5.16,
+            "a": [
+              27.5,
+              34.5
+            ],
+            "b": [
+              -12,
+              -6
+            ]
+          }
+        ],
+        "bells": [
+          {
+            "x": 8.4,
+            "y": 2.3,
+            "z": 1.3
+          },
+          {
+            "x": 9.8,
+            "y": 2.7,
+            "z": 1.3
+          },
+          {
+            "x": 11.2,
+            "y": 2.1,
+            "z": 1.3
+          }
+        ],
+        "feet": [
+          [
+            46.306473940446914,
+            0.055,
+            -102.57137624208632
+          ],
+          [
+            46.04641519196337,
+            0.14478541688336558,
+            -102.57535231982236
+          ]
+        ],
+        "audio": {
+          "metal": 78,
+          "glass": 4,
+          "water": 205,
+          "stone": 47,
+          "note": 19
+        },
+        "musicLoaded": 5,
+        "frames": 1425,
+        "averageFPS": 12.74235056575988,
+        "metrics": {
+          "calls": 31,
+          "triangles": 5088,
+          "geometries": 99,
+          "textures": 8,
+          "reflectionFrames": 467,
+          "pipelineCalls": 1,
+          "pixelRatio": 0.65
+        },
+        "camera": [
+          54.99999997950802,
+          7.699999989124297,
+          -88.49999999278803
+        ]
+      }
+    },
+    {
+      "name": "07-tea",
+      "time": 125.456,
+      "state": {
+        "chapter": 7,
+        "chapterName": "一盏灯，一场雨",
+        "ready": false,
+        "story": {
+          "voices": [
+            "glass",
+            "tin",
+            "water"
+          ],
+          "planted": [
+            0,
+            1
+          ],
+          "pool": 1,
+          "umbrellaHits": 8,
+          "surface": 2.5166666666666626,
+          "dive": -1,
+          "dream": 1,
+          "danceEnergy": 5.549999999999986,
+          "danceVoices": [
+            "chime",
+            "water",
+            "wind"
+          ],
+          "flightPart": 3,
+          "flightSpeed": 1.7063283857941587,
+          "flightTime": 26.48333333333311,
+          "route": "right",
+          "autopilot": true,
+          "landed": true,
+          "roomVisited": [
+            "lamp",
+            "record",
+            "cup"
+          ],
+          "lamp": true,
+          "record": true,
+          "cup": true,
+          "seated": false,
+          "won": false,
+          "walking": false
+        },
+        "storyView": {
+          "lampIntensity": 31.99999994140779,
+          "recordRotation": 8.829799999999999,
+          "cupPosition": [
+            46.647616210469074,
+            1.1167385344573806,
+            -105.51636017856643
+          ],
+          "umbrellas": [
+            {
+              "position": [
+                21.5,
+                0,
+                3.2
+              ],
+              "scale": 1
+            },
+            {
+              "position": [
+                25.5,
+                0,
+                3.2
+              ],
+              "scale": 1
+            },
+            {
+              "position": [
+                27.5,
+                0,
+                5.3
+              ],
+              "scale": 0.001
+            }
+          ],
+          "shadowMap": true,
+          "roomVisible": true
+        },
+        "musicIndex": 4,
+        "targets": [
+          {
+            "id": "window",
+            "x": 46,
+            "y": 2.2,
+            "z": -105.7,
+            "label": "窗外的雨",
+            "hint": "轻触窗户，听近一些"
+          },
+          {
+            "id": "lamp",
+            "x": 49,
+            "y": 1.8,
+            "z": -102.8,
+            "label": "一盏小灯",
+            "hint": "轻触灯罩，点亮房间"
+          },
+          {
+            "id": "record",
+            "x": 50.5,
+            "y": 1.15,
+            "z": -102.8,
+            "label": "熟悉的旋律",
+            "hint": "让唱片转起来"
+          },
+          {
+            "id": "cup",
+            "x": 48,
+            "y": 1.25,
+            "z": -102.8,
+            "label": "一杯热茶",
+            "hint": "捧起来，暖一暖手"
+          },
+          {
+            "id": "chair",
+            "x": 43.8,
+            "y": 0.6,
+            "z": -103.5,
+            "label": "坐下来，听一会儿雨",
+            "hint": "在窗边坐下"
+          }
+        ],
+        "phase": "play",
+        "mode": "mouse",
+        "player": {
+          "x": 46.35833104765322,
+          "y": 0,
+          "z": -105.2,
+          "vx": 0.05698533073770909,
+          "vz": -1.3988397592579052,
+          "yaw": 3.1008158868930287,
+          "distance": 70.22153260839728
+        },
+        "wind": {
+          "x": 2.30633675611403e-21,
+          "z": 2.6863998550054982e-21
+        },
+        "contacts": {
+          "stone": 67597,
+          "metal": 1229,
+          "glass": 24,
+          "water": 2195,
+          "roof": 5933,
+          "umbrella": 613
+        },
+        "guided": {
+          "metal": 3,
+          "glass": 2
+        },
+        "notes": [
+          1,
+          0,
+          2
+        ],
+        "gateOpen": true,
+        "completed": true,
+        "completion": "natural",
+        "easyMode": true,
+        "focusedDrop": -1,
+        "dwellProgress": 0,
+        "guide": {
+          "active": false,
+          "destination": "notes"
+        },
+        "musicDucking": 1,
+        "materialsAwake": true,
+        "elapsed": 115.26666666666141,
+        "puddles": [
+          {
+            "id": "entry-water",
+            "x": -12,
+            "z": 3.4,
+            "rx": 2.05,
+            "rz": 1.1
+          },
+          {
+            "id": "listening-water",
+            "x": 3,
+            "z": 3,
+            "rx": 2.25,
+            "rz": 1.3
+          },
+          {
+            "id": "courtyard-water",
+            "x": 16,
+            "z": -3.6,
+            "rx": 1.9,
+            "rz": 1.2
+          }
+        ],
+        "surfaces": [
+          {
+            "id": "tin-awning",
+            "material": "metal",
+            "axis": "y",
+            "at": 2.8,
+            "a": [
+              -10.1,
+              -5.9
+            ],
+            "b": [
+              -3.1,
+              1.4
+            ]
+          },
+          {
+            "id": "shop-window",
+            "material": "glass",
+            "axis": "z",
+            "at": -1.6,
+            "a": [
+              -2,
+              2
+            ],
+            "b": [
+              0.9,
+              3.6
+            ]
+          },
+          {
+            "id": "roof-0",
+            "material": "roof",
+            "axis": "y",
+            "at": 7.16,
+            "a": [
+              -31.5,
+              -24.5
+            ],
+            "b": [
+              -11,
+              -7
+            ]
+          },
+          {
+            "id": "roof-1",
+            "material": "roof",
+            "axis": "y",
+            "at": 6.36,
+            "a": [
+              -20,
+              -14
+            ],
+            "b": [
+              -7.6000000000000005,
+              -3.2
+            ]
+          },
+          {
+            "id": "roof-2",
+            "material": "roof",
+            "axis": "y",
+            "at": 5.5600000000000005,
+            "a": [
+              -10.6,
+              -5.4
+            ],
+            "b": [
+              -7,
+              -3
+            ]
+          },
+          {
+            "id": "roof-3",
+            "material": "roof",
+            "axis": "y",
+            "at": 6.26,
+            "a": [
+              -2.6,
+              2.6
+            ],
+            "b": [
+              -6.4,
+              -1.6
+            ]
+          },
+          {
+            "id": "roof-4",
+            "material": "roof",
+            "axis": "y",
+            "at": 7.96,
+            "a": [
+              3.5,
+              9.5
+            ],
+            "b": [
+              -8,
+              -3.1999999999999997
+            ]
+          },
+          {
+            "id": "roof-5",
+            "material": "roof",
+            "axis": "y",
+            "at": 6.76,
+            "a": [
+              18.9,
+              25.1
+            ],
+            "b": [
+              -7.9,
+              -2.9000000000000004
+            ]
+          },
+          {
+            "id": "roof-6",
+            "material": "roof",
+            "axis": "y",
+            "at": 5.0600000000000005,
+            "a": [
+              12.5,
+              18.5
+            ],
+            "b": [
+              -12.25,
+              -8.75
+            ]
+          },
+          {
+            "id": "roof-7",
+            "material": "roof",
+            "axis": "y",
+            "at": 5.16,
+            "a": [
+              27.5,
+              34.5
+            ],
+            "b": [
+              -12,
+              -6
+            ]
+          }
+        ],
+        "bells": [
+          {
+            "x": 8.4,
+            "y": 2.3,
+            "z": 1.3
+          },
+          {
+            "x": 9.8,
+            "y": 2.7,
+            "z": 1.3
+          },
+          {
+            "x": 11.2,
+            "y": 2.1,
+            "z": 1.3
+          }
+        ],
+        "feet": [
+          [
+            46.47646347617088,
+            0.06512551935142367,
+            -104.90647288821883
+          ],
+          [
+            46.240232049817145,
+            0.055,
+            -105.49434650363905
+          ]
+        ],
+        "audio": {
+          "metal": 78,
+          "glass": 4,
+          "water": 205,
+          "stone": 51,
+          "note": 21
+        },
+        "musicLoaded": 5,
+        "frames": 1463,
+        "averageFPS": 12.723365508460173,
+        "metrics": {
+          "calls": 31,
+          "triangles": 5088,
+          "geometries": 99,
+          "textures": 8,
+          "reflectionFrames": 467,
+          "pipelineCalls": 1,
+          "pixelRatio": 0.65
+        },
+        "camera": [
+          54.99999999999841,
+          7.699999999999154,
+          -88.49999999999945
+        ]
+      }
+    },
+    {
+      "name": "08-ending",
+      "time": 137.308,
+      "state": {
+        "chapter": 8,
+        "chapterName": "雨中曲",
+        "ready": false,
+        "story": {
+          "voices": [
+            "glass",
+            "tin",
+            "water"
+          ],
+          "planted": [
+            0,
+            1
+          ],
+          "pool": 1,
+          "umbrellaHits": 8,
+          "surface": 2.5166666666666626,
+          "dive": -1,
+          "dream": 1,
+          "danceEnergy": 5.549999999999986,
+          "danceVoices": [
+            "chime",
+            "water",
+            "wind"
+          ],
+          "flightPart": 3,
+          "flightSpeed": 1.7063283857941587,
+          "flightTime": 26.48333333333311,
+          "route": "right",
+          "autopilot": true,
+          "landed": true,
+          "roomVisited": [
+            "lamp",
+            "record",
+            "cup"
+          ],
+          "lamp": true,
+          "record": true,
+          "cup": true,
+          "seated": true,
+          "won": true,
+          "walking": false
+        },
+        "storyView": {
+          "lampIntensity": 32,
+          "recordRotation": 39.149599999979124,
+          "cupPosition": [
+            44.147613802834215,
+            0.9190772707413142,
+            -103.90358688887089
+          ],
+          "umbrellas": [
+            {
+              "position": [
+                21.5,
+                0,
+                3.2
+              ],
+              "scale": 1
+            },
+            {
+              "position": [
+                25.5,
+                0,
+                3.2
+              ],
+              "scale": 1
+            },
+            {
+              "position": [
+                27.5,
+                0,
+                5.3
+              ],
+              "scale": 0.001
+            }
+          ],
+          "shadowMap": true,
+          "roomVisible": true
+        },
+        "musicIndex": 4,
+        "targets": [],
+        "phase": "paused",
+        "mode": "mouse",
+        "player": {
+          "x": 43.85678418319232,
+          "y": 0,
+          "z": -103.55046256983724,
+          "vx": 0,
+          "vz": 0,
+          "yaw": 3.141592653589793,
+          "distance": 73.2985878132475
+        },
+        "wind": {
+          "x": 6.896651549379633e-45,
+          "z": 8.033156334677459e-45
+        },
+        "contacts": {
+          "stone": 75184,
+          "metal": 1229,
+          "glass": 24,
+          "water": 2198,
+          "roof": 5933,
+          "umbrella": 613
+        },
+        "guided": {
+          "metal": 3,
+          "glass": 2
+        },
+        "notes": [
+          1,
+          0,
+          2
+        ],
+        "gateOpen": true,
+        "completed": true,
+        "completion": "natural",
+        "easyMode": true,
+        "focusedDrop": -1,
+        "dwellProgress": 0,
+        "guide": {
+          "active": false,
+          "destination": "notes"
+        },
+        "musicDucking": 1,
+        "materialsAwake": true,
+        "elapsed": 126.09999999999413,
+        "puddles": [
+          {
+            "id": "entry-water",
+            "x": -12,
+            "z": 3.4,
+            "rx": 2.05,
+            "rz": 1.1
+          },
+          {
+            "id": "listening-water",
+            "x": 3,
+            "z": 3,
+            "rx": 2.25,
+            "rz": 1.3
+          },
+          {
+            "id": "courtyard-water",
+            "x": 16,
+            "z": -3.6,
+            "rx": 1.9,
+            "rz": 1.2
+          }
+        ],
+        "surfaces": [
+          {
+            "id": "tin-awning",
+            "material": "metal",
+            "axis": "y",
+            "at": 2.8,
+            "a": [
+              -10.1,
+              -5.9
+            ],
+            "b": [
+              -3.1,
+              1.4
+            ]
+          },
+          {
+            "id": "shop-window",
+            "material": "glass",
+            "axis": "z",
+            "at": -1.6,
+            "a": [
+              -2,
+              2
+            ],
+            "b": [
+              0.9,
+              3.6
+            ]
+          },
+          {
+            "id": "roof-0",
+            "material": "roof",
+            "axis": "y",
+            "at": 7.16,
+            "a": [
+              -31.5,
+              -24.5
+            ],
+            "b": [
+              -11,
+              -7
+            ]
+          },
+          {
+            "id": "roof-1",
+            "material": "roof",
+            "axis": "y",
+            "at": 6.36,
+            "a": [
+              -20,
+              -14
+            ],
+            "b": [
+              -7.6000000000000005,
+              -3.2
+            ]
+          },
+          {
+            "id": "roof-2",
+            "material": "roof",
+            "axis": "y",
+            "at": 5.5600000000000005,
+            "a": [
+              -10.6,
+              -5.4
+            ],
+            "b": [
+              -7,
+              -3
+            ]
+          },
+          {
+            "id": "roof-3",
+            "material": "roof",
+            "axis": "y",
+            "at": 6.26,
+            "a": [
+              -2.6,
+              2.6
+            ],
+            "b": [
+              -6.4,
+              -1.6
+            ]
+          },
+          {
+            "id": "roof-4",
+            "material": "roof",
+            "axis": "y",
+            "at": 7.96,
+            "a": [
+              3.5,
+              9.5
+            ],
+            "b": [
+              -8,
+              -3.1999999999999997
+            ]
+          },
+          {
+            "id": "roof-5",
+            "material": "roof",
+            "axis": "y",
+            "at": 6.76,
+            "a": [
+              18.9,
+              25.1
+            ],
+            "b": [
+              -7.9,
+              -2.9000000000000004
+            ]
+          },
+          {
+            "id": "roof-6",
+            "material": "roof",
+            "axis": "y",
+            "at": 5.0600000000000005,
+            "a": [
+              12.5,
+              18.5
+            ],
+            "b": [
+              -12.25,
+              -8.75
+            ]
+          },
+          {
+            "id": "roof-7",
+            "material": "roof",
+            "axis": "y",
+            "at": 5.16,
+            "a": [
+              27.5,
+              34.5
+            ],
+            "b": [
+              -12,
+              -6
+            ]
+          }
+        ],
+        "bells": [
+          {
+            "x": 8.4,
+            "y": 2.3,
+            "z": 1.3
+          },
+          {
+            "x": 9.8,
+            "y": 2.7,
+            "z": 1.3
+          },
+          {
+            "x": 11.2,
+            "y": 2.1,
+            "z": 1.3
+          }
+        ],
+        "feet": [
+          [
+            43.98678418319232,
+            0.055,
+            -103.99046256983723
+          ],
+          [
+            43.726784183192315,
+            0.055,
+            -103.99046256983723
+          ]
+        ],
+        "audio": {
+          "metal": 78,
+          "glass": 4,
+          "water": 205,
+          "stone": 56,
+          "note": 22
+        },
+        "musicLoaded": 5,
+        "frames": 1586,
+        "averageFPS": 12.594308420796184,
+        "metrics": {
+          "calls": 26,
+          "triangles": 4946,
+          "geometries": 99,
+          "textures": 8,
+          "reflectionFrames": 467,
+          "pipelineCalls": 1,
+          "pixelRatio": 0.65
+        },
+        "camera": [
+          50.290517229481516,
+          3.8452586149761334,
+          -96.63685346279505
+        ]
+      }
+    },
+    {
+      "name": "07-phone",
+      "time": 139.513,
+      "state": {
+        "chapter": 7,
+        "chapterName": "一盏灯，一场雨",
+        "ready": false,
+        "story": {
+          "voices": [
+            "glass",
+            "tin",
+            "water"
+          ],
+          "planted": [
+            0,
+            1
+          ],
+          "pool": 1,
+          "umbrellaHits": 8,
+          "surface": 2.5166666666666626,
+          "dive": -1,
+          "dream": 1,
+          "danceEnergy": 5.549999999999986,
+          "danceVoices": [
+            "chime",
+            "water",
+            "wind"
+          ],
+          "flightPart": 3,
+          "flightSpeed": 1.7063283857941587,
+          "flightTime": 26.48333333333311,
+          "route": "right",
+          "autopilot": true,
+          "landed": true,
+          "roomVisited": [
+            "lamp",
+            "record",
+            "cup"
+          ],
+          "lamp": true,
+          "record": true,
+          "cup": true,
+          "seated": false,
+          "won": true,
+          "walking": false
+        },
+        "storyView": {
+          "lampIntensity": 32,
+          "recordRotation": 43.29247999996243,
+          "cupPosition": [
+            44.147624904428476,
+            1.1089492385294775,
+            -103.9035868888709
+          ],
+          "umbrellas": [
+            {
+              "position": [
+                21.5,
+                0,
+                3.2
+              ],
+              "scale": 1
+            },
+            {
+              "position": [
+                25.5,
+                0,
+                3.2
+              ],
+              "scale": 1
+            },
+            {
+              "position": [
+                27.5,
+                0,
+                5.3
+              ],
+              "scale": 0.001
+            }
+          ],
+          "shadowMap": true,
+          "roomVisible": true
+        },
+        "musicIndex": 4,
+        "targets": [
+          {
+            "id": "window",
+            "x": 46,
+            "y": 2.2,
+            "z": -105.7,
+            "label": "窗外的雨",
+            "hint": "轻触窗户，听近一些"
+          },
+          {
+            "id": "lamp",
+            "x": 49,
+            "y": 1.8,
+            "z": -102.8,
+            "label": "一盏小灯",
+            "hint": "轻触灯罩，点亮房间"
+          },
+          {
+            "id": "record",
+            "x": 50.5,
+            "y": 1.15,
+            "z": -102.8,
+            "label": "熟悉的旋律",
+            "hint": "让唱片转起来"
+          },
+          {
+            "id": "cup",
+            "x": 48,
+            "y": 1.25,
+            "z": -102.8,
+            "label": "一杯热茶",
+            "hint": "捧起来，暖一暖手"
+          },
+          {
+            "id": "chair",
+            "x": 43.8,
+            "y": 0.6,
+            "z": -103.5,
+            "label": "坐下来，听一会儿雨",
+            "hint": "在窗边坐下"
+          }
+        ],
+        "phase": "play",
+        "mode": "mouse",
+        "player": {
+          "x": 43.85678418319232,
+          "y": 0,
+          "z": -103.55046256983724,
+          "vx": 0,
+          "vz": 0,
+          "yaw": 3.141592653589793,
+          "distance": 73.2985878132475
+        },
+        "wind": {
+          "x": 4.506216810304617e-48,
+          "z": 5.248799922099118e-48
+        },
+        "contacts": {
+          "stone": 76203,
+          "metal": 1229,
+          "glass": 24,
+          "water": 2201,
+          "roof": 5933,
+          "umbrella": 613
+        },
+        "guided": {
+          "metal": 3,
+          "glass": 2
+        },
+        "notes": [
+          1,
+          0,
+          2
+        ],
+        "gateOpen": true,
+        "completed": true,
+        "completion": "natural",
+        "easyMode": true,
+        "focusedDrop": -1,
+        "dwellProgress": 0,
+        "guide": {
+          "active": false,
+          "destination": "notes"
+        },
+        "musicDucking": 1,
+        "materialsAwake": true,
+        "elapsed": 127.56666666666071,
+        "puddles": [
+          {
+            "id": "entry-water",
+            "x": -12,
+            "z": 3.4,
+            "rx": 2.05,
+            "rz": 1.1
+          },
+          {
+            "id": "listening-water",
+            "x": 3,
+            "z": 3,
+            "rx": 2.25,
+            "rz": 1.3
+          },
+          {
+            "id": "courtyard-water",
+            "x": 16,
+            "z": -3.6,
+            "rx": 1.9,
+            "rz": 1.2
+          }
+        ],
+        "surfaces": [
+          {
+            "id": "tin-awning",
+            "material": "metal",
+            "axis": "y",
+            "at": 2.8,
+            "a": [
+              -10.1,
+              -5.9
+            ],
+            "b": [
+              -3.1,
+              1.4
+            ]
+          },
+          {
+            "id": "shop-window",
+            "material": "glass",
+            "axis": "z",
+            "at": -1.6,
+            "a": [
+              -2,
+              2
+            ],
+            "b": [
+              0.9,
+              3.6
+            ]
+          },
+          {
+            "id": "roof-0",
+            "material": "roof",
+            "axis": "y",
+            "at": 7.16,
+            "a": [
+              -31.5,
+              -24.5
+            ],
+            "b": [
+              -11,
+              -7
+            ]
+          },
+          {
+            "id": "roof-1",
+            "material": "roof",
+            "axis": "y",
+            "at": 6.36,
+            "a": [
+              -20,
+              -14
+            ],
+            "b": [
+              -7.6000000000000005,
+              -3.2
+            ]
+          },
+          {
+            "id": "roof-2",
+            "material": "roof",
+            "axis": "y",
+            "at": 5.5600000000000005,
+            "a": [
+              -10.6,
+              -5.4
+            ],
+            "b": [
+              -7,
+              -3
+            ]
+          },
+          {
+            "id": "roof-3",
+            "material": "roof",
+            "axis": "y",
+            "at": 6.26,
+            "a": [
+              -2.6,
+              2.6
+            ],
+            "b": [
+              -6.4,
+              -1.6
+            ]
+          },
+          {
+            "id": "roof-4",
+            "material": "roof",
+            "axis": "y",
+            "at": 7.96,
+            "a": [
+              3.5,
+              9.5
+            ],
+            "b": [
+              -8,
+              -3.1999999999999997
+            ]
+          },
+          {
+            "id": "roof-5",
+            "material": "roof",
+            "axis": "y",
+            "at": 6.76,
+            "a": [
+              18.9,
+              25.1
+            ],
+            "b": [
+              -7.9,
+              -2.9000000000000004
+            ]
+          },
+          {
+            "id": "roof-6",
+            "material": "roof",
+            "axis": "y",
+            "at": 5.0600000000000005,
+            "a": [
+              12.5,
+              18.5
+            ],
+            "b": [
+              -12.25,
+              -8.75
+            ]
+          },
+          {
+            "id": "roof-7",
+            "material": "roof",
+            "axis": "y",
+            "at": 5.16,
+            "a": [
+              27.5,
+              34.5
+            ],
+            "b": [
+              -12,
+              -6
+            ]
+          }
+        ],
+        "bells": [
+          {
+            "x": 8.4,
+            "y": 2.3,
+            "z": 1.3
+          },
+          {
+            "x": 9.8,
+            "y": 2.7,
+            "z": 1.3
+          },
+          {
+            "x": 11.2,
+            "y": 2.1,
+            "z": 1.3
+          }
+        ],
+        "feet": [
+          [
+            43.98678418319232,
+            0.055,
+            -103.55046256983724
+          ],
+          [
+            43.726784183192315,
+            0.055,
+            -103.55046256983724
+          ]
+        ],
+        "audio": {
+          "metal": 78,
+          "glass": 4,
+          "water": 205,
+          "stone": 56,
+          "note": 22
+        },
+        "musicLoaded": 5,
+        "frames": 1613,
+        "averageFPS": 12.659569040957955,
+        "metrics": {
+          "calls": 24,
+          "triangles": 4766,
+          "geometries": 99,
+          "textures": 8,
+          "reflectionFrames": 467,
+          "pipelineCalls": 1,
+          "pixelRatio": 0.65
+        },
+        "camera": [
+          54.944380527441076,
+          7.6544751105093285,
+          -88.59609707051547
+        ]
+      }
+    }
+  ],
+  "finite": {
+    "count": 33055,
+    "bad": 0
+  },
+  "errors": [],
+  "bad": [],
+  "images": []
+}
